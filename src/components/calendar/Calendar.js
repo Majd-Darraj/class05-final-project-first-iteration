@@ -7,6 +7,7 @@ class Calendar extends React.Component {
         selectedDate: new Date()
     };
 
+    
     renderHeader() {
         const dateFormat = "MMMM YYYY";
 
