@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../App.css";
-import {JobList } from "./componentsclass";
-
+// import {JobList } from "./componentsclass";
+import Searchbar from './searchbar/Searchbar';
+import Header from './Header';
 class Homepage extends Component {
 
   
@@ -12,8 +13,8 @@ class Homepage extends Component {
         <Header />
       </div>
 
+<Searchbar />
 
-      
       </div>
     );
   }

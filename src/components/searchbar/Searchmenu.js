@@ -1,5 +1,5 @@
 import React , {Link} from 'react';
-import '../App.css';
+import './searchmenu.css';
 
 
 function Combobox (props) {
@@ -9,12 +9,11 @@ function Combobox (props) {
           <form >
           <span className="custom-dropdown">
           <label>
-            Pick your favorite flavor:
+            Pick your favorite :
             <select value={props.value} onChange={(e) =>{
-                        
-                                props.handleChange((e.target).value);
+                          props.Changemenu((e.target).value);
             } }>
-              <option value="all" >ALL</option>
+              <option value="homepage" >ALL</option>
               <option value="interships">Interships</option>
               <option value="events" link="events">Events</option>
               <option value="mentors">Mentors</option>

@@ -6,7 +6,7 @@ import React from "react";
             <input
               placeholder="search for gifs"
               onChange={e => {
-                props.inputsubmit((e.target).value);
+                props.changeinput((e.target).value);
   
               }}
             />
