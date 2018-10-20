@@ -14,16 +14,15 @@
     * 1. GENERAL
         1.1 NORMALIZE
         1.2 BASE
-        1.3 VARIABLES
-        1.4 LOADER
+        1.3 LOADER
 
     * 2. HEADER SECTION 
 
-    * 3. SEARCH
+    * 3. SEARCH SECTION
 
     * 4. FOOTER SECTION
 
-    * 5. COMPONENTS
+    * 5. LIST VIEW
 
     * 6. MEDIA QUERIES
 
@@ -43,26 +42,30 @@
 @import "modules/general/base";
 
 /*
-1.3 VARIABLES
-*/
-/* @import "modules/general/variables"; */
-
-/*
-1.4 LOADER
+1.3 LOADER
 */
 @import "modules/general/loader";
 
 /*-----------------------------------------------------------------------------------*/
 /*  2 - HEADER
 /*-----------------------------------------------------------------------------------*/
-@import "modules/sections/header";
+@import "modules/header";
 
 /*-----------------------------------------------------------------------------------*/
 /*  3 - SEARCH
 /*-----------------------------------------------------------------------------------*/
-/* @import "modules/header/navigation"; */
+/* @import "modules/search"; */
 
 /*-----------------------------------------------------------------------------------*/
-/*  3 - SEARCH
+/*  4 - FOOTER
 /*-----------------------------------------------------------------------------------*/
-@import "modules/sections/container";
+/* @import "modules/footer"; */
+
+/*-----------------------------------------------------------------------------------*/
+/*  5 - LIST VIEW
+/*-----------------------------------------------------------------------------------*/
+@import "modules/cardsView/cardsList";
+@import "modules/cardsView/internshipsCard";
+/* @import "modules/cardsView/mentorsCard"; */
+/* @import "modules/cardsView/eventsCard"; */
+/* @import "modules/cardsView/networkingCard"; */
