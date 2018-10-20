@@ -1,0 +1,31 @@
+/* Custom dropdown */
+.square {
+    width: .7em;
+    height: .7em;
+    margin: .5em;
+    display: inline-block;
+  }
+  
+  .custom-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px; /* demo only */
+  }
+  
+  .custom-dropdown select {
+    background-color: #eaf7f4;
+    color: #adb8d1;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em; 
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  }
+  .big {
+    font-size: 1.2em;
+  }
