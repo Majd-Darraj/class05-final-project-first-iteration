@@ -196,3 +196,24 @@
   background-color: #ff6347;
   color: #fff;
 }
+
+
+/* ----------------------------
+      events LIST CONTAINER
+----------------------------*/
+
+.event-item .event-name {
+  font-size: 1.4rem;
+  line-height: 0.7rem;
+  color: #274fa5;
+}
+
+.event-links .event-read-more:hover {
+  background-color: #ff6347;
+  color: #fff;
+}
+
+.event-links .event-apply:hover {
+  background-color: #ff6347;
+  color: #fff;
+}
