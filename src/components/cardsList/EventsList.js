@@ -24,7 +24,8 @@ class EventsList extends React.Component {
           id: `${event.id}`,
           event_name: `${event.event_name}`,
           event_type: `${event.event_type}`,
-          event_adress: `${event.event_adress}`,
+          event_address: `${event.event_address}`,
+          event_postal_code: `${event.event_postal_code}`,
           event_city: `${event.event_city}`,
           event_geo_lat: `${event.event_geo_lat}`,
           event_geo_lng: `${event.event_geo_lng}`,
@@ -35,12 +36,12 @@ class EventsList extends React.Component {
           event_agenda: `${event.event_agenda}`,
           event_language: `${event.event_language}`,
           max_participants: `${event.max_participants}`,
-          event_URL: `${event.event_URL}`,
           event_theme_image: `${event.event_theme_image}`,
           contact_person: `${event.contact_person}`,
           contact_phone: `${event.contact_phone}`,
           contact_email: `${event.contact_email}`,
-          active: `${event.active}`
+          active: `${event.active}`,
+          event_URL: `${event.event_URL}`
         }))
       )
       .then(eventsData => {
@@ -63,7 +64,8 @@ class EventsList extends React.Component {
                     id,
                     event_name,
                     event_type,
-                    event_adress,
+                    event_address,
+                    event_postal_code,
                     event_city,
                     event_geo_lng,
                     event_geo_lat,
@@ -73,13 +75,13 @@ class EventsList extends React.Component {
                     event_end_hour,
                     event_agenda,
                     event_language,
-                    max_participants,
-                    event_URL,
+                    max_participants, 
                     event_theme_image,
                     contact_person,
                     contact_phone,
                     contact_email,
-                    active
+                    active,
+                    event_URL,
                   } = event;
 
                   return (
@@ -88,7 +90,8 @@ class EventsList extends React.Component {
                       id={id}
                       key={id}
                       event_type={event_type}
-                      event_adress={event_adress}
+                      event_address={event_address}
+                      event_postal_code={event_postal_code}
                       event_city={event_city}
                       event_geo_lat={event_geo_lat}
                       event_geo_lng={event_geo_lng}
@@ -99,12 +102,12 @@ class EventsList extends React.Component {
                       event_agenda={event_agenda}
                       event_language={event_language}
                       max_participants={max_participants}
-                      event_URL={event_URL}
                       event_theme_image={event_theme_image}
                       contact_person={contact_person}
                       contact_phone={contact_phone}
                       contact_email={contact_email}
-                      active={active}                    
+                      active={active}  
+                      event_URL={event_URL}               
                     />
                   );
                 })

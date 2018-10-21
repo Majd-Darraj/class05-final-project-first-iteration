@@ -1,0 +1,13 @@
+/* ----------------------------
+    Events card
+----------------------------*/
+
+
+  
+.card-info.event-name {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9rem;
+    color: rgba(1, 39, 80, 0.8);
+    line-height: 1.4rem;
+  }
+  

@@ -16,8 +16,8 @@ class EventCard extends Component {
             <h2 className="event-type">
               {this.props.event_type}
             </h2>
-            <p className="event-adress">
-              {this.props.event_adress}
+            <p className="event-address">
+              {this.props.event_address}
             </p>
             <p className="organisation-postal-code">
               {this.props.event_postal_code}
@@ -45,14 +45,11 @@ class EventCard extends Component {
             <p className="event-agenda">  
               {this.props.event_agenda}
             </p>
-            <p className="event-languagen">
-              {this.props.event_language}
+            <p className="event-language">
+             Language: {this.props.event_language}
             </p>
             <p className="max-participants">
-              {this.props.max_participants}
-            </p>
-            <p className="event-URL">
-              {this.props.event_URL}
+            Max participants: {this.props.max_participants} persons
             </p>
             <p className="contact-person">
               {this.props.contact_person}</p>
@@ -60,6 +57,9 @@ class EventCard extends Component {
               {this.props.contact_phone}</p>
             <p className="contact-email">
               {this.props.contact_email}
+            </p>
+            <p className="event-URL">
+              {this.props.event_URL}
             </p>
           </article>
         </div>
