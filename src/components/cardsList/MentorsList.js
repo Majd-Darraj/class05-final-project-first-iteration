@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MentorCard from "../cards/MentorCard";
 import Header from "../Header";
 
-class MentorsList extends React.Component {
+class MentorsList extends Component {
     constructor(props) {
       super(props);
       this.state = { mentorsData: []

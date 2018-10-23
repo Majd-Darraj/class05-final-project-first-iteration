@@ -1,5 +1,6 @@
 import React from "react";
 import "./MapComponent.css";
+import fetchAPIData from "../api/api"
 import {
   withScriptjs,
   withGoogleMap,
@@ -7,7 +8,33 @@ import {
   Marker
 } from "react-google-maps";
 
+
+
+
 class MapComponent extends React.Component {
+   fetchAPIData = (url) => {
+    return fetch(url).then(response => response.json());
+  }
+  
+  componentDidMount = () => {
+    let coords = [];
+  
+    fetchAPIData(
+      "https://raw.githubusercontent.com/paredesrichard/commandline/master/events.json"
+    ).then(newData => {
+      coords = newData.map(data => {
+        let newCoords = {};
+        newCoords = {
+          lat: data.event_geo_lat,
+          lng: data.event_geo_lng
+        };
+        return newCoords;
+      });
+      console.log("coordinates:", coords);
+    });
+  }
+
+  
   render() {
     if (this.props.coords) console.log("this.props.coords", this.props.coords);
     const GoogleMapComponent = withScriptjs(
