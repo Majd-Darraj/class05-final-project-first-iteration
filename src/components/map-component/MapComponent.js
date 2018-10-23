@@ -24,6 +24,7 @@ class MapComponent extends React.Component {
           ) : (
             ""
           )}
+
         </GoogleMap>
       ))
     );
