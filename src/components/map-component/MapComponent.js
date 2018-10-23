@@ -9,6 +9,7 @@ import {
 
 class MapComponent extends React.Component {
   render() {
+    if (this.props.coords) console.log("this.props.coords", this.props.coords);
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap
@@ -19,12 +20,19 @@ class MapComponent extends React.Component {
           }
           defaultZoom={this.props.Zoom ? this.props.Zoom : 13}
         >
-          {this.props.setMarker && this.props.mapCenter ? (
-            <Marker position={this.props.mapCenter} />
+          {this.props.setMarker &&
+          this.props.mapCenter &&
+          !this.props.coords ? (
+            <Marker key={Math.random()} position={this.props.mapCenter} />
           ) : (
             ""
           )}
 
+          {this.props.setMarker && this.props.coords
+            ? this.props.coords.map(coords => (
+                <Marker key={Math.random()} position={coords} />
+              ))
+            : ""}
         </GoogleMap>
       ))
     );
