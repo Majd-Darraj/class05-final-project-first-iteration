@@ -7,7 +7,6 @@ import Events from "./cardsList/EventsList";
 import Internships from "./cardsList/InternshipsList";
 import Mentors from "./cardsList/MentorsList";
 import Networking from "./cardsList/NetworkingList";
-import Homepage from "./Homepage";
 
 class Router extends Component {
   render() {
@@ -15,7 +14,6 @@ class Router extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Events} />
-          <Route exact path="/homepage" component={Homepage} />
           <Route exact path="/Internships" component={Internships} />
           <Route exact path="/Events" component={Events} />
           <Route exact path="/Mentors" component={Mentors} />

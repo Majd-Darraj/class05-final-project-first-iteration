@@ -1,14 +1,27 @@
 import React from "react";
 import dateFns from "date-fns";
+import './calendar.css';
 
 class Calendar extends React.Component {
-    state = {
-        currentMonth: new Date(),
-        selectedDate: new Date()
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentMonth: new Date(),
+            selectedDate: new Date(),
+            datespro:[],
+        };
+      }
+ componentWillMount(){   
 
     
+}
+    
     renderHeader() {
+        console.log(typeof(this.props.days));
+    console.log(this.props.days);
+    const dateformat1="DD MM YYYY";
+    const datearray = this.props.days.map(newday=>new Date(newday));
+console.log(datearray);
         const dateFormat = "MMMM YYYY";
 
         return (
@@ -29,6 +42,7 @@ class Calendar extends React.Component {
     }
 
     renderDays() {
+        
         const dateFormat = "dddd";
         const days = [];
 
@@ -46,6 +60,7 @@ class Calendar extends React.Component {
     }
 
     renderCells() {
+       
         const { currentMonth, selectedDate } = this.state;
         const monthStart = dateFns.startOfMonth(currentMonth);
         const monthEnd = dateFns.endOfMonth(monthStart);
@@ -68,7 +83,7 @@ class Calendar extends React.Component {
                         className={`col cell ${
                             !dateFns.isSameMonth(day, monthStart)
                                 ? "disabled"
-                                : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
+                                :this.props.days.includes(day) ? "selected" : ""
                             }`}
                         key={day}
                         onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
@@ -113,6 +128,7 @@ class Calendar extends React.Component {
                 {this.renderHeader()}
                 {this.renderDays()}
                 {this.renderCells()}
+
             </div>
         );
     }
