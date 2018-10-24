@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./MapComponent.css";
-// import fetchData from "../helpers/Fetch";
 import {
   withScriptjs,
   withGoogleMap,
@@ -10,6 +9,11 @@ import {
 
 class MapComponent extends Component {
   render() {
+    // const icon = {
+    //   url: "./assets/marker.png",
+    //   scaledSize: { width: 30, height: 30 },
+    //   anchor: { x: 15, y: 15 }
+    // };
     if (this.props.coords);
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (
@@ -24,22 +28,14 @@ class MapComponent extends Component {
           {this.props.setMarker &&
           this.props.mapCenter &&
           !this.props.coords ? (
-            <Marker
-              key={Math.random()}
-              position={this.props.mapCenter}
-              defaultIcon={this.props.icon}
-            />
+            <Marker key={Math.random()} position={this.props.mapCenter} />
           ) : (
             ""
           )}
 
           {this.props.setMarker && this.props.coords
             ? this.props.coords.map(coords => (
-                <Marker
-                  key={Math.random()}
-                  position={coords}
-                  defaultIcon={this.props.icon}
-                />
+                <Marker key={Math.random()} position={coords} />
               ))
             : ""}
         </GoogleMap>

@@ -1,8 +1,9 @@
 .map-container {
-  width: 600px;
-  height: 600px;
+  width: 100vw;
+  height: 50vh;
   display: block;
   background-color: #fff;
+  border-bottom-right-radius: 50px;
 }
 
 /* .grid {
