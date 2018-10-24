@@ -21,34 +21,6 @@ class InternshipsList extends Component {
       "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
     )
       .then(response => response.json())
-      .then(parsedJSON =>
-        parsedJSON.map(internship => ({
-          id: `${internship.id}`,
-          internship_title: `${internship.internship_title}`,
-          internship_category: `${internship.internship_category}`,
-          department: `${internship.department}`,
-          internship_description: `${internship.internship_description}`,
-          organisation_description: `${internship.organisation_description}`,
-          internship_agreement: `${internship.internship_agreement}`,
-          internship_requirements: `${internship.internship_requirements}`,
-          application_requirements: `${internship.application_requirements}`,
-          internship_availabiltiy_schedule: `${
-            internship.internship_availabiltiy_schedule
-          }`,
-          travel_expenses: `${internship.travel_expenses}`,
-          location: `${internship.location}`,
-          internship_add_date: `${internship.internship_add_date}`,
-          closing_date: `${internship.closing_date}`,
-          internship_deadline: `${internship.internship_deadline}`,
-          contact_person: `${internship.contact_person}`,
-          phone_contact: `${internship.phone_contact}`,
-          email_contact: `${internship.email_contact}`,
-          organisation_address: `${internship.organisation_address}`,
-          organisation_website: `${internship.organisation_website}`,
-          internship_theme_image: `${internship.internship_theme_image}`,
-          active: `${internship.active}`
-        }))
-      )
       .then(internshipsData =>
         this.setState({
           internshipsData,

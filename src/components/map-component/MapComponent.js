@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import "./MapComponent.css";
-import fetchAPIData from "../api/api"
+// import fetchData from "../helpers/Fetch";
 import {
   withScriptjs,
   withGoogleMap,
@@ -8,35 +8,9 @@ import {
   Marker
 } from "react-google-maps";
 
-
-
-
-class MapComponent extends React.Component {
-   fetchAPIData = (url) => {
-    return fetch(url).then(response => response.json());
-  }
-  
-  componentDidMount = () => {
-    let coords = [];
-  
-    fetchAPIData(
-      "https://raw.githubusercontent.com/paredesrichard/commandline/master/events.json"
-    ).then(newData => {
-      coords = newData.map(data => {
-        let newCoords = {};
-        newCoords = {
-          lat: data.event_geo_lat,
-          lng: data.event_geo_lng
-        };
-        return newCoords;
-      });
-      console.log("coordinates:", coords);
-    });
-  }
-
-  
+class MapComponent extends Component {
   render() {
-    if (this.props.coords) console.log("this.props.coords", this.props.coords);
+    if (this.props.coords);
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap
@@ -50,14 +24,22 @@ class MapComponent extends React.Component {
           {this.props.setMarker &&
           this.props.mapCenter &&
           !this.props.coords ? (
-            <Marker key={Math.random()} position={this.props.mapCenter} />
+            <Marker
+              key={Math.random()}
+              position={this.props.mapCenter}
+              defaultIcon={this.props.icon}
+            />
           ) : (
             ""
           )}
 
           {this.props.setMarker && this.props.coords
             ? this.props.coords.map(coords => (
-                <Marker key={Math.random()} position={coords} />
+                <Marker
+                  key={Math.random()}
+                  position={coords}
+                  defaultIcon={this.props.icon}
+                />
               ))
             : ""}
         </GoogleMap>
