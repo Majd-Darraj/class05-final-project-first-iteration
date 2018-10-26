@@ -5,47 +5,33 @@ import Header from "../Header";
 class NetworkingList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { NetworkingData: []
+    this.state = {
+      NetworkingData: []
     };
   }
 
   componentDidMount = () => {
-    this.fetchData();
+    fetch("/api/networking", {
+      method: "GET"
+    })
+      .then(response => response.json())
+      .then(NetworkingData => {
+        this.setState({
+          isLoading: false,
+          NetworkingData: NetworkingData
+        });
+      })
+      .catch(err => {
+        console.log("caught error!", err);
+      });
   };
 
-  fetchData() {
-    fetch("https://raw.githubusercontent.com/paredesrichard/commandline/master/networking.json"
-    )
-      .then(response => response.json())
-      .then(parsedJSON =>
-        parsedJSON.map(networking => ({
-          id: `${networking.id}`,
-          organisation_name: `${networking.organisation_name}`,
-          sector_activity: `${networking.sector_activity}`,
-          organisation_description: `${networking.organisation_description}`,
-          organisation_logo: `${networking.organisation_logo}`,
-          organisation_url: `${networking.organisation_url}`,
-          organisation_address: `${networking.organisation_address}`,
-          organisation_city: `${networking.organisation_city}`,
-          organisation_postal_code:`${networking.organisation_postal_code}`,
-          contact_person: `${networking.contact_person}`,
-          contact_email: `${networking.contact_email}`,
-          contact_phone: `${networking.contact_phone}`,
-          active: `${networking.active}`,
-        }))
-      )
-      .then(NetworkingData => {
-        this.setState({ NetworkingData });
-      });
-  
-  }
   render() {
     const { NetworkingData } = this.state;
     return (
       <div>
         <Header />
-        <section
-          className="cards-list-container">
+        <section className="cards-list-container">
           <div className="cards-list">
             {NetworkingData.length > 0
               ? NetworkingData.map(networking => {
@@ -62,7 +48,7 @@ class NetworkingList extends React.Component {
                     contact_person,
                     contact_email,
                     contact_phone,
-                    active,
+                    active
                   } = networking;
 
                   return (
@@ -77,17 +63,17 @@ class NetworkingList extends React.Component {
                       organisation_address={organisation_address}
                       organisation_city={organisation_city}
                       organisation_postal_code={organisation_postal_code}
-                      contact_person= {contact_person}
-                      contact_email={contact_email} 
+                      contact_person={contact_person}
+                      contact_email={contact_email}
                       contact_phone={contact_phone}
-                      active={active}  
+                      active={active}
                     />
                   );
                 })
               : null}
           </div>
-         </section>
-        </div>
+        </section>
+      </div>
     );
   }
 }

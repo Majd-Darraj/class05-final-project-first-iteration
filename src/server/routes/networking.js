@@ -6,7 +6,7 @@ import {
   getNetworkingById,
   updateNetworking,
   deleteNetworking
-} from "../controllers/networkings";
+} from "../controllers/networking";
 
 const router = express.Router();
 

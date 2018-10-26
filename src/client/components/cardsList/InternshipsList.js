@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InternshipCard from "../cards/InternshipCard";
 import Header from "../Header";
+import { debug } from "util";
 // import InternshipData from "../../database/InternshipData.json";
 
 class InternshipsList extends Component {
@@ -13,26 +14,24 @@ class InternshipsList extends Component {
   }
 
   componentDidMount = () => {
-    this.fetchData();
+    fetch("/api/internships", {
+      method: "GET"
+    })
+      .then(response => response.json())
+      .then(internshipsData => {
+        this.setState({
+          isLoading: false,
+          internshipsData: internshipsData
+        });
+      })
+      .catch(err => {
+        console.log("caught error!", err);
+      });
   };
 
-  fetchData() {
-    fetch(
-      "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
-    )
-      .then(response => response.json())
-      .then(internshipsData =>
-        this.setState({
-          internshipsData,
-          isLoading: false
-        })
-      )
-      .catch(error => console.log(error));
-  }
-
   render() {
-    // JSON.stringify(this.state.InternshipData);
     const { isLoading, internshipsData } = this.state;
+    // debugger;
     return (
       <>
         <Header />

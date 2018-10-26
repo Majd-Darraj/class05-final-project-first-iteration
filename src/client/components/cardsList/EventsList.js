@@ -13,26 +13,21 @@ class EventsList extends React.Component {
     };
   }
 
-  componentDidMount() {
-    let eventCoords = [];
-
-    fetch(
-      "https://raw.githubusercontent.com/paredesrichard/commandline/master/events.json"
-    )
+  componentDidMount = () => {
+    fetch("/api/events", {
+      method: "GET"
+    })
       .then(response => response.json())
       .then(eventsData => {
-        eventCoords = eventsData.map(event => {
-          return {
-            lat: event.event_geo_lat,
-            lng: event.event_geo_lng
-          };
-        });
         this.setState({
-          eventsData: eventsData,
-          eventCoords: eventCoords
+          isLoading: false,
+          eventsData: eventsData
         });
+      })
+      .catch(err => {
+        console.log("caught error!", err);
       });
-  }
+  };
 
   render() {
     const { eventsData } = this.state;
