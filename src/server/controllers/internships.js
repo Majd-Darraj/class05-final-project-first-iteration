@@ -6,9 +6,7 @@ import db from "../config/db";
 ******/
 export function listAllInternships(req, res) {
   // sql query definitions for db string
-  const sql = SqlString.format("SELECT * FROM internships WHERE is_active=?", [
-    1
-  ]);
+  const sql = SqlString.format("SELECT * FROM internships WHERE active=?", [1]);
   // sql query excution and send response
   db.execute(sql, (err, rows) => {
     // error handler
@@ -54,7 +52,7 @@ export function getInternshipById(req, res) {
 
   // sql query definitions for db string
   const sql = SqlString.format(
-    "SELECT * FROM internships WHERE id = ? AND is_active = ?",
+    "SELECT * FROM internships WHERE id = ? AND active = ?",
     [internshipId, 1]
   );
 
@@ -111,7 +109,7 @@ export function updateInternship(req, res) {
 }
 
 /******
-  DELETE one internship data by ID (change is_active state to 0 (false))
+  DELETE one internship data by ID (change active state to 0 (false))
 ******/
 export function deleteInternship(req, res) {
   // save internship 'id' from request body parameters in a variable
@@ -120,7 +118,7 @@ export function deleteInternship(req, res) {
   // sql query definitions for db string
   const sql = SqlString.format(`UPDATE internships SET ? WHERE id = ?`, [
     {
-      is_active: 0
+      active: 0
     },
     internshipId
   ]);
