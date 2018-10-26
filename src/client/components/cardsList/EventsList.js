@@ -1,5 +1,4 @@
 import React from "react";
-//import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import Header from "../Header";
 import EventCard from "../cards/EventCard";
 import MapComponent from "../map-component/MapComponent";
@@ -19,9 +18,16 @@ class EventsList extends React.Component {
     })
       .then(response => response.json())
       .then(eventsData => {
+        let eventCoords = eventsData.map(event => {
+          return {
+            lat: event.event_geo_lat,
+            lng: event.event_geo_lng
+          };
+        });
         this.setState({
           isLoading: false,
-          eventsData: eventsData
+          eventsData: eventsData,
+          eventCoords: eventCoords
         });
       })
       .catch(err => {
