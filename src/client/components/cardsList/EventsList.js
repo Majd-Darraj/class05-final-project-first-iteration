@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header";
 import EventCard from "../cards/EventCard";
 import MapComponent from "../map-component/MapComponent";
+import Calendar from "../calendar/Calendar";
 
 class EventsList extends React.Component {
   constructor(props) {
@@ -40,7 +41,11 @@ class EventsList extends React.Component {
     return (
       <div>
         <Header />
-        <div style={{ width: `100vw`, height: `50vh` }}>
+        <Calendar />
+        <div
+          className="map-container"
+          style={{ width: `100vw`, height: `50vh` }}
+        >
           <MapComponent
             mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
             setMarker

@@ -12,7 +12,7 @@ header {
 
     .site-branding-container {
       img {
-        max-height: 100px;
+        max-height: 60px;
         border: none;
       }
     }
@@ -31,9 +31,9 @@ header {
 
           a {
             color: white;
-            padding: 20px;
+            padding: 10px 20px;
             text-decoration: none;
-            font-size: 1.4em;
+            font-size: 0.9em;
             outline: none !important;
             border-radius: 5px;
             text-transform: uppercase;

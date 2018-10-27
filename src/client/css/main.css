@@ -12,9 +12,11 @@
 /*-------------------------------------------------------------------------------------
 
     * 1. GENERAL
-        1.1 NORMALIZE
-        1.2 BASE
-        1.3 LOADER
+        1.1 BOOTSTRAP
+        1.2 VARIABLES
+        1.3 NORMALIZE
+        1.4 BASE
+        1.5 LOADER
 
     * 2. HEADER SECTION 
 
@@ -32,17 +34,27 @@
 /*  1 - GENERAL
 /*-----------------------------------------------------------------------------------*/
 /*
-1.1 NORMALIZE
+1.1 BOOTSTRAP
+*/
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/*
+1.2 NORMALIZE
 */
 @import "modules/general/normalize";
 
 /*
-1.2 BASE
+1.3 VARIABLES
+*/
+@import "modules/general/variables";
+
+/*
+1.4 BASE
 */
 @import "modules/general/base";
 
 /*
-1.3 LOADER
+1.5 LOADER
 */
 @import "modules/general/loader";
 
