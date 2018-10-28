@@ -61,7 +61,11 @@ class EventCard extends Component {
             <p className="event-URL">
               {this.props.event_URL}
             </p>
+
           </article>
+          <button className="readmore">
+              Read More
+            </button>
         </div>
       </div>
     );

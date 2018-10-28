@@ -8,3 +8,8 @@ body {
   width: 100vw;
   padding: 40px;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+}

@@ -8,15 +8,15 @@ class Search extends Component {
   render() {
     return (
       <>
-        <div class="search-container">
+        <div className="search-container">
           <form>
             <fieldset>
               <legend>WHAT ARE YOU LOOKING FOR?</legend>
             </fieldset>
-            <div class="inner-form">
-              <div class="left">
-                <div class="input-wrap first">
-                  <div class="input-field first">
+            <div className="inner-form">
+              <div className="left">
+                <div className="input-wrap first">
+                  <div className="input-field first">
                     <label>WHAT</label>
                     <input
                       type="text"
@@ -24,10 +24,10 @@ class Search extends Component {
                     />
                   </div>
                 </div>
-                <div class="input-wrap second">
-                  <div class="input-field second">
+                <div className="input-wrap second">
+                  <div className="input-field second">
                     <label>IN</label>
-                    <div class="input-select">
+                    <div className="input-select">
                       <select data-trigger="" name="choices-single-defaul">
                         <option placeholder="">Section</option>
                         <option>Internships</option>
@@ -38,10 +38,10 @@ class Search extends Component {
                     </div>
                   </div>
                 </div>
-                <div class="input-wrap third">
-                  <div class="input-field third">
+                <div className="input-wrap third">
+                  <div className="input-field third">
                     <label>WHERE</label>
-                    <div class="input-select">
+                    <div className="input-select">
                       <select data-trigger="" name="choices-single-defaul">
                         <option placeholder="">Region</option>
                         <option>Copenhagen</option>
@@ -53,7 +53,7 @@ class Search extends Component {
                   </div>
                 </div>
               </div>
-              <button class="btn-search" type="button">
+              <button className="btn-search" type="button">
                 SEARCH
               </button>
             </div>
