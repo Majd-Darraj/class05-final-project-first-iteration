@@ -1,3 +1,10 @@
 body {
   background-color: #eee !important;
 }
+
+.page-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 40px;
+}
