@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import InternshipCard from "../cards/InternshipCard";
 import Header from "../Header";
-// import InternshipData from "../../database/InternshipData.json";
-
 class InternshipsList extends Component {
   constructor(props) {
     super(props);
@@ -11,17 +9,14 @@ class InternshipsList extends Component {
       internshipsData: []
     };
   }
-
   componentDidMount = () => {
     this.fetchData();
   };
-
   fetchData() {
     fetch("/api/internships")
       // "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
     
       .then(response => response.json())
-      
       .then(internshipsData =>
         this.setState({
           internshipsData: internshipsData,
