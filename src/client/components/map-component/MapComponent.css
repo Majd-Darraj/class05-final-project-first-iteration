@@ -1,0 +1,17 @@
+.map-container {
+  width: 50vw;
+  height: 80vh;
+  display: block;
+  background-color: #fff;
+  border-radius: 20px;
+  order: 2;
+  position: sticky;
+  top: 10%;
+  /* padding: 10px; */
+  /* border-radius: 20px; */
+}
+
+.map-style {
+  /* border-radius: 20px; */
+  /* padding: 10px; */
+}
