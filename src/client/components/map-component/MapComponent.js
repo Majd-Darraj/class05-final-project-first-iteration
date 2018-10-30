@@ -9,11 +9,6 @@ import {
 
 class MapComponent extends Component {
   render() {
-    // const icon = {
-    //   url: "./assets/marker.png",
-    //   scaledSize: { width: 30, height: 30 },
-    //   anchor: { x: 15, y: 15 }
-    // };
     if (this.props.coords);
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (

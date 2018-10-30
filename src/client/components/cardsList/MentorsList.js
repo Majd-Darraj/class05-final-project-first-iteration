@@ -42,42 +42,7 @@ class MentorsList extends Component {
               <div className="cards-list">
                 {mentorsData.length > 0
                   ? mentorsData.map(mentor => {
-                      const {
-                        id,
-                        first_name,
-                        last_name,
-                        email,
-                        gender,
-                        profile_picture,
-                        mentor_description,
-                        languages,
-                        availability,
-                        offering,
-                        area_location,
-                        preferred_meeting_place,
-                        affiliation,
-                        active
-                      } = mentor;
-
-                      return (
-                        <MentorCard
-                          id={id}
-                          key={id}
-                          first_name={first_name}
-                          last_name={last_name}
-                          email={email}
-                          gender={gender}
-                          profile_picture={profile_picture}
-                          mentor_description={mentor_description}
-                          languages={languages}
-                          availability={availability}
-                          offering={offering}
-                          area_location={area_location}
-                          preferred_meeting_place={preferred_meeting_place}
-                          affiliation={affiliation}
-                          active={active}
-                        />
-                      );
+                      return <MentorCard {...mentor} />;
                     })
                   : null}
               </div>

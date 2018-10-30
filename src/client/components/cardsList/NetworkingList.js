@@ -41,40 +41,7 @@ class NetworkingList extends React.Component {
               <div className="cards-list">
                 {NetworkingData.length > 0
                   ? NetworkingData.map(networking => {
-                      const {
-                        id,
-                        organisation_name,
-                        organisation_description,
-                        organisation_logo,
-                        organisation_url,
-                        organisation_address,
-                        organisation_postal_code,
-                        organisation_city,
-                        sector_activity,
-                        contact_person,
-                        contact_email,
-                        contact_phone,
-                        active
-                      } = networking;
-
-                      return (
-                        <NetworkingCard
-                          organisation_name={organisation_name}
-                          id={id}
-                          key={id}
-                          sector_activity={sector_activity}
-                          organisation_description={organisation_description}
-                          organisation_logo={organisation_logo}
-                          organisation_url={organisation_url}
-                          organisation_address={organisation_address}
-                          organisation_city={organisation_city}
-                          organisation_postal_code={organisation_postal_code}
-                          contact_person={contact_person}
-                          contact_email={contact_email}
-                          contact_phone={contact_phone}
-                          active={active}
-                        />
-                      );
+                      return <NetworkingCard {...networking} />;
                     })
                   : null}
               </div>
