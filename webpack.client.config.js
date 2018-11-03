@@ -33,9 +33,6 @@ module.exports = {
             options: {
               importLoaders: 1
             }
-          },
-          {
-            loader: "postcss-loader"
           }
         ]
       },
