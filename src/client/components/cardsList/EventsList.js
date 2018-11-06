@@ -76,7 +76,7 @@ class EventsList extends React.Component {
               <div className="cards-list">
                 {eventsData.length > 0
                   ? eventsData.map(event => {
-                      return <EventCard {...event} />;
+                      return <EventCard {...event} key={event.id}/>;
                     })
                   : null}
               </div>

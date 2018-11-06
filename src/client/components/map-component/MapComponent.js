@@ -4,10 +4,24 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
+  InfoWindow
 } from "react-google-maps";
 
+
 class MapComponent extends Component {
+
+  state = {
+    isInfoWindowvisible: false
+  };
+
+  handleClick=() =>  {
+    console.log('haha')
+    this.setState({isInfoWindowvisible:true})
+  }
+
+ 
+
   render() {
     if (this.props.coords);
     const GoogleMapComponent = withScriptjs(
@@ -18,19 +32,15 @@ class MapComponent extends Component {
               ? this.props.mapCenter
               : { lat: 55.676098, lng: 12.568337 }
           }
+
           defaultZoom={this.props.Zoom ? this.props.Zoom : 13}
         >
-          {this.props.setMarker &&
-          this.props.mapCenter &&
-          !this.props.coords ? (
-            <Marker key={Math.random()} position={this.props.mapCenter} />
-          ) : (
-            ""
-          )}
 
           {this.props.setMarker && this.props.coords
             ? this.props.coords.map(coords => (
-                <Marker key={Math.random()} position={coords} />
+                <Marker onClick={this.handleClick} key={Math.random()} position={coords}>
+              {this.state.isInfoWindowvisible &&  <InfoWindow onCloseClick={() => {} }><div> Info </div></InfoWindow> }
+                </Marker>
               ))
             : ""}
         </GoogleMap>
