@@ -1,26 +1,17 @@
 import React, { Component } from "react";
 import "./MapComponent.css";
+import MarkerComponent from "../Marker";
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker,
   InfoWindow
 } from "react-google-maps";
 
 
 class MapComponent extends Component {
 
-  state = {
-    isInfoWindowvisible: false
-  };
 
-  handleClick=() =>  {
-    console.log('haha')
-    this.setState({isInfoWindowvisible:true})
-  }
-
- 
 
   render() {
     if (this.props.coords);
@@ -38,9 +29,7 @@ class MapComponent extends Component {
 
           {this.props.setMarker && this.props.coords
             ? this.props.coords.map(coords => (
-                <Marker onClick={this.handleClick} key={Math.random()} position={coords}>
-              {this.state.isInfoWindowvisible &&  <InfoWindow onCloseClick={() => {} }><div> Info </div></InfoWindow> }
-                </Marker>
+                <MarkerComponent coords={coords}/>
               ))
             : ""}
         </GoogleMap>
