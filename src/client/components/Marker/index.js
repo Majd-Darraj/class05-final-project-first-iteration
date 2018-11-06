@@ -15,15 +15,17 @@ class MarkerComponent extends Component {
   };
 
   handleClick=() =>  {
-    this.setState({isInfoWindowvisible:true})
+    this.setState({isInfoWindowvisible:!this.state.isInfoWindowvisible})
+    console.log(this.props)
+
   }
 
- 
 
   render() {
       return (
-           <Marker onClick={this.handleClick} key={Math.random()} position={this.props.coords}>
-              {this.state.isInfoWindowvisible &&  <InfoWindow onCloseClick={() => {} }><div> {this.props.coords.lat} </div></InfoWindow> }
+          
+           <Marker onClick={this.handleClick} onDblClick={this.handleBlur} key={this.props.data.id} animation={google.maps.Animation.DROP} position={this.props.data.coord}>
+             {this.state.isInfoWindowvisible &&  <InfoWindow onCloseClick={() => {} }><div> {this.props.data.name} </div></InfoWindow> }
                 </Marker>
     )
    

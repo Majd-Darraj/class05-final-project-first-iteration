@@ -25,8 +25,13 @@ class EventsList extends React.Component {
       .then(eventsData => {
         let eventCoords = eventsData.map(event => {
           return {
-            lat: event.event_geo_lat,
-            lng: event.event_geo_lng
+            id:event.id,
+            name: event.event_name,
+            address: event.event_address,
+            coord: {
+              lat: event.event_geo_lat,
+              lng: event.event_geo_lng
+            }
           };
         });
         let eventDate = eventsData.map(event => {

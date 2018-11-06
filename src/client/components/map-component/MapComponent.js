@@ -11,8 +11,6 @@ import {
 
 class MapComponent extends Component {
 
-
-
   render() {
     if (this.props.coords);
     const GoogleMapComponent = withScriptjs(
@@ -28,8 +26,8 @@ class MapComponent extends Component {
         >
 
           {this.props.setMarker && this.props.coords
-            ? this.props.coords.map(coords => (
-                <MarkerComponent coords={coords}/>
+            ? this.props.coords.map(data => (
+                <MarkerComponent coords= {data.coord} data={data} />
               ))
             : ""}
         </GoogleMap>
