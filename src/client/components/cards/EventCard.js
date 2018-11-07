@@ -22,7 +22,7 @@ class EventCard extends Component {
     let eventDateMonth = months[eventDateNumber].substring(0, 3);
 
     return (
-      <div className="card-item event-item">
+      <div className="card-item event-item" key={this.props.id}>
         <div className="card-container event-item-container">
           <div className="card-info-container">
             <div className="card-image-container">

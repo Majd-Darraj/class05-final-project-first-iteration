@@ -7,6 +7,7 @@ import Search from "../search/Search";
 class EventsList extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       isLoading: true,
       eventsData: [],

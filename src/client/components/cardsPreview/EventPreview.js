@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import EventCard from "../cards/EventCard";
 import Header from "../Header";
 import Search from "../search/Search";
