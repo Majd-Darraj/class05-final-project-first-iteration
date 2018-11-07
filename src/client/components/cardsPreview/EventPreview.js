@@ -26,7 +26,7 @@ class EventPreview extends React.Component {
   componentDidMount = () => {
     const url = "/api/events";
     const id = this.props.match.params.id;
-    debugger;
+    // debugger;
 
     fetch(`/api/events`)
       .then(response => response.json())
@@ -43,10 +43,10 @@ class EventPreview extends React.Component {
   render() {
     const { isLoading, eventsData } = this.state;
     const as = this.props;
-    debugger;
+    // debugger;
     return (
       <div>
-        <div className="page-content">
+        <div className="page-content  card-preview">
           <section
             className={`cards-list-container cards-list-container-events ${
               isLoading ? "is-loading" : ""

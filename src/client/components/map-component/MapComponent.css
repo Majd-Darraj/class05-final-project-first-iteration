@@ -1,12 +1,14 @@
 .map-container {
   width: 50%;
-  height: 80vh;
+  height: 100vh;
+  border: 1em solid #007bff;
+  border-right: 1em solid #007bff;
   /* display: block; */
   /* background-color: #fff; */
   /* border-radius: 20px; */
   order: 2;
   position: sticky;
-  top: 10%;
+  top: 0;
   /* padding: 10px; */
   /* border-radius: 20px; */
 }

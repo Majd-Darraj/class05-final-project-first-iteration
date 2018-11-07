@@ -4,8 +4,7 @@
 .cards-list-container {
   /* margin: 0 auto; */
   max-width: 90%;
-  margin: 30px auto;
-  padding: 20px 0;
+  margin: 0 auto;
 
   .cards-list {
     display: flex;
@@ -14,7 +13,7 @@
     justify-content: space-between;
 
     .card-item {
-      flex: 0 1 calc(calc(100% / 3) - 20px);
+      flex: 0 1 calc(calc(100% / 3) - 30px);
       display: flex;
       width: 100%;
       margin: 20px 0;
