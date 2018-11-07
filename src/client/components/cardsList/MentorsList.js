@@ -31,11 +31,7 @@ class MentorsList extends Component {
   render() {
     const { mentorsData } = this.state;
     return (
-      <div>
-        <div className="itemBefore">
-          <Header />
-          <Search />
-        </div>
+      <>
         <div className="page-content">
           <section className="cards-list-container">
             <div className="mentors-main-container">
@@ -49,7 +45,7 @@ class MentorsList extends Component {
             </div>
           </section>
         </div>
-      </div>
+      </>
     );
   }
 }

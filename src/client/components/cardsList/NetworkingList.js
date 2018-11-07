@@ -30,11 +30,7 @@ class NetworkingList extends React.Component {
   render() {
     const { NetworkingData } = this.state;
     return (
-      <div>
-        <div className="itemBefore">
-          <Header />
-          <Search />
-        </div>
+      <>
         <div className="page-content">
           <section className="cards-list-container">
             <div className="networking-main-container">
@@ -48,7 +44,7 @@ class NetworkingList extends React.Component {
             </div>
           </section>
         </div>
-      </div>
+      </>
     );
   }
 }

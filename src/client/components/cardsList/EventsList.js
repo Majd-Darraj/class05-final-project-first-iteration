@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../Header";
+import Search from "../search/Search";
 import EventCard from "../cards/EventCard";
 import MapComponent from "../map-component/MapComponent";
-import Search from "../search/Search";
 
 class EventsList extends React.Component {
   constructor(props) {
@@ -47,12 +47,7 @@ class EventsList extends React.Component {
   render() {
     const { isLoading, eventsData } = this.state;
     return (
-      <div>
-        <div className="itemBefore">
-          <Header />
-          <Search />
-        </div>
-
+      <>
         <div className="page-content">
           <MapComponent
             mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
@@ -79,7 +74,7 @@ class EventsList extends React.Component {
             </div>
           </section>
         </div>
-      </div>
+      </>
     );
   }
 }

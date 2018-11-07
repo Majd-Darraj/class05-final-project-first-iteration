@@ -33,10 +33,6 @@ class InternshipsList extends Component {
     // debugger;
     return (
       <>
-        <div className="itemBefore">
-          <Header />
-          <Search />
-        </div>
         <div className="page-content">
           <section
             className={`cards-list-container ${isLoading ? "is-loading" : ""}`}
