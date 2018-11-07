@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class EventCard extends Component {
   render() {
@@ -34,34 +35,35 @@ class EventCard extends Component {
             </div>
             <article className="card-info">
               <div className="card-date">
-                <span className="event-month">{eventDateMonth}</span>
-                <span className="event-day">{eventDate}</span>
+                <p className="event-month">{eventDateMonth}</p>
+                <p className="event-day">{eventDate}</p>
               </div>
-              <h1 className="event-name">{this.props.event_name}</h1>
-              <h3 className="event-type">{this.props.event_type}</h3>
-              <p className="event-address">
-                {this.props.event_address}, {this.props.event_city}
-              </p>
+              <div className="card-information">
+                <h1 className="event-name">{this.props.event_name}</h1>
+                <h3 className="event-type">{this.props.event_type}</h3>
+                <p className="event-address">
+                  {this.props.event_address}, {this.props.event_city}
+                </p>
 
-              <p className="event-end-date">{this.props.event_end_date}</p>
-              <p className="event-start-hour">
-                {this.props.event_start_hour.slice(0, 5)},
-              </p>
-              <p className="event-end-hour" />
-              <p className="event-agenda">{this.props.event_agenda}</p>
-              <p className="event-language">
-                Language: {this.props.event_language}
-              </p>
-              <p className="max-participants">
-                Max participants: {this.props.max_participants} persons
-              </p>
-              <p className="contact-person">{this.props.contact_person}</p>
-              <p className="contact-phone">{this.props.contact_phone}</p>
-              <p className="contact-email">{this.props.contact_email}</p>
-              <p className="event-URL">{this.props.event_URL}</p>
+                <p className="event-end-date">{this.props.event_end_date}</p>
+                <p className="event-start-hour">
+                  {this.props.event_start_hour.slice(0, 5)},
+                </p>
+                <p className="event-language">
+                  Language: {this.props.event_language}
+                </p>
+                <p className="contact-person">{this.props.contact_person}</p>
+              </div>
             </article>
           </div>
-          <button className="readmore">Read More</button>
+          <button className="readmore">
+            <Link
+              to={`/Events/preview/${this.props.id}`}
+              className="menuLink nav-link"
+            >
+              Read More
+            </Link>
+          </button>
         </div>
       </div>
     );

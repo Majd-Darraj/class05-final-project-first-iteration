@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import InternshipCard from "../cards/InternshipCard";
 import Header from "../Header";
 import Search from "../search/Search";
-import { debug } from "util";
-// import InternshipData from "../../database/InternshipData.json";
 
 class InternshipsList extends Component {
   constructor(props) {
