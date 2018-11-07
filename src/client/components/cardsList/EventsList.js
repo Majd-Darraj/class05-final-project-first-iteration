@@ -1,19 +1,13 @@
 import React from "react";
-import Header from "../Header";
-import Search from "../search/Search";
 import EventCard from "../cards/EventCard";
 import MapComponent from "../map-component/MapComponent";
 
 class EventsList extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-    this.state = {
-      isLoading: true,
-      eventsData: [],
-      eventCoords: []
-    };
-  }
+  state = {
+    isLoading: true,
+    eventsData: [],
+    eventCoords: []
+  };
 
   componentDidMount = () => {
     fetch("/api/events", {

@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import InternshipCard from "../cards/InternshipCard";
-import Header from "../Header";
-import Search from "../search/Search";
 
 class InternshipsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      internshipsData: []
-    };
-  }
+  state = {
+    isLoading: true,
+    internshipsData: []
+  };
 
   componentDidMount = () => {
     fetch("/api/internships", {
@@ -41,7 +36,9 @@ class InternshipsList extends Component {
               <div className="cards-list">
                 {!isLoading && internshipsData.length > 0
                   ? internshipsData.map(internship => {
-                      return <InternshipCard {...internship} />;
+                      return (
+                        <InternshipCard {...internship} key={internship.id} />
+                      );
                     })
                   : null}
               </div>

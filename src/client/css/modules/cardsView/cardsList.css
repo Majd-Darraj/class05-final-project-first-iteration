@@ -55,33 +55,3 @@
     }
   }
 }
-
-.readmore {
-  /* border: 3px solid #fff; */
-  color: #fff !important;
-  background: #007bff;
-  border: none;
-  font-size: 0.7em;
-  padding: 1em 2em;
-  cursor: pointer;
-  margin: 0 auto;
-  width: 100%;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  outline: none;
-  position: relative;
-  transition: all 0.2s;
-  border-radius: 3px;
-  transform: scale(1.2);
-
-  &:hover {
-    background-color: #003269 !important;
-    transform: scale(1.3);
-  }
-  &:active {
-    background-color: #011e50 !important;
-    transform: scale(1);
-  }
-}

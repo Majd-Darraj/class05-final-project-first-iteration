@@ -1,15 +1,10 @@
 import React from "react";
 import NetworkingCard from "../cards/NetworkingCard";
-import Header from "../Header";
-import Search from "../search/Search";
 
 class NetworkingList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      NetworkingData: []
-    };
-  }
+  state = {
+    NetworkingData: []
+  };
 
   componentDidMount = () => {
     fetch("/api/networking", {
@@ -37,7 +32,9 @@ class NetworkingList extends React.Component {
               <div className="cards-list">
                 {NetworkingData.length > 0
                   ? NetworkingData.map(networking => {
-                      return <NetworkingCard {...networking} />;
+                      return (
+                        <NetworkingCard {...networking} key={networking.id} />
+                      );
                     })
                   : null}
               </div>
