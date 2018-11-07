@@ -1,13 +1,27 @@
 /* ----------------------------
     Events card
 ----------------------------*/
+.cards-list-container-events {
+  max-width: 50% !important;
+  flex: 0 0 50%;
+  padding: 0 20px 0 20px;
 
+  .cards-list {
+    height: 80vh;
+    position: sticky;
+    top: 10%;
+    overflow-y: scroll;
 
-  
-.card-info.event-name {
-    font-family: "Raleway", sans-serif;
-    font-size: 0.9rem;
-    color: rgba(1, 39, 80, 0.8);
-    line-height: 1.4rem;
+    .card-item {
+      min-width: 90%;
+      margin: 20px auto;
+    }
   }
-  
+}
+
+.card-info.event-name {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(1, 39, 80, 0.8);
+  line-height: 1.4rem;
+}

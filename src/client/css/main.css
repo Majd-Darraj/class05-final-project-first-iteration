@@ -79,5 +79,5 @@
 @import "modules/cardsView/cardsList";
 @import "modules/cardsView/internshipsCard";
 /* @import "modules/cardsView/mentorsCard"; */
-/* @import "modules/cardsView/eventsCard"; */
+@import "modules/cardsView/eventsCard";
 /* @import "modules/cardsView/networkingCard"; */

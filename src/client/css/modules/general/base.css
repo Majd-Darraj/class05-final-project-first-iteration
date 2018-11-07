@@ -6,7 +6,6 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  padding: 40px;
 }
 
 .sticky {

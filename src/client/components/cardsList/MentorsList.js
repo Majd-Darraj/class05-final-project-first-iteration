@@ -17,7 +17,7 @@ class MentorsList extends Component {
     })
       .then(response => response.json())
       .then(mentorsData => {
-        debugger;
+        // debugger;
         this.setState({
           isLoading: false,
           mentorsData: mentorsData

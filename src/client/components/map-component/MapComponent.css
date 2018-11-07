@@ -1,9 +1,9 @@
 .map-container {
-  width: 50vw;
+  width: 50%;
   height: 80vh;
-  display: block;
-  background-color: #fff;
-  border-radius: 20px;
+  /* display: block; */
+  /* background-color: #fff; */
+  /* border-radius: 20px; */
   order: 2;
   position: sticky;
   top: 10%;

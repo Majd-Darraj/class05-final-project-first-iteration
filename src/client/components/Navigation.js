@@ -16,9 +16,11 @@ class Router extends Component {
           <Route exact path="/" component={Events} />
           <Route exact path="/Internships" component={Internships} />
           <Route exact path="/Events" component={Events} />
+          {/* <Route exact path="/Events/add" component={EventsForm.AddEvent} />
+          <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} />
+          <Route exact path="/Events/details/:id" component={EventDetailedView} /> */}
           <Route exact path="/Mentors" component={Mentors} />
           <Route exact path="/Networking" component={Networking} />
-          {/* <Route exact component={error} /> */}
         </Switch>
       </BrowserRouter>
     );

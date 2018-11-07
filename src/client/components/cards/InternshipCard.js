@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class InternshipCard extends Component {
   render() {
-    debugger;
+    // debugger;
     return (
       <div className="card-item internship-item">
         <div className="card-container internship-item-container">
