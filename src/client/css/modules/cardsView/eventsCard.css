@@ -2,18 +2,17 @@
     Events card
 ----------------------------*/
 .cards-list-container-events {
-  max-width: 50% !important;
-  flex: 0 0 50%;
+  max-width: 70% !important;
   padding: 0 20px 0 20px;
 
   .cards-list {
-    height: 80vh;
+    height: 100%;
     position: sticky;
     top: 10%;
     overflow-y: scroll;
 
     .card-item {
-      min-width: 90%;
+      min-width: calc(100% / 2 - 20px);
       margin: 20px auto;
     }
   }

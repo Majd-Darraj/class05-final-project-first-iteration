@@ -16,30 +16,26 @@ class EventCard extends Component {
       "November",
       "December"
     ];
-    let date = this.props.event_start_date.substring(5, 7);
-    let eventDateNumber = parseInt(date, 10) - 1;
-    let eventDateMonth = months[eventDateNumber];
-    debugger;
+    let eventDate = this.props.event_start_date.substring(5, 7);
+    let eventDateNumber = parseInt(eventDate, 10) - 1;
+    let eventDateMonth = months[eventDateNumber].substring(0, 3);
+
     return (
       <div className="card-item event-item">
         <div className="card-container event-item-container">
           <div className="card-info-container">
-            <div
-              className="card-image event-theme-image"
-              style={{
-                backgroundImage: `url(${this.props.event_theme_image})`
-              }}
-            />
+            <div className="card-image-container">
+              <div
+                className="card-image event-theme-image"
+                style={{
+                  backgroundImage: `url(${this.props.event_theme_image})`
+                }}
+              />
+            </div>
             <article className="card-info">
-              <div className="date">
-                <p className="event-start-date">
-                  {() => {
-                    let date = this.props.event_start_date.substring(5, 7);
-                    let dateDay = parseInt(date, 10);
-                    debugger;
-                    return dateDay;
-                  }}
-                </p>
+              <div className="card-date">
+                <span className="event-month">{eventDateMonth}</span>
+                <span className="event-day">{eventDate}</span>
               </div>
               <h1 className="event-name">{this.props.event_name}</h1>
               <h3 className="event-type">{this.props.event_type}</h3>
