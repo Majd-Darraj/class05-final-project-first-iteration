@@ -7,7 +7,7 @@ class Header extends Component {
       <header className="masthead">
         <div className="header-navbar-container">
           <div className="site-branding-container">
-            <a className="logo" href="index.html">
+            <a className="logo" href="/Events">
               <img
                 alt="logo"
                 src="https://raw.githubusercontent.com/HackYourFuture-CPH/class05-final-project/master/images/thread-logo.png"

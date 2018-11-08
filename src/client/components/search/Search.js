@@ -1,11 +1,18 @@
 import React, { Component } from "react";
+import SearchResults from "./SearchResults";
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { keyword: [] };
-  }
+  state = { search: "" };
+
+  updateSearch = keyWord => {
+    this.setState({
+      search: keyWord.target.value.substr(0, 20)
+    });
+  };
+
   render() {
+    let searchKeyword = this.state.search;
+    debugger;
     return (
       <>
         <div className="search-container">
@@ -21,6 +28,8 @@ class Search extends Component {
                     <input
                       type="text"
                       placeholder="ex: DIY, fair, workshop, internship"
+                      value={this.state.search}
+                      onChange={this.updateSearch}
                     />
                   </div>
                 </div>
@@ -59,6 +68,7 @@ class Search extends Component {
             </div>
           </form>
         </div>
+        <SearchResults value={searchKeyword} key="search" />
       </>
     );
   }
