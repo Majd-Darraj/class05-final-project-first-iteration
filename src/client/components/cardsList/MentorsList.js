@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MentorCard from "../cards/MentorCard";
+import { Link } from "react-router-dom";
 
 class MentorsList extends Component {
   state = {
@@ -31,6 +32,7 @@ class MentorsList extends Component {
         <div className="page-content">
           <section className="cards-list-container">
             <div className="mentors-main-container">
+            <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/MentorsList/add">Add New Mentor</Link>
               <div className="cards-list">
                 {!isLoading && mentorsData.length > 0
                   ? mentorsData.map(mentor => {
