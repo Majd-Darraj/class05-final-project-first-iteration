@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../Header";
-import Search from "../search/Search";
 import EventCard from "../cards/EventCard";
 
 class EventPreview extends React.Component {
@@ -9,20 +7,6 @@ class EventPreview extends React.Component {
     eventsData: []
   };
 
-  //   componentDidMount() {
-  //     const url = "/api/events";
-  //     const id = this.props.match.params.id;
-  //     fetch(`${url}/${id}`, {
-  //       method: "GET"
-  //     })
-  //       .then(response => response.json())
-  //       .then(eventsData =>
-  //         this.setState({
-  //           isLoading: false,
-  //           eventsData: eventsData
-  //         })
-  //       );
-  //   }
   componentDidMount = () => {
     const url = "/api/events";
     const id = this.props.match.params.id;
@@ -36,14 +20,17 @@ class EventPreview extends React.Component {
           eventsData: eventsData
         });
       })
+
       .catch(err => {
         console.log("caught error!", err);
       });
   };
+
   render() {
     const { isLoading, eventsData } = this.state;
     const as = this.props;
     // debugger;
+
     return (
       <div>
         <div className="page-content  card-preview">
@@ -71,4 +58,5 @@ class EventPreview extends React.Component {
     );
   }
 }
+
 export default EventPreview;
