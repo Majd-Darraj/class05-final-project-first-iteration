@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class MentorCard extends Component {
   render() {
@@ -14,7 +15,8 @@ class MentorCard extends Component {
                 }}
               />
             </div>
-            <article className="card-info">
+            <article className="card-info"> <br></br>
+            <Link to={`/MentorsList/edit/${this.props.id}`}> Edit</Link>
               <h1 className="mentor-first-name">{this.props.first_name}</h1>
               <h2 className="mentor-last-name">{this.props.last_name}</h2>
               <p className="mentor-email">{this.props.email}</p>

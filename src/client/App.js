@@ -8,7 +8,7 @@ import MentorsList from "./components/cardsList/MentorsList";
 import Networking from "./components/cardsList/NetworkingList";
 import Header from "./components/Header";
 import Search from "./components/search/Search";
-import AddMentor from "./components/mentor-form/mentor-form"
+import MentorForm from "./components/mentor-form/mentor-form"
 
 class App extends Component {
   render() {
@@ -17,19 +17,22 @@ class App extends Component {
         <div className="itemBefore">
         </div>
         <header>
-             <Header /> 
+          <Header /> 
         </header>
+      <main>
          <Search />
-        <Switch>
+  <Switch>
           <Route exact path="/Header" component={Header} />
           <Route exact path="/" component={Events} />
           <Route exact path="/Internships" component={Internships} />
           <Route exact path="/Events" component={Events} />
           <Route exact path="/Events/preview/:id" component={EventPreview} /> 
           <Route exact path="/Mentors" component={MentorsList} />
-          <Route exact path="/Mentors/add" component={AddMentor} />
+          <Route exact path={"/Mentors/edit/:id"} component= {MentorForm} />
+          <Route exact path="/MentorsList/add" component= {MentorForm} />
           <Route exact path="/Networking" component={Networking} />
         </Switch>
+        </main> 
       </div>
     );
   }

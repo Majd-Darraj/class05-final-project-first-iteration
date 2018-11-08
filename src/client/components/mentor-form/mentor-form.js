@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 
-
-
-class AddMentor extends Component {
+class MentorForm extends Component {
 
         state = {
                 "first_name": "Sussanne",
@@ -23,8 +21,6 @@ class AddMentor extends Component {
    
     updateField = (e) => {
         const {name, value }= e.target;
-
-
         this.setState({
             [name]:value,
         })
@@ -67,10 +63,57 @@ class AddMentor extends Component {
                 <input name="last_name" value={this.state.last_name} onChange={this.updateField} />
                 </label>
             </div>
+            <div>
+                <label>
+                Gender
+                <input name="gender" value={this.state.gender} onChange={this.updateField} />
+                 </label>
+            </div>
+            <div> 
+                 <label>
+                Profile Picture
+                <input name="profile_picture" value={this.state.profile_picture} onChange={this.updateField} />
+                </label>
+            </div>
+            <div>
+                <label>
+                Mentor Description
+                <input name="mentor_description" value={this.state.mentor_description} onChange={this.updateField} />
+                </label>
+            <div>
+                <label>
+                Languages
+                <input name="Languages" value={this.state.languages} onChange={this.updateField} />
+                </label>
+            </div>
+            <div>
+                 <label>
+                Offering
+                <input name="Offering" value={this.state.offering} onChange={this.updateField} />
+                 </label>
+            </div>
+            <div>
+                <label>
+                Area Location
+                <input name="area_location" value={this.state.area_location} onChange={this.updateField} />
+                </label>
+            </div>
+            <div>
+                <label>
+                Preferred Meeting Place
+                <input name="preferred_meeting_place" value={this.state.preferred_meeting_place} onChange={this.updateField} />
+                </label>
+            </div>
+                <label>
+                Affiliation
+                <input name="affiliation" value={this.state.affiliation} onChange={this.updateField} />
+                        </label>
+            </div>
             <button type= "submit"> Submit</button>
+            <button > Cancel </button>
         </form>
         )
     }
 }
 
-export default AddMentor;
+export default MentorForm;
