@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import { Switch, Route } from "react-router-dom";
+import EventPreview from "../cardsPreview/EventPreview";
 class EventCard extends Component {
   render() {
+    // debugger;
     let months = [
       "January",
       "February",
@@ -20,6 +22,7 @@ class EventCard extends Component {
     let eventDate = this.props.event_start_date.substring(5, 7);
     let eventDateNumber = parseInt(eventDate, 10) - 1;
     let eventDateMonth = months[eventDateNumber].substring(0, 3);
+    // debugger;
 
     return (
       <div className="card-item event-item" key={this.props.id}>
@@ -65,6 +68,10 @@ class EventCard extends Component {
             </Link>
           </button>
         </div>
+        <Route
+          path={`/events/preview/:id`}
+          render={props => <EventPreview {...props} data={this.props} />}
+        />
       </div>
     );
   }

@@ -1,9 +1,8 @@
 import React from "react";
-import EventCard from "../cards/EventCard";
 import MapComponent from "../map-component/MapComponent";
-import { Switch, Route } from "react-router-dom";
-import EventPreview from "../cardsPreview/EventPreview";
-class EventsList extends React.Component {
+import EventCard from "../cards/eventCard";
+
+class EventsListView extends React.Component {
   state = {
     isLoading: true,
     eventsData: [],
@@ -75,4 +74,4 @@ class EventsList extends React.Component {
   }
 }
 
-export default EventsList;
+export default EventsListView;

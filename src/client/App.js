@@ -11,12 +11,10 @@ import Search from "./components/search/Search";
 import SearchResults from "./components/search/SearchResults";
 import searchData from "./components/search/SearchFetch";
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.setQuery.bind(this);
-    this.setState.bind(this);
-    this.runSearch.bind(this);
-  }
+  state = {
+    q: "",
+    data: []
+  };
 
   componentDidMount = () => {
     this.setState({
@@ -25,21 +23,21 @@ class App extends Component {
     });
   };
 
-  setQuery(e) {
+  setQuery = e => {
     this.setState({
       q: e.target.value,
       data: this.state.data
     });
-  }
+  };
 
-  async runSearch(e) {
+  runSearch = e => {
     e.preventDefault();
     const data = searchData(this.setQuery.q);
     this.setState({
       q: this.state.q,
       data
     });
-  }
+  };
 
   render() {
     const { data } = this.state.data;
@@ -51,10 +49,16 @@ class App extends Component {
         </div>
         <Switch>
           <Route exact path="/" component={Events} />
-
+          <Route
+            path="/search"
+            render={props => <SearchResults {...props} data={data} />}
+          />
           <Route exact path="/Internships" component={Internships} />
+          {/* <Route
+            path={`/events/preview/:id`}
+            render={props => <EventPreview {...props} />}
+          /> */}
           <Route exact path="/Events" component={Events} />
-          <Route exact path="/Events/preview/:id" component={EventPreview} />
           {/* <Route exact path="/Events/add" component={EventsForm.AddEvent} />
           <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} /> */}
           <Route exact path="/Mentors" component={Mentors} />
