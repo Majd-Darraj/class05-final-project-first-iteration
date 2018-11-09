@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class MentorForms extends Component {
 
     state = {
-        "first_name": "Sussane",
+        "first_name": "",
         "last_name": "",
         "email": "",
         "gender": "",
@@ -75,6 +75,9 @@ class MentorForms extends Component {
     render () {
         return (
         <form onSubmit={this.submitForm}>
+        <h2>
+            {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}   
+        </h2>     
             <div>
                 <label>
                     First Name
