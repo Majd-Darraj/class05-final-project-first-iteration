@@ -1,24 +1,49 @@
 import React, { Component } from 'react';
 
 
-class MentorForm extends Component {
+class MentorForms extends Component {
 
-        state = {
-                "first_name": "Sussanne",
-                "last_name": "Lervard",
-                "email": "",
-                "gender": "",
-                "profile_picture": "",
-                "languages": "",
-                "availability": "",
-                "offering": "",
-                "area_location": "",
-                "preffered_meeting_place": "",
-                "affiliation": "",
-                "active": 1
+    state = {
+        "first_name": "Sussane",
+        "last_name": "",
+        "email": "",
+        "gender": "",
+        "profile_picture": "",
+        "languages": "",
+        "availability": "",
+        "offering": "",
+        "area_location": "",
+        "preffered_meeting_place": "",
+        "affiliation": "",
+        "active": 1
     }
-    
-   
+
+    // componentDidMount = () => {
+    //     const url = "/api/events";
+    //     const id = this.props.match.params.id;
+
+    //     fetch(`/api/mentors`)
+    //       .then(response => response.json())
+    //       .then(mentorsData => 
+    //         mentorsData.map(mentor => {
+    //             if (this.props.match.params.id == mentor.id)
+    //         this.setState({
+    //             "first_name": mentor.first_name,
+    //             "last_name": "",
+    //             "email": "",
+    //             "gender": "",
+    //             "profile_picture": "",
+    //             "languages": "",
+    //             "availability": "",
+    //             "offering": "",
+    //             "area_location": "",
+    //             "preffered_meeting_place": "",
+    //             "affiliation": "",
+    //             "active": 1
+    //         });
+    //       })
+    //     };
+
     updateField = (e) => {
         const {name, value }= e.target;
         this.setState({
@@ -46,7 +71,6 @@ class MentorForm extends Component {
          
        .catch(error => console.log('Error',error));
     }
-
 
     render () {
         return (
@@ -116,4 +140,4 @@ class MentorForm extends Component {
     }
 }
 
-export default MentorForm;
+export default MentorForms;
