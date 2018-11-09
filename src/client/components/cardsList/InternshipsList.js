@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import InternshipCard from "../cards/InternshipCard";
 import Header from "../Header";
+// import InternshipData from "../../database/InternshipData.json";
+
 class InternshipsList extends Component {
   constructor(props) {
     super(props);
@@ -9,18 +11,18 @@ class InternshipsList extends Component {
       internshipsData: []
     };
   }
+
   componentDidMount = () => {
     this.fetchData();
   };
+
   fetchData() {
     fetch("/api/internships")
-      // "https://raw.githubusercontent.com/paredesrichard/commandline/master/internships.json"
-    
       .then(response => response.json())
-      .then(internshipsData =>
+     
+      .then(Data =>
         this.setState({
-          internshipsData: internshipsData,
-          isLoading: false
+          internshipsData:Data,
         })
       )
       .catch(error => console.log(error));
@@ -28,27 +30,25 @@ class InternshipsList extends Component {
 
   render() {
     // JSON.stringify(this.state.InternshipData);
-    const {  internshipsData ,isLoading } = this.state;
+    const { isLoading, internshipsData } = this.state;
     return (
-      <>
-        <Header />
-        <section
-          className={`cards-list-container `}
-        >
+      <div>
+              <Header />
+        <section  className={`cards-list-container `}>
           <div className="cards-list">
-            { internshipsData.length > 0
-              ? internshipsData.map(internship => {
-                    return (
-                    <InternshipCard  {...internship}    />
+            {internshipsData.map(internship => {
+                return (
+                    <InternshipCard {...internship} />
                   );
                 })
-              : null}
+              }
           </div>
           <div className="loader">
             <div className="icon" />
           </div>
         </section>
-      </>
+        </div>
+
     );
   }
 }
