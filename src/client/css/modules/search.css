@@ -15,7 +15,7 @@
 
 .search-container form {
   width: 100%;
-  max-width: 914px;
+  max-width: 900px;
   margin: 0;
 }
 
@@ -28,6 +28,7 @@
 }
 
 .search-container form .inner-form {
+  max-width: 900px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -239,6 +240,10 @@
   transform: scale(0.95);
 }
 
+.menuLink,
+a {
+  color: #fff !important;
+}
 @media screen and (max-width: 767px) {
   .search-container form .inner-form {
     display: block;
