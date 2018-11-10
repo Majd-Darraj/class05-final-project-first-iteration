@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Helpers from "./helpers";
+// import { updateField, submitForm } from "./helpers";
 // import Form from "./form";
 
 class MentorForm extends Component {
@@ -32,17 +32,58 @@ class MentorForm extends Component {
     }
   };
 
-  UpdateField(e) {
-    Helpers.updateField(e);
-  }
+  updateField = e => {
+    const { name, value } = e.target;
+    debugger;
+    this.setState({
+      data: {
+        ...this.state.data,
+        [name]: value
+      }
+    });
+  };
 
-  SubmitField(e) {
-    Helpers.submitForm(e);
-  }
+  submitForm = e => {
+    e.preventDefault();
+
+    let url = "",
+      method = "";
+
+    if (this.props.isEditing) {
+      url = `/api/mentors/${this.props.match.params.id}`;
+      method = "PUT";
+    } else {
+      url = `/api/mentors`;
+      method = "POST";
+    }
+
+    fetch(url, {
+      method,
+      body: JSON.stringify(this.state.data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.text())
+      .then(response => {
+        console.log("Success:", response);
+        // TODO redirect to the Mentors list page (/Mentors)
+      })
+      .catch(error => console.error("Error:", error));
+  };
+
+  // updateField = e => {
+  //   debugger;
+  //   updateField(e);
+  // };
+
+  // submitField(e) {
+  //   submitForm(e);
+  // }
 
   render() {
     const { data } = this.state;
-    debugger;
+    // debugger;
     return (
       <form onSubmit={this.submitForm}>
         <h2>{`${this.props.isEditing ? "Edit" : "Add"} Mentor`}</h2>
@@ -51,7 +92,7 @@ class MentorForm extends Component {
             First Name
             <input
               name="first_name"
-              value={data.first_name}
+              value={this.state.data.first_name}
               onChange={this.updateField}
             />
           </label>
