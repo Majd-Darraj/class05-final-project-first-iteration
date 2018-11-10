@@ -34,7 +34,7 @@ class MentorForm extends Component {
 
   updateField = e => {
     const { name, value } = e.target;
-    debugger;
+    // debugger;
     this.setState({
       data: {
         ...this.state.data,
@@ -48,7 +48,6 @@ class MentorForm extends Component {
 
     let url = "",
       method = "";
-
     if (this.props.isEditing) {
       url = `/api/mentors/${this.props.match.params.id}`;
       method = "PUT";
@@ -66,8 +65,7 @@ class MentorForm extends Component {
     })
       .then(res => res.text())
       .then(response => {
-        console.log("Success:", response);
-        // TODO redirect to the Mentors list page (/Mentors)
+        alert("Success:", response);
       })
       .catch(error => console.error("Error:", error));
   };
@@ -82,6 +80,10 @@ class MentorForm extends Component {
   // }
 
   render() {
+    // let url = this.props.match.url;
+    // let api = url.substring(0, url.indexOf("/"));
+
+    // debugger;
     const { data } = this.state;
     // debugger;
     return (
