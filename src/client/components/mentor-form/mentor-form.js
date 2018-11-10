@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 
 
 class MentorForms extends Component {
-
-    state = {
+    constructor(props) {
+        super(props);
+        if (this.isEditing) {
+            this.state ={
+                mentorsData: this.props.mentorsData
+            }
+        }else{
+        this.state = {
+        mentorsData: {
         "first_name": "",
         "last_name": "",
         "email": "",
@@ -16,7 +23,10 @@ class MentorForms extends Component {
         "preffered_meeting_place": "",
         "affiliation": "",
         "active": 1
+        }
     }
+  }
+}
 
     // componentDidMount = () => {
     //     const url = "/api/events";
@@ -53,14 +63,21 @@ class MentorForms extends Component {
     
     submitForm = (e) => {
         e.preventDefault();
-       // alert(JSON.stringify(this.state));
 
-       var url ='./api/mentors';
-       var data =this.state;
+
+       let url ='', method ='';
+       if (this.props.isEditing) {
+        url = `/api/mentors/${this.props.match.params.id}`
+        method = 'PUT';
+    } else {
+        url = `/api/mentors`
+        method = 'POST';
+    }
+
 
        fetch(url,{
-        method:'POST',
-        body: JSON.stringify(data),
+        method,
+        body: JSON.stringify(his.state.mentorsData),
         headers:{
             'Content-Type': 'application/json'
         }
@@ -76,7 +93,7 @@ class MentorForms extends Component {
         return (
         <form onSubmit={this.submitForm}>
         <h2>
-            {`${this.props.isEditing ? "Edit" : "Add"} Mentor`}   
+        {`${this.props.isEditing ? "Add" : "Edit"} Mentor`}  
         </h2>     
             <div>
                 <label>

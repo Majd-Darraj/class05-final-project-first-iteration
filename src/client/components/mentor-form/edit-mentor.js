@@ -11,26 +11,34 @@ import MentorForm from './mentor-form';
 class EditMentor extends Component {
     state = {
         isloading: true,
-        mentorData: null
+        message:'Hang in there...',
+        mentorsData: null
     }
 
 componentDidMount() {
-    const url = '/api/mentors/'
+    const url = '/api/mentors'
     const id =this.props.match.params.id;
 
     console.log({props:this.props});
-
-    //fetch()
-
+ 
+    
+    fetch(`${url}/${id}`)
+    .then(
+        response => response.json()
+    ).then(
+        data => this.setState({
+            isLoading: false,
+            mentorsData: data
+        })
+    )
 }
 
 render() {
     return(
         this.state.isloading ?
-        <div> Hang in there ....</div>
+        <div>{this.state.message}</div>
         :
-         <MentorForm {...this.props} isEditing={true} />
-    )
+    <MentorForm {...this.props} mentorsData={this.state.mentorsData} id={this.props.match.params.id} isEditing={true} />    )
 }
 }
 
