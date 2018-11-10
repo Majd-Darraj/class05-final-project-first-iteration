@@ -19,8 +19,8 @@ class MentorsList extends Component {
           isLoading: false,
           mentorsData: mentorsData
         });
-      })
-     /* .catch(err => {
+      });
+    /* .catch(err => {
         console.log("caught error!", err);
       }); */
   };
@@ -31,7 +31,12 @@ class MentorsList extends Component {
       <>
         <div className="page-content">
           <section className="cards-list-container">
-          <Link className="btn btn-outline-danger btn-lg btn-block mentor-add-button" to="/MentorsList/add">Add New Mentor</Link>
+            <Link
+              className="btn btn-outline-danger btn-lg btn-block mentor-add-button"
+              to="/MentorsList/add"
+            >
+              Add New Mentor
+            </Link>
             <div className="mentors-main-container">
               <div className="cards-list">
                 {!isLoading && mentorsData.length > 0

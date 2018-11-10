@@ -8,31 +8,39 @@ import MentorsList from "./components/cardsList/MentorsList";
 import Networking from "./components/cardsList/NetworkingList";
 import Header from "./components/Header";
 import Search from "./components/search/Search";
-import MentorForms  from "./components/mentor-form";
+import MentorForms from "./components/mentor-form";
 
 class App extends Component {
   render() {
     return (
       <div id="app">
-        <div className="itemBefore">
-        </div>
+        <div className="itemBefore" />
         <header>
-          <Header /> 
+          <Header />
         </header>
-      <main>
-         <Search />
-  <Switch>
-          <Route exact path="/Header" component={Header} />
-          <Route exact path="/" component={Events} />
-          <Route exact path="/Internships" component={Internships} />
-          <Route exact path="/Events" component={Events} />
-          <Route exact path="/Events/preview/:id" component={EventPreview} /> 
-          <Route exact path="/Mentors" component={MentorsList} />
-          <Route exact path={"/Mentors/edit/:id"} component= {MentorForms.EditMentor} />
-          <Route exact path="/MentorsList/add" component= {MentorForms.AddMentor} />
-          <Route exact path="/Networking" component={Networking} />
-        </Switch>
-        </main> 
+        <main>
+          <Search />
+          <Switch>
+            <Route exact path="/Header" component={Header} />
+            <Route exact path="/" component={Events} />
+            <Route exact path="/Internships" component={Internships} />
+            <Route exact path="/Events" component={Events} />
+            <Route exact path="/Events/preview/:id" component={EventPreview} />
+            <Route exact path="/Networking" component={Networking} />
+
+            <Route exact path="/Mentors" component={MentorsList} />
+            <Route
+              exact
+              path="/Mentors/add"
+              component={MentorForms.AddMentor}
+            />
+            <Route
+              exact
+              path={`/Mentors/edit/:id`}
+              component={MentorForms.EditMentor}
+            />
+          </Switch>
+        </main>
       </div>
     );
   }

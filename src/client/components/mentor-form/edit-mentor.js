@@ -1,37 +1,41 @@
 import React, { Component } from "react";
 import MentorForm from "./mentor-form";
 
-/*export default (props) => {
-    return (
-        <MentorForm {...props} isEditing={true} />
-    )
-}*/
-
 class EditMentor extends Component {
   state = {
-    isloading: true,
-    mentorData: null
+    isLoading: true,
+    data: null
   };
 
   componentDidMount() {
-    const url = "/api/Mentors";
+    const url = "/api/mentors";
     const id = this.props.match.params.id;
-
-    console.log({ props: this.props });
 
     fetch(`${url}/${id}`)
       .then(response => response.json())
-      .then(data =>
+      .then(data => {
         this.setState({
-          isLoading: false,
-          mentorData: data
-        })
-      );
+          data: data,
+          isLoading: false
+        });
+      });
+    // debugger;
   }
 
   render() {
-    debugger;
-    return <MentorForm {...this.props} isEditing={true} />;
+    // debugger;
+    return this.state.isLoading ? (
+      <div>
+        <p>wait</p>
+      </div>
+    ) : (
+      <MentorForm
+        {...this.props}
+        data={this.state.data}
+        id={this.props.match.params.id}
+        isEditing={true}
+      />
+    );
   }
 }
 

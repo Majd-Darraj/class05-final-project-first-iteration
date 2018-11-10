@@ -1,47 +1,8 @@
 import React, { Component } from "react";
-import Helpers from "./helpers";
-// import Form from "./form";
 
-class MentorForm extends Component {
-  state = {
-    data: {
-      first_name: "",
-      last_name: "",
-      email: "",
-      gender: "",
-      profile_picture: "",
-      mentor_description: "",
-      languages: "",
-      availability: "",
-      offering: "",
-      area_location: "",
-      preferred_meeting_place: "",
-      affiliation: "",
-      active: 1
-    }
-  };
-
-  componentDidMount = () => {
-    if (this.props.isEditing) {
-      // debugger;
-      this.setState({
-        data: this.props.data
-      });
-    } else if (this.props.isAdding) {
-      return null;
-    }
-  };
-
-  UpdateField(e) {
-    Helpers.updateField(e);
-  }
-
-  SubmitField(e) {
-    Helpers.submitForm(e);
-  }
-
+class form extends Component {
   render() {
-    const { data } = this.state;
+    const { data, UpdateField, SubmitField } = this.props;
     debugger;
     return (
       <form onSubmit={this.submitForm}>
@@ -147,13 +108,8 @@ class MentorForm extends Component {
         <button type="submit"> Submit</button>
         <button> Cancel </button>
       </form>
-      // <Form
-      //   data={this.state.data}
-      //   UpdateField={this.UpdateField}
-      //   submitField={this.SubmitField}
-      // />
     );
   }
 }
 
-export default MentorForm;
+export default form;
