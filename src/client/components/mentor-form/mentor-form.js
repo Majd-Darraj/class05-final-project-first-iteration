@@ -23,7 +23,7 @@ class MentorForm extends Component {
 
   componentDidMount = () => {
     if (this.props.isEditing) {
-      // debugger;
+      debugger;
       this.setState({
         data: this.props.data
       });
@@ -94,7 +94,7 @@ class MentorForm extends Component {
             First Name
             <input
               name="first_name"
-              value={this.state.data.first_name}
+              value={data.first_name}
               onChange={this.updateField}
             />
           </label>
@@ -138,46 +138,49 @@ class MentorForm extends Component {
               onChange={this.updateField}
             />
           </label>
-          <div>
-            <label>
-              Languages
-              <input
-                name="Languages"
-                value={data.languages}
-                onChange={this.updateField}
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Offering
-              <input
-                name="Offering"
-                value={data.offering}
-                onChange={this.updateField}
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Area Location
-              <input
-                name="area_location"
-                value={data.area_location}
-                onChange={this.updateField}
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Preferred Meeting Place
-              <input
-                name="preferred_meeting_place"
-                value={data.preferred_meeting_place}
-                onChange={this.updateField}
-              />
-            </label>
-          </div>
+        </div>
+        <div>
+          <label>
+            languages
+            <input
+              name="languages"
+              value={data.languages}
+              onChange={this.updateField}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Offering
+            <input
+              name="offering"
+              value={data.offering}
+              onChange={this.updateField}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Area Location
+            <input
+              name="area_location"
+              value={data.area_location}
+              onChange={this.updateField}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Preferred Meeting Place
+            <input
+              name="preferred_meeting_place"
+              value={data.preferred_meeting_place}
+              onChange={this.updateField}
+            />
+          </label>
+        </div>
+        <div>
           <label>
             Affiliation
             <input
