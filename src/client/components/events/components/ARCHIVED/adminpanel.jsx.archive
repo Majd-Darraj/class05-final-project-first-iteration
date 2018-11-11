@@ -1,0 +1,53 @@
+import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import AdminNavigation from "./views/AdminNavigation";
+import EditCardItem from "../cards/EditCardItem";
+
+class EditView extends React.Component {
+  state = {
+    isLoading: true
+  };
+
+  componentDidMount = () => {
+    const { data } = this.props;
+    if (data.length > 0 || data !== undefined) {
+      this.setState({
+        isLoading: false
+      });
+    } else {
+      return null;
+    }
+  };
+
+  render() {
+    const { data } = this.props;
+    const { isLoading } = this.state;
+
+    // debugger;
+    return (
+      <>
+        <AdminNavigation />
+        <Switch>
+          <Route
+            path="/Events/edit"
+            render={props => <EditView {...props} data={data} />}
+          />
+          <Route
+            path="/Mentors/edit"
+            render={props => <EditView {...props} data={data} />}
+          />
+          <Route
+            path="/Internships/edit"
+            render={props => <EditView {...props} data={data} />}
+          />
+          <Route
+            path="/Networking/edit"
+            render={props => <EditView {...props} data={data} />}
+          />
+        </Switch>
+      </>
+    );
+  }
+}
+
+export default EditView;

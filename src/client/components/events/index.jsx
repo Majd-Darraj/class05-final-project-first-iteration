@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import ListView from "./components/views/ListView";
 import CardView from "./components/views/CardView";
+import EditView from "./components/views/EditView";
 
 class Events extends Component {
   state = {
@@ -39,10 +40,22 @@ class Events extends Component {
 
   render() {
     const { eventsData, eventCoords } = this.state;
-
+    const { url, params } = this.props.match;
+    debugger;
     return (
       <>
+        <div className="admin-bar">
+          <button className="readmore admin-btn" key="admin">
+            <Link to={`${url}/edit`} className="menuLink nav-link admin-link">
+              Admin view
+            </Link>
+          </button>
+        </div>
         <Switch>
+          <Route
+            path={`${url}/edit`}
+            render={props => <EditView {...props} data={eventsData} />}
+          />
           <Route
             exact
             path="/Events"
