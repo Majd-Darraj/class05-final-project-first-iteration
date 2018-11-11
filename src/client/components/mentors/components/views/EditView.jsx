@@ -1,6 +1,6 @@
 import React from "react";
 import EditCardItem from "../cards/EditCardItem";
-import Nav from "../ARCHIVED/AdminNavigation";
+
 class EditView extends React.Component {
   state = {
     isLoading: true

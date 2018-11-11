@@ -10,7 +10,8 @@ import {
 
 class MapComponent extends Component {
   render() {
-    if (this.props.coords);
+    // debugger;
+    if (this.props.mapData);
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap
@@ -21,15 +22,17 @@ class MapComponent extends Component {
           }
           defaultZoom={this.props.Zoom ? this.props.Zoom : 13}
         >
-          {this.props.setMarker && this.props.coords
-            ? this.props.coords.map(data => (
-                <MarkerComponent coords={data.coord} data={data} />
-              ))
+          {this.props.setMarker && this.props.mapData
+            ? this.props.mapData.map(event => {
+                // debugger;
+                return <MarkerComponent mapData={event} key={event.id} />;
+              })
             : ""}
         </GoogleMap>
       ))
     );
 
+    // debugger;
     return (
       <div className="map-container">
         <GoogleMapComponent

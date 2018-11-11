@@ -7,41 +7,70 @@ class ListView extends React.Component {
     isLoading: true
   };
 
-  componentDidMount = () => {
-    const { eventsData } = this.props;
-    if (eventsData.length > 0 || eventsData !== undefined) {
+  componentWillMount = () => {
+    if (this.props.match.url === "/Events") {
       this.setState({
-        isLoading: false
+        ...this.state,
+        mapData: []
       });
+    }
+    // debugger;
+  };
+
+  componentDidUpdate = () => {
+    const { data } = this.props;
+    // debugger;
+    if (data.length > 0 && this.state.mapData <= 0) {
+      let mapData = data.map(event => {
+        // debugger;
+        return {
+          ...event,
+          coords: {
+            lat: event.event_geo_lat,
+            lng: event.event_geo_lng
+          }
+        };
+      });
+
+      this.setState({
+        isLoading: false,
+        mapData: mapData
+      });
+      // debugger;
     } else {
       return null;
     }
+    // debugger;
   };
 
   render() {
-    const { eventsData, eventCoords } = this.props;
-    const { isLoading } = this.state;
+    const { data } = this.props;
+    const { isLoading, mapData } = this.state;
 
     // debugger;
     return (
       <>
         <div className="page-content">
-          <MapComponent
-            mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
-            setMarker
-            Zoom={11}
-            coords={eventCoords}
-            key="events"
-          />
+          {this.props.match.url === "/Events" ? (
+            <MapComponent
+              mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
+              setMarker
+              Zoom={11}
+              mapData={mapData}
+              key="events"
+            />
+          ) : null}
           <section
-            className={`cards-list-container cards-list-container-events ${
-              isLoading ? "is-loading" : ""
-            }`}
+            className={`cards-list-container ${
+              this.props.match.url === "/Events"
+                ? "cards-list-container-events "
+                : ""
+            } ${isLoading ? "is-loading" : ""}`}
           >
             <div className="events-main-container">
               <div className="cards-list">
-                {eventsData.length > 0
-                  ? eventsData.map(event => {
+                {data.length > 0
+                  ? data.map(event => {
                       return <CardItem {...event} key={event.id} />;
                     })
                   : null}

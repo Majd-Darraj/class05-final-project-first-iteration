@@ -69,3 +69,14 @@
 .red {
   background-color: #f14949 !important;
 }
+
+.active-main-link {
+  background-color: #142855 !important;
+}
+
+.admin-link {
+  background: #f9293a !important;
+}
+.active-admin-link {
+  background: #f9293a !important;
+}

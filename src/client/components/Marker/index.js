@@ -7,29 +7,38 @@ import {
   InfoWindow
 } from "react-google-maps";
 
-
 class MarkerComponent extends Component {
-
   state = {
     isInfoWindowvisible: false
   };
 
-  handleClick=() =>  {
-    this.setState({isInfoWindowvisible:!this.state.isInfoWindowvisible})
-    console.log(this.props)
-
-  }
-
+  handleClick = () => {
+    this.setState({ isInfoWindowvisible: !this.state.isInfoWindowvisible });
+    // console.log(this.props);
+  };
 
   render() {
-      return (
-          
-           <Marker onClick={this.handleClick} onDblClick={this.handleBlur} key={this.props.data.id} animation={google.maps.Animation.DROP} position={this.props.data.coord}>
-             {this.state.isInfoWindowvisible &&  <InfoWindow onCloseClick={() => {} }><div> {this.props.data.name} </div></InfoWindow> }
-                </Marker>
-    )
-   
- }
-};
+    // debugger;
+    return (
+      <Marker
+        onClick={this.handleClick}
+        onDblClick={this.handleBlur}
+        key={this.props.mapData.id}
+        animation={google.maps.Animation.DROP}
+        position={this.props.mapData.coords}
+      >
+        {this.state.isInfoWindowvisible && (
+          <InfoWindow onCloseClick={() => {}}>
+            <div>
+              {" "}
+              {this.props.mapData.event_name} <br />{" "}
+              {this.props.mapData.event_type}{" "}
+            </div>
+          </InfoWindow>
+        )}
+      </Marker>
+    );
+  }
+}
 
 export default MarkerComponent;

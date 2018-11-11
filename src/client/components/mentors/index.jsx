@@ -6,30 +6,42 @@ import EditView from "./components/views/EditView";
 
 class Events extends Component {
   state = {
-    data: []
+    eventsData: [],
+    eventCoords: []
   };
 
   componentDidMount = () => {
-    // debugger;
-    const { url } = this.props.match;
-    fetch(`/api${url}`, {
+    fetch("/api/events", {
       method: "GET"
     })
       .then(response => response.json())
-      .then(data => {
+      .then(eventsData => {
+        let eventCoords = eventsData.map(event => {
+          return {
+            id: event.id,
+            name: event.event_name,
+            address: event.event_address,
+            coord: {
+              lat: event.event_geo_lat,
+              lng: event.event_geo_lng
+            }
+          };
+        });
+
         this.setState({
-          data: data
+          eventsData: eventsData,
+          eventCoords: eventCoords
         });
       })
       .catch(err => {
-        console.log(`caught error in ${url}`, err);
+        console.log("caught error!", err);
       });
   };
 
   render() {
-    const { data } = this.state;
-    const { url, path } = this.props.match;
-    // debugger;
+    const { eventsData, eventCoords } = this.state;
+    const { url, params } = this.props.match;
+    debugger;
     return (
       <>
         <div className="admin-bar">
@@ -42,26 +54,26 @@ class Events extends Component {
         <Switch>
           <Route
             path={`${url}/edit`}
-            render={props => <EditView {...props} data={data} />}
+            render={props => <EditView {...props} data={eventsData} />}
           />
           <Route
             exact
-            path={`${path}`}
+            path="/Events"
             render={props => (
               <ListView
-                // onEnter={this.mapData()}
                 {...props}
-                data={data}
+                eventsData={eventsData}
+                eventCoords={eventCoords}
               />
             )}
           />
           <Route
-            path={`${url}/preview/:id`}
+            path="/Events/preview/:id"
             render={props => (
               <CardView
                 {...props}
-                data={data.find(dataEntry => {
-                  return dataEntry.id === props.match.params.id;
+                data={eventsData.find(event => {
+                  return event.id == props.match.params.id;
                 })}
               />
             )}

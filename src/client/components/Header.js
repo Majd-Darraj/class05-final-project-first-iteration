@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -18,24 +18,40 @@ class Header extends Component {
             <nav className="navigation">
               <ul className="nav-menu">
                 <li className="nav-item Interships">
-                  <Link to="/Internships" className="menuLink nav-link">
+                  <NavLink
+                    to="/Internships"
+                    className="menuLink nav-link"
+                    activeClassName="active-main-link"
+                  >
                     Internships
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item Events">
-                  <Link to="/Events" className="menuLink nav-link">
+                  <NavLink
+                    to="/Events"
+                    className="menuLink nav-link"
+                    activeClassName="active-main-link"
+                  >
                     Events
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item Mentors">
-                  <Link to="/Mentors" className="menuLink nav-link">
+                  <NavLink
+                    to="/Mentors"
+                    className="menuLink nav-link"
+                    activeClassName="active-main-link"
+                  >
                     Mentors
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item Networking">
-                  <Link to="/Networking" className=" nav-link">
+                  <NavLink
+                    to="/Networking"
+                    className=" nav-link"
+                    activeClassName="active-main-link"
+                  >
                     Networking
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
