@@ -46,6 +46,9 @@
             transform: scale(1.2);
           }
         }
+        .card-info {
+          padding: 30px;
+        }
       }
     }
     .card-item:hover {
@@ -53,4 +56,16 @@
       transform: translateY(-3px);
     }
   }
+}
+
+.mentor-add-button {
+  text-align: center !important;
+}
+
+.mentors-card {
+  padding-top: 0 !important;
+}
+
+.red {
+  background-color: #f14949 !important;
 }

@@ -15,10 +15,15 @@ class MentorCard extends Component {
                 }}
               />
             </div>
-            <article className="card-info">
+            <article className="card-info mentors-card">
               {" "}
-              <br />
-              <Link to={`/Mentors/edit/${this.props.id}`}> Edit</Link>
+              <Link
+                to={`/Mentors/edit/${this.props.id}`}
+                className="edit-btn readmore mentor-add-button red"
+              >
+                {" "}
+                Edit
+              </Link>
               <h1 className="mentor-first-name">{this.props.first_name}</h1>
               <h2 className="mentor-last-name">{this.props.last_name}</h2>
               <p className="mentor-email">{this.props.email}</p>

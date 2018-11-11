@@ -31,10 +31,7 @@ class MentorsList extends Component {
       <>
         <div className="page-content">
           <section className="cards-list-container">
-            <Link
-              className="btn btn-outline-danger btn-lg btn-block mentor-add-button"
-              to="/Mentors/add"
-            >
+            <Link className="readmore mentor-add-button" to="/Mentors/add">
               Add New Mentor
             </Link>
             <div className="mentors-main-container">
