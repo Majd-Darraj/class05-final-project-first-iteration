@@ -1,0 +1,35 @@
+import React, { Component } from "react";
+import { Switch, Route, Link } from "react-router-dom";
+
+export default class AdminNavigation extends Component {
+  render() {
+    return (
+      <>
+        <div className="admin-nav">
+          <div className="btns btns-admin-nav">
+            <button className="readmore " key={this.props.id}>
+              <Link to={`/Internships/edit`} className="menuLink nav-link">
+                Internships
+              </Link>
+            </button>
+            <button className="readmore archive-btn" key={this.props.id}>
+              <Link to={`/Events/edit`} className="menuLink nav-link">
+                Events
+              </Link>
+            </button>
+            <button className="readmore archive-btn" key={this.props.id}>
+              <Link to={`/Mentors/edit`} className="menuLink nav-link">
+                Mentors
+              </Link>
+            </button>
+            <button className="readmore archive-btn" key={this.props.id}>
+              <Link to={`/Networking/edit`} className="menuLink nav-link">
+                Networking
+              </Link>
+            </button>
+          </div>
+        </div>
+      </>
+    );
+  }
+}

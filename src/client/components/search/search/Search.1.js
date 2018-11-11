@@ -2,19 +2,39 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Search extends Component {
-  state = { search: "" };
+  constructor(props) {
+    super(props);
+    this.setQuery.bind(this);
+    this.setState.bind(this);
+    this.runSearch.bind(this);
+  }
 
-  updateSearch = keyWord => {
+  componentDidMount = () => {
     this.setState({
-      search: keyWord.target.value
+      q: "",
+      data: []
     });
   };
 
+  setQuery(e) {
+    this.setState({
+      q: e.target.value
+    });
+  }
+
+  async runSearch(e) {
+    e.preventDefault();
+    this.setState({
+      q: this.state.q
+    });
+  }
+
   render() {
+    let searchKeyword = this.state.q;
     return (
       <>
         <div className="search-container">
-          <form>
+          <form onSubmit={e => this.runSearch(e)}>
             <fieldset>
               <legend>WHAT ARE YOU LOOKING FOR?</legend>
             </fieldset>
@@ -26,8 +46,9 @@ class Search extends Component {
                     <input
                       type="text"
                       placeholder="ex: DIY, fair, workshop, internship"
-                      value={this.state.search}
-                      onChange={this.updateSearch}
+                      // value={this.state.search}
+                      onChange={e => this.setQuery(e)}
+                      name="q"
                     />
                   </div>
                 </div>
@@ -60,14 +81,9 @@ class Search extends Component {
                   </div>
                 </div>
               </div>
-              <button className="btn-search" type="button">
-                <Link
-                  to={`/Events/preview/${this.props.id}`}
-                  className="menuLink nav-link"
-                >
-                  SEARCH{" "}
-                </Link>
-              </button>
+              <Link type="submit" to="/search" className="btn-search">
+                Search
+              </Link>
             </div>
           </form>
         </div>

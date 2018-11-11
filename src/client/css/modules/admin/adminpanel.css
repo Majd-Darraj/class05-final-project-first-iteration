@@ -1,0 +1,107 @@
+.admin-bar {
+  top: 0 !important;
+  position: sticky;
+  z-index: 1005;
+  right: 0 !important;
+  width: 100vw !important;
+
+  .admin-btn {
+    padding: 0;
+    margin: 0;
+    background-color: #ff4150;
+    height: 30px;
+
+    &:hover {
+      color: #f14949 !important;
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1.2rem;
+  border-bottom: 1px solid #f14949;
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+
+  span {
+    font-size: 1.7em;
+    background-color: #eee;
+    padding: 0.1em 1rem;
+    color: #f14949;
+    border-radius: 5px;
+    font-family: Poppins, sans-serifsans-serif;
+    font-weight: 300;
+  }
+}
+
+/* Edit view */
+.edit-content {
+  .cards-list-container {
+    max-width: 80vw !important;
+    border-radius: 1em;
+    box-shadow: inset 0 0 5px #a1b4ba;
+
+    .cards-list {
+      flex-direction: column;
+      padding: 1em;
+
+      .card-item {
+        .card-container {
+          .card-info-container {
+            display: flex;
+            flex-direction: row;
+            padding: 0 !important;
+
+            .card-image-container {
+              width: 30% !important;
+              min-width: 200px;
+
+              .card-image {
+                width: auto;
+                height: 100%;
+                padding: 0 !important;
+              }
+            }
+
+            .card-info {
+              justify-content: space-between;
+              flex: 1 0;
+              padding: 2em !important;
+            }
+          }
+
+          .btns {
+            display: flex;
+
+            .readmore {
+              width: auto !important;
+              font-size: 0.7em;
+              line-height: 0.2 !important;
+
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
+
+            .archive-btn {
+              background-color: #ff4150;
+
+              &:hover {
+                background-color: #8e000d !important;
+              }
+            }
+            .edit-btn {
+              background-color: #8bc53f;
+              flex-grow: 4;
+
+              &:hover {
+                background-color: #44af5c !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

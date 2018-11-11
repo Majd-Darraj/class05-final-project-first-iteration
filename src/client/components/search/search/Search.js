@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class Search extends Component {
-  state = { search: "" };
+  state = { search: "majd" };
 
   updateSearch = keyWord => {
     this.setState({
@@ -61,12 +60,7 @@ class Search extends Component {
                 </div>
               </div>
               <button className="btn-search" type="button">
-                <Link
-                  to={`/Events/preview/${this.props.id}`}
-                  className="menuLink nav-link"
-                >
-                  SEARCH{" "}
-                </Link>
+                SEARCH
               </button>
             </div>
           </form>
