@@ -2,7 +2,7 @@ import SqlString from 'sqlstring';
 import db from '../config/db';
 
 export function listAllEvents(req, res){
-  const sql = SqlString.format('SELECT * FROM events WHERE is_active=?', [true]);
+  const sql = SqlString.format('SELECT * FROM events WHERE active=?', [true]);
   console.log(sql);
   db.execute(sql, (err, rows)=>{
       if(err){
@@ -12,7 +12,7 @@ export function listAllEvents(req, res){
       res.send(rows);
   })
 }
-export function createEvents(req,res){
+export function createEvent(req,res){
     const jsonData = req.body;
 const sql = SqlString.format('INSERT INTO events SET ?', jsonData);
 console.log(sql);
@@ -55,7 +55,7 @@ export function deleteEvent(req,res){
     const eventId = req.params.id;
     const sql = SqlString.format(`UPDATE events SET ? WHERE id = ?`, [
       {
-        is_active: false,
+        active: false,
       },
       eventId,
     ]);
@@ -80,7 +80,7 @@ export function deleteEvent(req,res){
 export function getEventById(req,res){
     const eventId = req.params.id;
     const sql = SqlString.format(
-      'SELECT * FROM events WHERE id = ? AND is_active = ?',
+      'SELECT * FROM events WHERE id = ? AND active = ?',
       [eventId, true],
     );
     console.log(sql);
