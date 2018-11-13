@@ -1,0 +1,21 @@
+
+
+footer {
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: lightgrey;
+   }
+
+#contact {
+    width: 100%;
+    background-color:lightgrey;
+    text-align: center;
+  }
+
+  #main-footer {
+    background-color: lightgrey;
+    text-align: center;
+    width: 100%;
+  }
+

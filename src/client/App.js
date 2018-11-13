@@ -8,6 +8,9 @@ import Mentors from "./components/cardsList/MentorsList";
 import Networking from "./components/cardsList/NetworkingList";
 import Header from "./components/Header";
 import Search from "./components/search/Search";
+import Footer from "./components/footer/Footer";
+
+
 class App extends Component {
   render() {
     return (
@@ -25,7 +28,8 @@ class App extends Component {
           <Route exact path="/Events/edit/:id" component={EventsForm.EditEvent} /> */}
           <Route exact path="/Mentors" component={Mentors} />
           <Route exact path="/Networking" component={Networking} />
-        </Switch>
+        </Switch>  
+        <Footer />
       </div>
     );
   }
