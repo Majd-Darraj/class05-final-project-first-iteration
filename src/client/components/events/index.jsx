@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import ListView from "./components/views/ListView";
-import CardView from "./components/views/CardView";
-import EditView from "./components/views/EditView";
+// import CardView from "./components/views/CardView";
+import AdminView from "./components/views/EditView";
 
 class Events extends Component {
   state = {
@@ -34,15 +34,15 @@ class Events extends Component {
       <>
         <div className="admin-bar">
           <button className="readmore admin-btn" key="admin">
-            <Link to={`${url}/edit`} className="menuLink nav-link admin-link">
+            <Link to={`${url}/admin`} className="menuLink nav-link admin-link">
               Admin view
             </Link>
           </button>
         </div>
         <Switch>
           <Route
-            path={`${url}/edit`}
-            render={props => <EditView {...props} data={data} />}
+            path={`${url}/admin`}
+            render={props => <AdminView {...props} data={data} />}
           />
           <Route
             exact
@@ -52,18 +52,6 @@ class Events extends Component {
                 // onEnter={this.mapData()}
                 {...props}
                 data={data}
-              />
-            )}
-          />
-          <Route
-            path={`${url}/preview/:id`}
-            render={props => (
-              <CardView
-                {...props}
-                allData={this.props}
-                data={data.find(dataEntry => {
-                  return dataEntry.id === props.match.params.id;
-                })}
               />
             )}
           />

@@ -23,6 +23,7 @@ class EditCard extends Component {
     let eventDateNumber = parseInt(eventDate, 10) - 1;
     let eventDateMonth = months[eventDateNumber];
     debugger;
+    // let url = this.props.match.url;
     return (
       <div className="card-item event-item" key={this.props.id}>
         <div className="card-container event-item-container">
@@ -61,7 +62,7 @@ class EditCard extends Component {
           <div className="btns">
             <button className="readmore edit-btn" key={this.props.id}>
               <Link
-                to={`/Events/edit/${this.props.id}`}
+                to={`Events/admin/edit/${this.props.id}`}
                 className="menuLink nav-link"
               >
                 Edit
@@ -69,7 +70,7 @@ class EditCard extends Component {
             </button>
             <button className="readmore archive-btn" key={this.props.id}>
               <Link
-                to={`/Events/edit/${this.props.id}`}
+                to={`${url}/admin/edit/${this.props.id}`}
                 className="menuLink nav-link"
               >
                 Archive
