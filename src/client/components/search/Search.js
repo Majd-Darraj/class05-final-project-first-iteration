@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 class Search extends Component {
   state = { search: "" };
 
-  updateSearch = keyWord => {
+  updateField = e => {
+    const { name, value } = e.target;
+    console.log(name, value);
     this.setState({
-      search: keyWord.target.value
+      data: {
+        search: value
+      }
     });
   };
 
@@ -14,7 +18,7 @@ class Search extends Component {
     return (
       <>
         <div className="search-container">
-          <form>
+          <form action={`/api/search`}>
             <fieldset>
               <legend>WHAT ARE YOU LOOKING FOR?</legend>
             </fieldset>
@@ -27,7 +31,7 @@ class Search extends Component {
                       type="text"
                       placeholder="ex: DIY, fair, workshop, internship"
                       value={this.state.search}
-                      onChange={this.updateSearch}
+                      onChange={this.updateField}
                     />
                   </div>
                 </div>

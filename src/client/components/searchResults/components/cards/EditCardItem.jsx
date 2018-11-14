@@ -22,7 +22,7 @@ class EditCard extends Component {
     let eventDate = this.props.event_start_date.substring(5, 7);
     let eventDateNumber = parseInt(eventDate, 10) - 1;
     let eventDateMonth = months[eventDateNumber];
-    debugger;
+
     return (
       <div className="card-item event-item" key={this.props.id}>
         <div className="card-container event-item-container">

@@ -10,9 +10,11 @@
     margin: 0;
     background-color: #ff4150;
     height: 30px;
+    position: absolute;
 
     &:hover {
-      color: #f14949 !important;
+      background-color: #f14949 !important;
+      transform: scale(1.2) !important;
     }
   }
 }

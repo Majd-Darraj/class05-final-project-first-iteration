@@ -2,12 +2,10 @@ import React from "react";
 import CardFull from "../cards/cardFull";
 class CardView extends React.Component {
   state = {
-    isLoading: true,
-    data: []
+    isLoading: true
   };
 
   componentWillMount = () => {
-    debugger;
     const { data } = this.props;
 
     this.setState({
@@ -17,7 +15,6 @@ class CardView extends React.Component {
   };
 
   componentDidMount = () => {
-    debugger;
     const { data } = this.props;
     if (data.length > 0 || data !== undefined) {
       this.setState({
@@ -29,7 +26,6 @@ class CardView extends React.Component {
   };
 
   render() {
-    debugger;
     // fix id is undefined when passing to the key
     // const id = "";
     const { isLoading, data } = this.state;
@@ -43,7 +39,7 @@ class CardView extends React.Component {
           >
             <div className="events-main-container">
               <div className="cards-list">
-                {<CardFull {...data} key={Math.random()} />}
+                {<CardFull {...data} key={data.id} />}
               </div>
               <div className="loader">
                 <div className="icon" />

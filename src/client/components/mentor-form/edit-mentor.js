@@ -19,11 +19,11 @@ class EditMentor extends Component {
           isLoading: false
         });
       });
-    debugger;
+    // debugger;
   }
 
   render() {
-    debugger;
+    // debugger;
     return this.state.isLoading ? (
       <div>
         <p>wait</p>

@@ -60,7 +60,6 @@ class Events extends Component {
             render={props => (
               <CardView
                 {...props}
-                allData={this.props}
                 data={data.find(dataEntry => {
                   return dataEntry.id === props.match.params.id;
                 })}

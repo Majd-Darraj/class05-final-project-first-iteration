@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class EditCard extends Component {
+class CardItem extends Component {
   render() {
     // debugger;
     let months = [
@@ -21,8 +21,8 @@ class EditCard extends Component {
 
     let eventDate = this.props.event_start_date.substring(5, 7);
     let eventDateNumber = parseInt(eventDate, 10) - 1;
-    let eventDateMonth = months[eventDateNumber];
-    debugger;
+    let eventDateMonth = months[eventDateNumber].substring(0, 3);
+
     return (
       <div className="card-item event-item" key={this.props.id}>
         <div className="card-container event-item-container">
@@ -58,28 +58,18 @@ class EditCard extends Component {
               </div>
             </article>
           </div>
-          <div className="btns">
-            <button className="readmore edit-btn" key={this.props.id}>
-              <Link
-                to={`/Events/edit/${this.props.id}`}
-                className="menuLink nav-link"
-              >
-                Edit
-              </Link>
-            </button>
-            <button className="readmore archive-btn" key={this.props.id}>
-              <Link
-                to={`/Events/edit/${this.props.id}`}
-                className="menuLink nav-link"
-              >
-                Archive
-              </Link>
-            </button>
-          </div>
+          <button className="readmore" key={this.props.id}>
+            <Link
+              to={`/Events/preview/${this.props.id}`}
+              className="menuLink nav-link"
+            >
+              Read More
+            </Link>
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default EditCard;
+export default CardItem;
