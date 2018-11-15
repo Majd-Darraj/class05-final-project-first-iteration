@@ -2,24 +2,13 @@ import React from "react";
 import CardFull from "../cards/cardFull";
 class CardView extends React.Component {
   state = {
-    isLoading: true,
-    data: []
-  };
-
-  componentWillMount = () => {
-    debugger;
-    const { data } = this.props;
-
-    this.setState({
-      ...this.state,
-      data: data
-    });
+    isLoading: true
   };
 
   componentDidMount = () => {
     debugger;
     const { data } = this.props;
-    if (data.length > 0 || data !== undefined) {
+    if (data.length > 0) {
       this.setState({
         isLoading: false
       });
@@ -29,10 +18,15 @@ class CardView extends React.Component {
   };
 
   render() {
-    debugger;
-    // fix id is undefined when passing to the key
-    // const id = "";
-    const { isLoading, data } = this.state;
+    const { url, params } = this.props.match;
+    // const data = this.props.data.map(dataEntry => {
+    //   debugger;
+    //   return dataEntry.id == params ? dataEntry : null;
+    // });
+    const data = this.props.data.find(dataEntry => {
+      return dataEntry.id == params.id ? dataEntry : null;
+    });
+    const { isLoading } = this.state;
     return (
       <>
         <div className="page-content">
@@ -43,7 +37,10 @@ class CardView extends React.Component {
           >
             <div className="events-main-container">
               <div className="cards-list">
-                {<CardFull {...data} key={Math.random()} />}
+                {
+                  // <CardFull {...this.props} data={data} key={data.id} />
+                  <CardFull {...this.props} data={data} />
+                }
               </div>
               <div className="loader">
                 <div className="icon" />

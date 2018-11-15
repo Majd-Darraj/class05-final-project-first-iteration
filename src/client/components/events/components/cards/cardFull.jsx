@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 class CardFull extends Component {
   render() {
-    // debugger;
+    const { data } = this.props;
+
     let months = [
       "January",
       "February",
@@ -18,19 +19,25 @@ class CardFull extends Component {
       "November",
       "December"
     ];
+    debugger;
 
-    let eventDate = this.props.event_start_date.substring(5, 7);
+    let eventDate = data.event_start_date.substring(5, 7);
     let eventDateNumber = parseInt(eventDate, 10) - 1;
-    let eventDateMonth = months[eventDateNumber].substring(0, 3);
+    let eventDateMonth = months[eventDateNumber];
+    let eventStartHour = data.event_start_hour.slice(0, 5);
+    let eventEndHour = data.event_end_hour.slice(0, 5);
+
+    const { url, path } = this.props.match;
+
     return (
-      <div className="card-item event-item" key={this.props.id}>
+      <div className="card-item event-item" key={data.id}>
         <div className="card-container event-item-container">
           <div className="card-info-container">
             <div className="card-image-container">
               <div
                 className="card-image event-theme-image"
                 style={{
-                  backgroundImage: `url(${this.props.event_theme_image})`
+                  backgroundImage: `url(${data.event_theme_image})`
                 }}
               />
             </div>
@@ -45,20 +52,18 @@ class CardFull extends Component {
                 <p className="event-day">{eventDate}</p>
               </div>
               <div className="card-information">
-                <h1 className="event-name">{this.props.event_name}</h1>
-                <h3 className="event-type">{this.props.event_type}</h3>
+                <h1 className="event-name">{data.event_name}</h1>
+                <h3 className="event-type">{data.event_type}</h3>
                 <p className="event-address">
-                  {this.props.event_address}, {this.props.event_city}
+                  {data.event_address}, {data.event_city}
                 </p>
 
-                <p className="event-end-date">{this.props.event_end_date}</p>
-                <p className="event-start-hour">
-                  {this.props.event_start_hour.slice(0, 5)},
-                </p>
+                <p className="event-end-date">{data.event_end_date}</p>
+                <p className="event-start-hour">{eventStartHour},</p>
                 <p className="event-language">
-                  Language: {this.props.event_language}
+                  Language: {data.event_language}
                 </p>
-                <p className="contact-person">{this.props.contact_person}</p>
+                <p className="contact-person">{data.contact_person}</p>
               </div>
             </article>
           </div>

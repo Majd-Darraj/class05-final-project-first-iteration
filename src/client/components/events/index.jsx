@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import ListView from "./components/views/ListView";
 import CardView from "./components/views/CardView";
-import EditView from "./components/views/EditView";
+import AdminView from "./components/views/AdminView";
 
 class Events extends Component {
   state = {
@@ -29,43 +29,38 @@ class Events extends Component {
   render() {
     const { data } = this.state;
     const { url, path } = this.props.match;
-    // debugger;
+    debugger;
     return (
       <>
         <div className="admin-bar">
           <button className="readmore admin-btn" key="admin">
-            <Link to={`${url}/edit`} className="menuLink nav-link admin-link">
+            <Link to={`${url}/admin`} className="menuLink nav-link admin-link">
               Admin view
             </Link>
           </button>
         </div>
         <Switch>
           <Route
-            path={`${url}/edit`}
-            render={props => <EditView {...props} data={data} />}
+            path={`${path}/admin`}
+            render={props => <AdminView {...props} data={data} />}
           />
           <Route
             exact
             path={`${path}`}
-            render={props => (
-              <ListView
-                // onEnter={this.mapData()}
-                {...props}
-                data={data}
-              />
-            )}
+            render={props => <ListView {...props} data={data} />}
           />
           <Route
-            path={`${url}/preview/:id`}
-            render={props => (
-              <CardView
-                {...props}
-                allData={this.props}
-                data={data.find(dataEntry => {
-                  return dataEntry.id === props.match.params.id;
-                })}
-              />
-            )}
+            path={`${path}/preview/:id`}
+            render={props => <CardView {...props} data={data} />}
+            // <Route
+            //   path={`${path}/preview/:id`}
+            //   render={props => (
+            //     <CardView
+            //       {...props}
+            //       data={data.find(
+            //         dataEntry => dataEntry.id === this.props.match.params.id
+            //       )}
+            //     />
           />
         </Switch>
       </>

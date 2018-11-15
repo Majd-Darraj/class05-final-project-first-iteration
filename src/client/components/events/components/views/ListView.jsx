@@ -70,9 +70,9 @@ class ListView extends React.Component {
             <div className="events-main-container">
               <div className="cards-list">
                 {data.length > 0
-                  ? data.map(event => {
+                  ? data.map(data => {
                       return (
-                        <CardItem {...event} key={event.id} data={this.props} />
+                        <CardItem {...this.props} key={data.id} data={data} />
                       );
                     })
                   : null}

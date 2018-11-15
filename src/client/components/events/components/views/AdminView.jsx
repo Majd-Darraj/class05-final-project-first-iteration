@@ -1,6 +1,8 @@
 import React from "react";
 import EditCardItem from "../cards/EditCardItem";
 import Nav from "../ARCHIVED/AdminNavigation";
+import { Switch, Route, Link } from "react-router-dom";
+
 class EditView extends React.Component {
   state = {
     isLoading: true
@@ -9,7 +11,7 @@ class EditView extends React.Component {
   componentDidMount = () => {
     // debugger;
     const { data } = this.props;
-    if (data.length > 0 || data !== undefined) {
+    if (data.length > 0) {
       this.setState({
         isLoading: false
       });
@@ -21,6 +23,7 @@ class EditView extends React.Component {
   render() {
     const { data } = this.props;
     const { isLoading } = this.state;
+    const { url } = this.props.match;
 
     debugger;
     return (
@@ -40,7 +43,8 @@ class EditView extends React.Component {
                   ? data.map(event => {
                       return <EditCardItem {...event} key={event.id} />;
                     })
-                  : null}
+                  : // make error handler (contact us form)
+                    null}
               </div>
               <div className="loader">
                 <div className="icon" />
@@ -48,6 +52,36 @@ class EditView extends React.Component {
             </div>
           </section>
         </div>
+
+        {/* // <Switch>
+        //   <Route
+        //     path={`${url}/edit`}
+        //     render={props => <EditView {...props} data={data} />}
+        //   />
+        //   <Route
+        //     exact
+        //     path={`${path}`}
+        //     render={props => (
+        //       <ListView
+        //         // onEnter={this.mapData()}
+        //         {...props}
+        //         data={data}
+        //       />
+        //     )}
+        //   />
+        //   <Route
+        //     path={`${url}/preview/:id`}
+        //     render={props => (
+        //       <CardView
+        //         {...props}
+        //         allData={this.props}
+        //         data={data.find(dataEntry => {
+        //           return dataEntry.id === props.match.params.id;
+        //         })}
+        //       />
+        //     )}
+        //   />
+        // </Switch> */}
       </>
     );
   }
