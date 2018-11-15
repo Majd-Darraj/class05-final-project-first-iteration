@@ -1,15 +1,33 @@
 import React from "react";
-import EditCardItem from "../cards/EditCardItem";
-import Nav from "../ARCHIVED/AdminNavigation";
+// import EditCardItem from "../cards/EditCardItem";
+// import Nav from "../ARCHIVED/AdminNavigation";
 import { Switch, Route, Link } from "react-router-dom";
 
 class EditView extends React.Component {
   state = {
-    isLoading: true
+    isLoading: true,
+    data: []
   };
 
   componentDidMount = () => {
+    const urls = [
+      "/api/events",
+      "/api/mentors",
+      "/api/internships",
+      "/api/networking"
+    ];
     // debugger;
+
+    Promise.all(urls.map(url => fetch(url).then(resp => resp.json()))).then(
+      data => {
+        debugger;
+        this.setState({
+          isLoading: false,
+          data: data
+        });
+      }
+    );
+
     const { data } = this.props;
     if (data.length > 0) {
       this.setState({
@@ -21,38 +39,13 @@ class EditView extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    const { isLoading } = this.state;
-    const { url } = this.props.match;
+    // const { data } = this.props;
+    // const { isLoading } = this.state;
+    // const { url } = this.props.match;
 
     // debugger;
     return (
       <>
-        <div className="divider">
-          <span>EVENTS</span>
-        </div>
-        <div className="page-content edit-content">
-          <section
-            className={`cards-list-container cards-list-container-events ${
-              isLoading ? "is-loading" : ""
-            }`}
-          >
-            <div className="events-main-container">
-              <div className="cards-list">
-                {data.length > 0
-                  ? data.map(event => {
-                      return <EditCardItem {...event} key={event.id} />;
-                    })
-                  : // make error handler (contact us form)
-                    null}
-              </div>
-              <div className="loader">
-                <div className="icon" />
-              </div>
-            </div>
-          </section>
-        </div>
-
         {/* // <Switch>
         //   <Route
         //     path={`${url}/edit`}

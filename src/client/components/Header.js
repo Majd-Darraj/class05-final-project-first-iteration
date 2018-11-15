@@ -53,6 +53,15 @@ class Header extends Component {
                     Networking
                   </NavLink>
                 </li>
+                <li className="nav-item admin">
+                  <NavLink
+                    to="/admin"
+                    className=" nav-link"
+                    activeClassName="active-main-link"
+                  >
+                    Login
+                  </NavLink>
+                </li>
               </ul>
             </nav>
           </div>

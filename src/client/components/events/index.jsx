@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import CardsListView from "./components/views/CardsListView";
 import CardItemView from "./components/views/CardItemView";
-import AdminView from "./components/views/AdminView";
+import AdminView from "../admin/index";
 
 class Events extends Component {
   state = {
@@ -32,18 +32,14 @@ class Events extends Component {
     // debugger;
     return (
       <>
-        <div className="admin-bar">
+        {/* <div className="admin-bar">
           <button className="readmore admin-btn" key="admin">
             <Link to={`${url}/admin`} className="menuLink nav-link admin-link">
               Admin view
             </Link>
           </button>
-        </div>
+        </div> */}
         <Switch>
-          <Route
-            path={`${path}/admin`}
-            render={props => <AdminView {...props} data={data} />}
-          />
           <Route
             exact
             path={`${path}`}

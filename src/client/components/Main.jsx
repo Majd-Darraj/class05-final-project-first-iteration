@@ -5,6 +5,7 @@ import Internships from "./cardsList/InternshipsList";
 import Mentors from "./cardsList/MentorsList";
 import Networking from "./cardsList/NetworkingList";
 import MentorForms from "./mentor-form";
+import AdminView from "./admin/index";
 export default class Main extends Component {
   render() {
     return (
@@ -21,6 +22,7 @@ export default class Main extends Component {
             component={MentorForms.EditMentor}
           /> */}
           <Route path="/Networking" component={Networking} />
+          <Route path={`/admin`} component={AdminView} />
         </Switch>
       </main>
     );
