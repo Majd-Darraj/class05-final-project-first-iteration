@@ -2,18 +2,16 @@ import React from "react";
 import MapComponent from "../../../map-component/MapComponent";
 import CardItem from "../cards/cardItem";
 
-class ListView extends React.Component {
+class CardListView extends React.Component {
   state = {
     isLoading: true
   };
 
   componentWillMount = () => {
-    if (this.props.match.url === "/Events") {
-      this.setState({
-        ...this.state,
-        mapData: []
-      });
-    }
+    this.setState({
+      ...this.state,
+      mapData: []
+    });
     // debugger;
   };
 
@@ -51,15 +49,13 @@ class ListView extends React.Component {
     return (
       <>
         <div className="page-content">
-          {this.props.match.url === "/Events" ? (
-            <MapComponent
-              mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
-              setMarker
-              Zoom={11}
-              mapData={mapData}
-              key="events"
-            />
-          ) : null}
+          <MapComponent
+            mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
+            setMarker
+            Zoom={11}
+            mapData={mapData}
+            key="events"
+          />
           <section
             className={`cards-list-container ${
               this.props.match.url === "/Events"
@@ -88,4 +84,4 @@ class ListView extends React.Component {
   }
 }
 
-export default ListView;
+export default CardListView;

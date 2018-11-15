@@ -1,12 +1,12 @@
 import React from "react";
 import CardFull from "../cards/cardFull";
-class CardView extends React.Component {
+class CardItemView extends React.Component {
   state = {
     isLoading: true
   };
 
   componentDidMount = () => {
-    debugger;
+    // debugger;
     const { data } = this.props;
     if (data.length > 0) {
       this.setState({
@@ -53,4 +53,4 @@ class CardView extends React.Component {
   }
 }
 
-export default CardView;
+export default CardItemView;

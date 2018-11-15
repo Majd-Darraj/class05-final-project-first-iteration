@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import ListView from "./components/views/ListView";
-import CardView from "./components/views/CardView";
+import CardsListView from "./components/views/CardsListView";
+import CardItemView from "./components/views/CardItemView";
 import AdminView from "./components/views/AdminView";
 
 class Events extends Component {
@@ -29,7 +29,7 @@ class Events extends Component {
   render() {
     const { data } = this.state;
     const { url, path } = this.props.match;
-    debugger;
+    // debugger;
     return (
       <>
         <div className="admin-bar">
@@ -47,15 +47,20 @@ class Events extends Component {
           <Route
             exact
             path={`${path}`}
-            render={props => <ListView {...props} data={data} />}
+            render={props => <CardsListView {...props} data={data} />}
           />
+          {/* <Route
+            exact
+            path={`${path}`}
+            render={props => <CardsListView {...props} data={data} />}
+          /> */}
           <Route
             path={`${path}/preview/:id`}
-            render={props => <CardView {...props} data={data} />}
+            render={props => <CardItemView {...props} data={data} />}
             // <Route
             //   path={`${path}/preview/:id`}
             //   render={props => (
-            //     <CardView
+            //     <CardItemView
             //       {...props}
             //       data={data.find(
             //         dataEntry => dataEntry.id === this.props.match.params.id

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, withRouter } from "react-router-dom";
+import BackBtn from "../helpers/BackBtn";
 class CardFull extends Component {
   render() {
     const { data } = this.props;
@@ -19,7 +19,7 @@ class CardFull extends Component {
       "November",
       "December"
     ];
-    debugger;
+    // debugger;
 
     let eventDate = data.event_start_date.substring(5, 7);
     let eventDateNumber = parseInt(eventDate, 10) - 1;
@@ -28,7 +28,7 @@ class CardFull extends Component {
     let eventEndHour = data.event_end_hour.slice(0, 5);
 
     const { url, path } = this.props.match;
-
+    debugger;
     return (
       <div className="card-item event-item" key={data.id}>
         <div className="card-container event-item-container">
@@ -41,11 +41,23 @@ class CardFull extends Component {
                 }}
               />
             </div>
-            <button className="readmore">
+            {/* <button
+              className="readmore"
+              onClick={() => {
+                this.props.history.push(path);
+              }}
+            >
+              BACK
+            </button> */}
+            <button className="readmore" onClick={this.props.history.goBack}>
+              BACK
+            </button>
+            {/* <button className="readmore">
               <Link to="/events" className="menuLink nav-link">
                 BACK
               </Link>
-            </button>
+            </button> */}
+            {/* <BackBtn /> */}
             <article className="card-info">
               <div className="card-date">
                 <p className="event-month">{eventDateMonth}</p>
@@ -73,4 +85,4 @@ class CardFull extends Component {
   }
 }
 
-export default CardFull;
+export default withRouter(CardFull);

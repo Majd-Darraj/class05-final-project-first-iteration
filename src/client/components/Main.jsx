@@ -15,11 +15,11 @@ export default class Main extends Component {
           <Route path="/Events" component={Events} />
           <Route path="/Mentors" component={Mentors} />
           <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
-          <Route
+          {/* <Route
             exact
             path={`/Mentors/edit/:id`}
             component={MentorForms.EditMentor}
-          />
+          /> */}
           <Route path="/Networking" component={Networking} />
         </Switch>
       </main>

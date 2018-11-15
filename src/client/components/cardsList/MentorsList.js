@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MentorCard from "../cards/MentorCard";
-import { Link } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
+import MentorForms from "../mentor-form";
 
 class MentorsList extends Component {
   state = {
@@ -48,6 +49,14 @@ class MentorsList extends Component {
             </div>
           </section>
         </div>
+        <Switch>
+          <Route
+            exact
+            path={`/Mentors/edit/:id`}
+            component={MentorForms.EditMentor}
+          />
+          <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
+        </Switch>
       </>
     );
   }

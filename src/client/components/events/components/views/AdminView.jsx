@@ -25,7 +25,7 @@ class EditView extends React.Component {
     const { isLoading } = this.state;
     const { url } = this.props.match;
 
-    debugger;
+    // debugger;
     return (
       <>
         <div className="divider">
