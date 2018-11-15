@@ -1,9 +1,9 @@
 import React from "react";
-// import EditCardItem from "../cards/EditCardItem";
-// import Nav from "../ARCHIVED/AdminNavigation";
 import { Switch, Route, Link } from "react-router-dom";
-
-class EditView extends React.Component {
+import AdminNavigation from "./AdminNavigation";
+import EditView from "./views/EditView";
+class AdminView extends React.Component {
+  // data = [1.events, 2.mentors, 3.networking, 4.internships]
   state = {
     isLoading: true,
     data: []
@@ -11,9 +11,9 @@ class EditView extends React.Component {
 
   componentDidMount = () => {
     const urls = [
+      "/api/internships",
       "/api/events",
       "/api/mentors",
-      "/api/internships",
       "/api/networking"
     ];
     // debugger;
@@ -27,57 +27,45 @@ class EditView extends React.Component {
         });
       }
     );
-
-    const { data } = this.props;
-    if (data.length > 0) {
-      this.setState({
-        isLoading: false
-      });
-    } else {
-      return null;
-    }
   };
 
   render() {
-    // const { data } = this.props;
-    // const { isLoading } = this.state;
+    const eventsData = this.state.data[1];
+    const mentorsData = this.state.data[2];
+    const networkingData = this.state.data[3];
+    const internshipsData = this.state.data[4];
+    debugger;
+    const { isLoading } = this.state;
     // const { url } = this.props.match;
-
     // debugger;
     return (
       <>
-        {/* // <Switch>
-        //   <Route
-        //     path={`${url}/edit`}
-        //     render={props => <EditView {...props} data={data} />}
-        //   />
-        //   <Route
-        //     exact
-        //     path={`${path}`}
-        //     render={props => (
-        //       <ListView
-        //         // onEnter={this.mapData()}
-        //         {...props}
-        //         data={data}
-        //       />
-        //     )}
-        //   />
-        //   <Route
-        //     path={`${url}/preview/:id`}
-        //     render={props => (
-        //       <CardView
-        //         {...props}
-        //         allData={this.props}
-        //         data={data.find(dataEntry => {
-        //           return dataEntry.id === props.match.params.id;
-        //         })}
-        //       />
-        //     )}
-        //   />
-        // </Switch> */}
+        <AdminNavigation />
+        <Switch>
+          <Route
+            path={`/admin/events`}
+            render={props => <EditView {...props} eventsData={eventsData} />}
+          />
+          {/* <Route
+            path={`/admin/mentors`}
+            render={props => <EditView {...props} mentorsData={mentorsData} />}
+          />
+          <Route
+            path={`/admin/networking`}
+            render={props => (
+              <EditView {...props} networkingData={networkingData} />
+            )}
+          />
+          <Route
+            path={`/admin/internships`}
+            render={props => (
+              <EditView {...props} internshipsData={internshipsData} />
+            )}
+          /> */}
+        </Switch>
       </>
     );
   }
 }
 
-export default EditView;
+export default AdminView;
