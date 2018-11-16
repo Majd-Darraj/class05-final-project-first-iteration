@@ -6,44 +6,36 @@ export default class AdminNavigation extends Component {
     return (
       <>
         <div className="admin-nav">
-          <div className="btns btns-admin-nav">
-            <button className="readmore " key={this.props.id}>
-              <NavLink
-                to={`/admin/internships`}
-                className="menuLink nav-link admin-link"
-                activeClassName="active-admin-link"
-              >
-                Internships
-              </NavLink>
-            </button>
-            <button className="readmore archive-btn" key={this.props.id}>
-              <NavLink
-                to={`/admin/events`}
-                className="menuLink nav-link admin-link"
-                activeClassName="active-admin-link"
-              >
-                Events
-              </NavLink>
-            </button>
-            <button className="readmore archive-btn" key={this.props.id}>
-              <NavLink
-                to={`/admin/mentors`}
-                className="menuLink nav-link admin-link"
-                activeClassName="active-admin-link"
-              >
-                Mentors
-              </NavLink>
-            </button>
-            <button className="readmore archive-btn" key={this.props.id}>
-              <NavLink
-                to={`/admin/networking`}
-                className="menuLink nav-link admin-link"
-                activeClassName="active-admin-link"
-              >
-                Networking
-              </NavLink>
-            </button>
-          </div>
+          <ul className="btns btns-admin-nav">
+            <NavLink
+              to={`/admin/internships`}
+              className="readmore admin-btn"
+              activeClassName="active-admin-link"
+            >
+              Internships
+            </NavLink>
+            <NavLink
+              to={`/admin/events`}
+              className="readmore admin-btn"
+              activeClassName="active-admin-link"
+            >
+              Events
+            </NavLink>
+            <NavLink
+              to={`/admin/mentors`}
+              className="readmore admin-btn"
+              activeClassName="active-admin-link"
+            >
+              Mentors
+            </NavLink>
+            <NavLink
+              to={`/admin/networking`}
+              className="readmore admin-btn"
+              activeClassName="active-admin-link"
+            >
+              Networking
+            </NavLink>
+          </ul>
         </div>
       </>
     );

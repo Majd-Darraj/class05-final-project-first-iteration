@@ -53,7 +53,7 @@ class Header extends Component {
                     Networking
                   </NavLink>
                 </li>
-                <li className="nav-item admin">
+                {/* <li className="nav-item admin">
                   <NavLink
                     to="/admin"
                     className=" nav-link"
@@ -61,7 +61,7 @@ class Header extends Component {
                   >
                     Login
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

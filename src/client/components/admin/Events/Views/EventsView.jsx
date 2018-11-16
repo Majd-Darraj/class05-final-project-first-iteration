@@ -1,13 +1,9 @@
 import React from "react";
-import EditCardItem from "../cards/EditCardItem";
 
-class EditView extends React.Component {
-  state = {
-    isLoading: true
-  };
+import EventCard from "./EventCard";
 
+class EventsView extends React.Component {
   componentDidMount = () => {
-    debugger;
     const { eventsData } = this.props;
     if (eventsData.length > 0 || eventsData !== undefined) {
       this.setState({
@@ -20,9 +16,7 @@ class EditView extends React.Component {
 
   render() {
     const { eventsData } = this.props;
-    const { isLoading } = this.state;
 
-    debugger;
     return (
       <>
         <div className="divider">
@@ -30,19 +24,17 @@ class EditView extends React.Component {
         </div>
         <div className="page-content edit-content">
           <section
-            className={`cards-list-container cards-list-container-events ${
-              isLoading ? "is-loading" : ""
-            }`}
+            className={`cards-list-container cards-list-container-events`}
           >
             <div className="events-main-container">
               <div className="cards-list">
                 {eventsData.length > 0
                   ? eventsData.map(event => {
                       return (
-                        <EditCardItem
+                        <EventCard
                           {...this.props}
                           eventsData={event}
-                          key={event.id}
+                          key={`event_${event.id}`}
                         />
                       );
                     })
@@ -59,4 +51,4 @@ class EditView extends React.Component {
   }
 }
 
-export default EditView;
+export default EventsView;
