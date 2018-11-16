@@ -2,16 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Search extends Component {
-  state = { search: "" };
+  state = {
+    data: [],
+    searchQuery: ""
+  };
+  
 
-  updateField = e => {
-    const { name, value } = e.target;
-    console.log(name, value);
-    this.setState({
-      data: {
-        search: value
-      }
-    });
+  componentDidMount = () => {
+    debugger;
+
+    fetch(`/api/search?q=${q}`)
+      .then(res => res.json())
+      .then(json => json);
   };
 
   search = async q => {
@@ -20,11 +22,34 @@ class Search extends Component {
     return json;
   };
 
+  setQuery = e => {
+    this.setState({
+      searchQuery: e.target.value,
+      data: this.state.data
+    });
+  };
+
+  async runSearch(e) {
+    e.preventDefault();
+    const data = await this.search(this.state.q);
+    this.setState({ q: this.state.q, data });
+  }
+
+  updateField = e => {
+    const { name, value } = e.target;
+    console.log(name, value);
+    this.setState({
+      searchQuery: value
+    });
+    debugger;
+  };
+
   render() {
+    debugger;
     return (
       <>
         <div className="search-container">
-          <form action={`/api/search`}>
+          <form onSubmit={}>
             <fieldset>
               <legend>WHAT ARE YOU LOOKING FOR?</legend>
             </fieldset>
@@ -36,7 +61,8 @@ class Search extends Component {
                     <input
                       type="text"
                       placeholder="ex: DIY, fair, workshop, internship"
-                      value={this.state.search}
+                      name={"searchQuery"}
+                      value={this.state.searchQuery}
                       onChange={this.updateField}
                     />
                   </div>
@@ -71,16 +97,15 @@ class Search extends Component {
                 </div>
               </div>
               <button className="btn-search" type="button">
-                <Link
-                  to={`/Events/preview/${this.props.id}`}
-                  className="menuLink nav-link"
-                >
+                <Link to={`/Search`} className="menuLink nav-link">
                   SEARCH{" "}
                 </Link>
               </button>
             </div>
           </form>
         </div>
+        {/* <SearchResults {...this.props} data={this.state.data} /> */}
+        <p>{this.state.data}</p>
       </>
     );
   }
