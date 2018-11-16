@@ -145,7 +145,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 1em;
-    margin-bottom: 1.8em;
+    margin: 0 !important;
     align-items: baseline;
 
     .edit-form-input {
@@ -248,5 +248,16 @@
 }
 
 .admin-container {
-  padding: 2em !important;
+  padding: 3em !important;
+}
+
+.edit-form > div {
+  padding: 1em !important;
+
+  &:hover {
+    background-color: #f4fdff !important;
+
+    background-color: #f2faff;
+    border-radius: 5px;
+  }
 }
