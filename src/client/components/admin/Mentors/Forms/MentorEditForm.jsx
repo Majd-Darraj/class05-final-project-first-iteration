@@ -81,17 +81,11 @@ class EventEditForm extends Component {
           >
             <div className="card-info-container">
               <article className="card-info">
-                <form
-                  onSubmit={this.submitForm}
-                  className="edit-form"
-                  autoComplete="off"
-                >
+                <form onSubmit={this.submitForm}>
                   <div>
                     <label>
-                      <p>Event name</p>
+                      Event name
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_name"
                         value={eventsData.event_name}
                         onChange={this.updateField}
@@ -100,10 +94,8 @@ class EventEditForm extends Component {
                   </div>
                   <div>
                     <label>
-                      <p>Type</p>
+                      Type
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_type"
                         value={eventsData.event_type}
                         onChange={this.updateField}
@@ -112,10 +104,8 @@ class EventEditForm extends Component {
                   </div>
                   <div>
                     <label>
-                      <p>Address</p>
+                      Address
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_address"
                         value={eventsData.event_address}
                         onChange={this.updateField}
@@ -126,8 +116,6 @@ class EventEditForm extends Component {
                     <label>
                       Postal code
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_postal_code"
                         value={eventsData.event_postal_code}
                         onChange={this.updateField}
@@ -138,8 +126,6 @@ class EventEditForm extends Component {
                     <label>
                       City
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_city"
                         value={eventsData.event_city}
                         onChange={this.updateField}
@@ -150,8 +136,6 @@ class EventEditForm extends Component {
                     <label>
                       Start date
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_start_date"
                         value={eventsData.event_start_date}
                         onChange={this.updateField}
@@ -163,8 +147,6 @@ class EventEditForm extends Component {
                     <label>
                       End date
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_end_date"
                         value={eventsData.event_end_date}
                         onChange={this.updateField}
@@ -175,8 +157,6 @@ class EventEditForm extends Component {
                     <label>
                       Start hour
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_start_hour"
                         value={eventsData.event_start_hour}
                         onChange={this.updateField}
@@ -187,8 +167,6 @@ class EventEditForm extends Component {
                     <label>
                       End hour
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_end_hour"
                         value={eventsData.event_end_hour}
                         onChange={this.updateField}
@@ -199,8 +177,6 @@ class EventEditForm extends Component {
                     <label>
                       Agenda
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="event_agenda"
                         value={eventsData.event_agenda}
                         onChange={this.updateField}
@@ -211,8 +187,6 @@ class EventEditForm extends Component {
                     <label>
                       Max participants
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="max_participants"
                         value={eventsData.max_participants}
                         onChange={this.updateField}
@@ -222,9 +196,7 @@ class EventEditForm extends Component {
                   <div>
                     <label>
                       URL
-                      <textarea
-                        autoComplete="off"
-                        className="edit-form-input text-area"
+                      <input
                         name="event_URL"
                         value={eventsData.event_URL}
                         onChange={this.updateField}
@@ -234,9 +206,7 @@ class EventEditForm extends Component {
                   <div>
                     <label>
                       Image
-                      <textarea
-                        autoComplete="off"
-                        className="edit-form-input text-area"
+                      <input
                         name="event_theme_image"
                         value={eventsData.event_theme_image}
                         onChange={this.updateField}
@@ -247,8 +217,6 @@ class EventEditForm extends Component {
                     <label>
                       Contact person name
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="contact_person"
                         value={eventsData.contact_person}
                         onChange={this.updateField}
@@ -259,8 +227,6 @@ class EventEditForm extends Component {
                     <label>
                       Contact Email
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="contact_email"
                         value={eventsData.contact_email}
                         onChange={this.updateField}
@@ -271,23 +237,14 @@ class EventEditForm extends Component {
                     <label>
                       Active
                       <input
-                        autoComplete="off"
-                        className="edit-form-input"
                         name="active"
                         value={eventsData.active}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
-                  <div className="form-btns">
-                    <button id="confirm" className="readmore" type="submit">
-                      {" "}
-                      Submit
-                    </button>
-                    <Link id="cancel" className="readmore " to={`/admin`}>
-                      Cancel
-                    </Link>
-                  </div>
+                  <button type="submit"> Submit</button>
+                  <button> Cancel </button>
                 </form>
               </article>
             </div>

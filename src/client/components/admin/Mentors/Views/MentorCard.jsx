@@ -60,7 +60,6 @@ class EventCard extends Component {
                   <p className="">{eventsData.contact_person}</p>
                   <Link
                     id="edit-card"
-                    className="readmore"
                     to={`/admin/events/edit/${eventsData.id}`}
                   >
                     {" "}
