@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import EventEditForm from "./EventEditForm";
+import EventsMainForm from "./EventsMainForm";
 
 class EventEdit extends Component {
   state = {
@@ -29,7 +29,7 @@ class EventEdit extends Component {
         <p>Getting your data...</p>
       </div>
     ) : (
-      <EventEditForm
+      <EventsMainForm
         {...this.props}
         data={this.state.data}
         id={this.props.match.params.id}
