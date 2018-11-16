@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import EventCard from "./EventCard";
 
@@ -26,6 +27,14 @@ class EventsView extends React.Component {
           <section
             className={`cards-list-container cards-list-container-events`}
           >
+            <div className="add-btn-con">
+              <Link
+                className="readmore add-card active-admin-link"
+                to="/admin/events/add"
+              >
+                Add New Mentor
+              </Link>
+            </div>
             <div className="events-main-container">
               <div className="cards-list">
                 {eventsData.length > 0

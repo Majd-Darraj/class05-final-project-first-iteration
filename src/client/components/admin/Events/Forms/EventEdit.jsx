@@ -33,6 +33,7 @@ class EventEdit extends Component {
         {...this.props}
         data={this.state.data}
         id={this.props.match.params.id}
+        addForm={false}
       />
     );
   }

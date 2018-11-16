@@ -113,7 +113,7 @@
   position: sticky;
   top: 10px;
   background-color: rgba(250, 250, 250, 0.8);
-  padding: 20px;
+  padding: 15px;
   z-index: 100;
   box-shadow: 0.0625rem 0.4375rem 1.0625rem rgba(68, 68, 70, 0.2);
 
@@ -201,4 +201,52 @@
   &:hover {
     background-color: #28a745 !important;
   }
+}
+
+.card-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stat-container {
+  cursor: pointer;
+}
+.active-stat {
+  background-color: #28a745 !important;
+  color: #000080 !important;
+}
+.arch-stat {
+  background-color: #f9293a !important;
+  color: #000080;
+}
+
+.add-btn-con {
+  display: flex;
+  position: sticky;
+  top: 71px;
+  justify-content: space-evenly;
+  z-index: 2000;
+  opacity: 0.9;
+
+  .add-card {
+    width: 100%;
+    padding: 1em 6.5em;
+    margin: 0 !important;
+    margin-bottom: 2em !important;
+    transform: scale(1.2);
+    text-align: center;
+
+    &hover {
+      transform: scale(1.25);
+    }
+
+    &active {
+      transform: scale(1.18);
+    }
+  }
+}
+
+.admin-container {
+  padding: 2em !important;
 }

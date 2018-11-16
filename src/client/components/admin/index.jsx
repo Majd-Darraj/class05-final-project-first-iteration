@@ -1,11 +1,19 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
+
 import AdminNavigation from "./AdminNavigation";
+
 import EventView from "./Events/Views/EventsView";
 import EventEdit from "./Events/Forms/EventEdit";
+import EventAdd from "./Events/Forms/EventAdd";
 
 class AdminView extends React.Component {
-  // data = [1.events, 2.mentors, 3.networking, 4.internships]
+  // data = [
+  // 1.events,
+  // 2.mentors,
+  // 3.networking,
+  // 4.internships
+  // ]
   state = {
     isLoading: true,
     data: []
@@ -52,6 +60,10 @@ class AdminView extends React.Component {
           <Route
             path={`/admin/events/edit/:id`}
             render={props => <EventEdit {...props} eventsData={eventsData} />}
+          />
+          <Route
+            path={`/admin/events/add`}
+            render={props => <EventAdd {...props} eventsData={eventsData} />}
           />
 
           {/* <Route
