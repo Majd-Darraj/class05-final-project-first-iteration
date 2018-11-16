@@ -3,9 +3,12 @@ import { Switch, Route, Link } from "react-router-dom";
 
 import AdminNavigation from "./AdminNavigation";
 
-import EventView from "./Events/Views/EventsView";
+import EventsView from "./Events/Views/EventsView";
 import EventEdit from "./Events/Forms/EventEdit";
 import EventAdd from "./Events/Forms/EventAdd";
+import MentorsView from "./Mentors/Views/MentorsView";
+import MentorEdit from "./Mentors/Forms/MentorEdit";
+import MentorAdd from "./Mentors/Forms/MentorAdd";
 
 class AdminView extends React.Component {
   // data = [
@@ -55,7 +58,7 @@ class AdminView extends React.Component {
           <Route
             exact
             path={`/admin/events`}
-            render={props => <EventView {...props} eventsData={eventsData} />}
+            render={props => <EventsView {...props} eventsData={eventsData} />}
           />
           <Route
             path={`/admin/events/edit/:id`}
@@ -65,12 +68,21 @@ class AdminView extends React.Component {
             path={`/admin/events/add`}
             render={props => <EventAdd {...props} eventsData={eventsData} />}
           />
-
-          {/* <Route
+          <Route
             path={`/admin/mentors`}
-            render={props => <EditView {...props} mentorsData={mentorsData} />}
+            render={props => <MentorsView {...props} mentorsData={mentorsData} />}
           />
           <Route
+            path={`/admin/mentors/edit/:id`}
+            render={props => <MentorEdit {...props} mentorsData={mentorsData} />}
+          />
+          <Route
+            path={`/admin/mentors/add`}
+            render={props => <MentorAdd {...props} mentorsData={mentorsData} />}
+          />
+
+
+         {/* <Route
             path={`/admin/networking`}
             render={props => (
               <EditView {...props} networkingData={networkingData} />

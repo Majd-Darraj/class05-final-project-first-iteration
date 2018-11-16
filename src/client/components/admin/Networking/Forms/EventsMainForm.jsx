@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 
 // import { fetchData, updateField } from "./Helpers";
 
-class EventEditForm extends Component {
+class EventsMainForm extends Component {
   state = {
+    res: [],
     data: {
       event_name: "",
       event_type: "",
       event_address: "",
       event_postal_code: "",
       event_city: "",
+      event_geo_lat: "",
+      event_geo_lng: "",
       event_start_date: "",
       event_end_date: "",
       event_start_hour: "",
@@ -28,9 +31,15 @@ class EventEditForm extends Component {
   };
 
   componentDidMount = () => {
-    this.setState({
-      data: this.props.data
-    });
+    if (this.props.status) {
+      debugger;
+      return null;
+    } else {
+      debugger;
+      this.setState({
+        data: this.props.data
+      });
+    }
   };
 
   updateField = e => {
@@ -46,12 +55,20 @@ class EventEditForm extends Component {
   submitForm = e => {
     e.preventDefault();
 
-    const { id } = this.props;
-    let method = "PUT";
-
     // fetchData(id, method)
 
-    fetch(`/api/events/${id}`, {
+    // const { id } = this.props;
+    let url = "",
+      method = "";
+    if (this.props.status) {
+      url = `/api/events`;
+      method = "POST";
+    } else {
+      url = `/api/events/${this.props.match.params.id}`;
+      method = "PUT";
+    }
+
+    fetch(url, {
       method,
       body: JSON.stringify(this.state.data),
       headers: {
@@ -60,54 +77,94 @@ class EventEditForm extends Component {
     })
       .then(res => res.text())
       .then(response => {
-        console.log(response);
+        alert(`Server response: ${response}`);
+        this.setState({
+          res: response
+        });
       })
       .catch(error => console.error("Error:", error));
   };
 
   render() {
     const { data } = this.state;
-    const eventsData = data;
+
     debugger;
     return (
       <>
         <div className="divider">
-          <span className="edit-title">{eventsData.event_name}</span>
+          <span className="edit-title">{data.event_name}</span>
         </div>
+
         <div className="page-content edit-content">
           <section
-            className={`cards-list-container cards-list-container-events`}
+            className={`cards-list-container cards-list-container-events admin-container`}
             id={`edit-container`}
           >
             <div className="card-info-container">
               <article className="card-info">
-                <form onSubmit={this.submitForm}>
+                <form
+                  onSubmit={this.submitForm}
+                  className="edit-form"
+                  autoComplete="off"
+                >
+                  <div>
+                    <label className="stat-container">
+                      <p className="card-status-title">Status</p>
+                      <select
+                        className={`edit-form-input 
+                        ${data.active == 1 ? "active-stat" : "arch-stat"}
+                      `}
+                        name="active"
+                        value={data.active}
+                        onChange={this.updateField}
+                      >
+                        <option
+                          value="1"
+                          {...(data.active == 1 ? "selected" : "")}
+                        >
+                          Active
+                        </option>
+                        <option
+                          value="0"
+                          {...(data.active == 0 ? "selected" : "")}
+                        >
+                          Archived
+                        </option>
+                      </select>
+                    </label>
+                  </div>
                   <div>
                     <label>
-                      Event name
+                      <p>Event name</p>
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_name"
-                        value={eventsData.event_name}
+                        value={data.event_name}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Type
+                      <p>Type</p>
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_type"
-                        value={eventsData.event_type}
+                        value={data.event_type}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Address
+                      <p>Address</p>
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_address"
-                        value={eventsData.event_address}
+                        value={data.event_address}
                         onChange={this.updateField}
                       />
                     </label>
@@ -116,8 +173,34 @@ class EventEditForm extends Component {
                     <label>
                       Postal code
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_postal_code"
-                        value={eventsData.event_postal_code}
+                        value={data.event_postal_code}
+                        onChange={this.updateField}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      GEO lat
+                      <textarea
+                        autoComplete="off"
+                        className="edit-form-input text-area"
+                        name="event_geo_lat"
+                        value={data.event_geo_lat}
+                        onChange={this.updateField}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      GEO lng
+                      <textarea
+                        autoComplete="off"
+                        className="edit-form-input text-area"
+                        name="event_geo_lng"
+                        value={data.event_geo_lng}
                         onChange={this.updateField}
                       />
                     </label>
@@ -126,8 +209,10 @@ class EventEditForm extends Component {
                     <label>
                       City
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_city"
-                        value={eventsData.event_city}
+                        value={data.event_city}
                         onChange={this.updateField}
                       />
                     </label>
@@ -136,8 +221,10 @@ class EventEditForm extends Component {
                     <label>
                       Start date
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_start_date"
-                        value={eventsData.event_start_date}
+                        value={data.event_start_date}
                         onChange={this.updateField}
                       />
                     </label>
@@ -147,8 +234,10 @@ class EventEditForm extends Component {
                     <label>
                       End date
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_end_date"
-                        value={eventsData.event_end_date}
+                        value={data.event_end_date}
                         onChange={this.updateField}
                       />
                     </label>
@@ -157,8 +246,10 @@ class EventEditForm extends Component {
                     <label>
                       Start hour
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_start_hour"
-                        value={eventsData.event_start_hour}
+                        value={data.event_start_hour}
                         onChange={this.updateField}
                       />
                     </label>
@@ -167,8 +258,10 @@ class EventEditForm extends Component {
                     <label>
                       End hour
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_end_hour"
-                        value={eventsData.event_end_hour}
+                        value={data.event_end_hour}
                         onChange={this.updateField}
                       />
                     </label>
@@ -177,8 +270,10 @@ class EventEditForm extends Component {
                     <label>
                       Agenda
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="event_agenda"
-                        value={eventsData.event_agenda}
+                        value={data.event_agenda}
                         onChange={this.updateField}
                       />
                     </label>
@@ -187,8 +282,10 @@ class EventEditForm extends Component {
                     <label>
                       Max participants
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="max_participants"
-                        value={eventsData.max_participants}
+                        value={data.max_participants}
                         onChange={this.updateField}
                       />
                     </label>
@@ -196,19 +293,24 @@ class EventEditForm extends Component {
                   <div>
                     <label>
                       URL
-                      <input
+                      <textarea
+                        autoComplete="off"
+                        className="edit-form-input text-area"
                         name="event_URL"
-                        value={eventsData.event_URL}
+                        value={data.event_URL}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
+
                   <div>
                     <label>
                       Image
-                      <input
+                      <textarea
+                        autoComplete="off"
+                        className="edit-form-input text-area"
                         name="event_theme_image"
-                        value={eventsData.event_theme_image}
+                        value={data.event_theme_image}
                         onChange={this.updateField}
                       />
                     </label>
@@ -217,8 +319,10 @@ class EventEditForm extends Component {
                     <label>
                       Contact person name
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="contact_person"
-                        value={eventsData.contact_person}
+                        value={data.contact_person}
                         onChange={this.updateField}
                       />
                     </label>
@@ -227,24 +331,24 @@ class EventEditForm extends Component {
                     <label>
                       Contact Email
                       <input
+                        autoComplete="off"
+                        className="edit-form-input"
                         name="contact_email"
-                        value={eventsData.contact_email}
+                        value={data.contact_email}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
-                  <div>
-                    <label>
-                      Active
-                      <input
-                        name="active"
-                        value={eventsData.active}
-                        onChange={this.updateField}
-                      />
-                    </label>
+
+                  <div className="form-btns">
+                    <button id="confirm" className="readmore" type="submit">
+                      {" "}
+                      Submit
+                    </button>
+                    <Link id="cancel" className="readmore " to={`/admin`}>
+                      Cancel
+                    </Link>
                   </div>
-                  <button type="submit"> Submit</button>
-                  <button> Cancel </button>
                 </form>
               </article>
             </div>
@@ -255,4 +359,4 @@ class EventEditForm extends Component {
   }
 }
 
-export default EventEditForm;
+export default EventsMainForm;

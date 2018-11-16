@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import MentorsMainForm from "./MentorsMainForm";
+import EventsMainForm from "./EventsMainForm";
 
-class MentorEdit extends Component {
+class EventEdit extends Component {
   state = {
     isLoading: true,
     data: null
@@ -10,16 +10,16 @@ class MentorEdit extends Component {
 
   componentDidMount() {
     const paramsID = this.props.match.params.id;
-    const { mentorsData } = this.props;
+    const { eventsData } = this.props;
 
-    let currentMentor = mentorsData.find(mentor => {
-      return mentor.id == paramsID;
+    let currentEvent = eventsData.find(event => {
+      return event.id == paramsID;
     });
     debugger;
 
     this.setState({
       isLoading: false,
-      data: currentMentor
+      data: currentEvent
     });
   }
 
@@ -29,14 +29,14 @@ class MentorEdit extends Component {
         <p>Getting your data...</p>
       </div>
     ) : (
-      <MentorsMainForm
+      <EventsMainForm
         {...this.props}
         data={this.state.data}
         id={this.props.match.params.id}
-        status={false}
+        addForm={false}
       />
     );
   }
 }
 
-export default MentorEdit;
+export default EventEdit;

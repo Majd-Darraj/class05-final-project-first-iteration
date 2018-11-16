@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import MentorCard from "./MentorCard";
+import EventCard from "./EventCard";
 
-class MentorsView extends React.Component {
+class EventsView extends React.Component {
   componentDidMount = () => {
-    const { mentorsData } = this.props;
-    if (mentorsData.length > 0 || mentorsData !== undefined) {
+    const { eventsData } = this.props;
+    if (eventsData.length > 0 || eventsData !== undefined) {
       this.setState({
         isLoading: false
       });
@@ -16,12 +16,12 @@ class MentorsView extends React.Component {
   };
 
   render() {
-    const { mentorsData } = this.props;
+    const { eventsData } = this.props;
 
     return (
       <>
         <div className="divider">
-          <span>MENTORS</span>
+          <span>EVENTS</span>
         </div>
         <div className="page-content edit-content">
           <section
@@ -30,20 +30,20 @@ class MentorsView extends React.Component {
             <div className="add-btn-con">
               <Link
                 className="readmore add-card active-admin-link"
-                to="/admin/mentors/add"
+                to="/admin/events/add"
               >
                 Add New Mentor
               </Link>
             </div>
             <div className="events-main-container">
               <div className="cards-list">
-                {mentorsData.length > 0
-                  ? mentorsData.map(mentor => {
+                {eventsData.length > 0
+                  ? eventsData.map(event => {
                       return (
-                        <MentorCard
+                        <EventCard
                           {...this.props}
-                          mentorsData={mentor}
-                          key={`mentor_${mentor.id}`}
+                          eventsData={event}
+                          key={`event_${event.id}`}
                         />
                       );
                     })
@@ -60,4 +60,4 @@ class MentorsView extends React.Component {
   }
 }
 
-export default MentorsView;
+export default EventsView;
