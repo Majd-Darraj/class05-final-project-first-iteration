@@ -68,7 +68,11 @@ class CardListView extends React.Component {
                 {data.length > 0
                   ? data.map(data => {
                       return (
-                        <CardItem {...this.props} key={data.id} data={data} />
+                        <CardItem
+                          {...this.props}
+                          key={data.id}
+                          eventsData={data}
+                        />
                       );
                     })
                   : null}
