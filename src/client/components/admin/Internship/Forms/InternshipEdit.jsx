@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import EventsMainForm from "./EventsMainForm";
+import InternshipMainForm from "./InternshipMainForm";
 
-class EventEdit extends Component {
+class InternshipEdit extends Component {
   state = {
     isLoading: true,
     data: null
@@ -10,10 +10,10 @@ class EventEdit extends Component {
 
   componentDidMount() {
     const paramsID = this.props.match.params.id;
-    const { eventsData } = this.props;
+    const { internshipsData } = this.props;
 
-    let currentEvent = eventsData.find(event => {
-      return event.id == paramsID;
+    let currentEvent = internshipsData.find(internship => {
+      return internship.id == paramsID;
     });
     debugger;
 
@@ -29,7 +29,7 @@ class EventEdit extends Component {
         <p>Getting your data...</p>
       </div>
     ) : (
-      <EventsMainForm
+      <InternshipMainForm
         {...this.props}
         data={this.state.data}
         id={this.props.match.params.id}
@@ -39,4 +39,4 @@ class EventEdit extends Component {
   }
 }
 
-export default EventEdit;
+export default InternshipEdit;

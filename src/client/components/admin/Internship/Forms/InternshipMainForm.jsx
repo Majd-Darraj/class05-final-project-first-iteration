@@ -7,25 +7,27 @@ class EventsMainForm extends Component {
   state = {
     res: [],
     data: {
-      event_name: "",
-      event_type: "",
-      event_address: "",
-      event_postal_code: "",
-      event_city: "",
-      event_geo_lat: "",
-      event_geo_lng: "",
-      event_start_date: "",
-      event_end_date: "",
-      event_start_hour: "",
-      event_end_hour: "",
-      event_agenda: "",
-      event_language: "",
-      max_participants: "",
-      event_URL: "",
-      event_theme_image: "",
+      internship_title: "",
+      internship_category: "",
+      organisation_name: "",
+      department: "",
+      internship_description: "",
+      organisation_description: "",
+      internship_agreement: "",
+      internship_requirements: "",
+      application_requirements: "",
+      internship_availabiltiy_schedule: "",
+      travel_expenses: "",
+      location: "",
+      internship_add_date: "",
+      closing_date: "",
+      internship_deadline: "",
       contact_person: "",
-      contact_phone: "",
-      contact_email: "",
+      phone_contact: "",
+      email_contact: "",
+      organisation_address: "",
+      organisation_website: "",
+      internship_theme_image: "",
       active: 1
     }
   };
@@ -61,10 +63,10 @@ class EventsMainForm extends Component {
     let url = "",
       method = "";
     if (this.props.status) {
-      url = `/api/events`;
+      url = `/api/internships`;
       method = "POST";
     } else {
-      url = `/api/events/${this.props.match.params.id}`;
+      url = `/api/internships/${this.props.match.params.id}`;
       method = "PUT";
     }
 
@@ -92,7 +94,7 @@ class EventsMainForm extends Component {
     return (
       <>
         <div className="divider">
-          <span className="edit-title">{data.event_name}</span>
+          <span className="edit-title">{data.internship_title}</span>
         </div>
 
         <div className="page-content edit-content">
@@ -135,96 +137,96 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                      <p>Event name</p>
+                      <p>Internship title</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_name"
-                        value={data.event_name}
+                        name="internship_title"
+                        value={data.internship_title}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      <p>Type</p>
+                      <p>Internship category</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_type"
-                        value={data.event_type}
+                        name="internship_category"
+                        value={data.internship_category}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      <p>Address</p>
+                      <p>Organisation name</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_address"
-                        value={data.event_address}
+                        name="organisation_name"
+                        value={data.organisation_name}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Postal code
+                     <p>Department</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_postal_code"
-                        value={data.event_postal_code}
+                        name="department"
+                        value={data.department}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      GEO lat
+                     <p>Internship description</p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
-                        name="event_geo_lat"
-                        value={data.event_geo_lat}
+                        name="internship_description"
+                        value={data.internship_description}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      GEO lng
+                    <p>Organisation description</p> 
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
-                        name="event_geo_lng"
-                        value={data.event_geo_lng}
+                        name="organisation_description"
+                        value={data.organisation_description}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      City
+                    <p>Internship agreement</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_city"
-                        value={data.event_city}
+                        name="internship_agreement"
+                        value={data.internship_agreement}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Start date
+                    <p>Internship requirements</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_start_date"
-                        value={data.event_start_date}
+                        name="internship_requirements"
+                        value={data.internship_requirements}
                         onChange={this.updateField}
                       />
                     </label>
@@ -232,72 +234,72 @@ class EventsMainForm extends Component {
 
                   <div>
                     <label>
-                      End date
+                    <p> Application requirements</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_end_date"
-                        value={data.event_end_date}
+                        name="application_requirements"
+                        value={data.application_requirements}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Start hour
+                    <p> Internship availabiltiy schedule</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_start_hour"
-                        value={data.event_start_hour}
+                        name="Internship_availabiltiy_schedule"
+                        value={data.internship_availabiltiy_schedule}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      End hour
+                    <p>Travel expenses</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_end_hour"
-                        value={data.event_end_hour}
+                        name="travel_expenses"
+                        value={data.travel_expenses}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Agenda
+                    <p> Location</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="event_agenda"
-                        value={data.event_agenda}
+                        name="location"
+                        value={data.location}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Max participants
+                    <p> Internship add date </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="max_participants"
-                        value={data.max_participants}
+                        name="internship_add_date"
+                        value={data.internship_add_date}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      URL
+                   <p> Closing date </p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
-                        name="event_URL"
-                        value={data.event_URL}
+                        name="closing_date"
+                        value={data.closing_date}
                         onChange={this.updateField}
                       />
                     </label>
@@ -305,19 +307,19 @@ class EventsMainForm extends Component {
 
                   <div>
                     <label>
-                      Image
+                    <p>Internship deadline</p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
-                        name="event_theme_image"
-                        value={data.event_theme_image}
+                        name="internship_deadline"
+                        value={data.internship_deadline}
                         onChange={this.updateField}
                       />
                     </label>
                   </div>
                   <div>
                     <label>
-                      Contact person name
+                  <p>Contact person</p> 
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -329,12 +331,60 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                      Contact Email
+                    <p> Phone contact </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
-                        name="contact_email"
-                        value={data.contact_email}
+                        name="phone_contact"
+                        value={data.phone_contact}
+                        onChange={this.updateField}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                    <p> Email contact</p>
+                      <input
+                        autoComplete="off"
+                        className="edit-form-input"
+                        name="email_contact"
+                        value={data.email_contact}
+                        onChange={this.updateField}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                    <p> Porganisation address </p>
+                      <input
+                        autoComplete="off"
+                        className="edit-form-input"
+                        name="organisation_address"
+                        value={data.organisation_address}
+                        onChange={this.updateField}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                    <p> Organisation website </p>
+                      <input
+                        autoComplete="off"
+                        className="edit-form-input"
+                        name="organisation_website"
+                        value={data.organisation_website}
+                        onChange={this.updateField}
+                      />
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                    <p> Internship theme image </p>
+                      <input
+                        autoComplete="off"
+                        className="edit-form-input"
+                        name="internship_theme_image"
+                        value={data.internship_theme_image}
                         onChange={this.updateField}
                       />
                     </label>

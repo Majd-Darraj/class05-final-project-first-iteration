@@ -1,17 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import MentorCard from "./MentorCard";
+import NetworkingCard from "./NetworkingCard";
 
-class MentorsView extends React.Component {
+class NetworkingView extends React.Component {
+  componentDidMount = () => {
+    const { networkingData } = this.props;
+    if (networkingData.length > 0 || networkingData !== undefined) {
+      this.setState({
+        isLoading: false
+      });
+    } else {
+      return null;
+    }
+  };
+
   render() {
-
-    const { mentorsData } = this.props;
+    const { networkingData } = this.props;
 
     return (
       <>
         <div className="divider">
-          <span>Mentors</span>
+          <span>Networking</span>
         </div>
         <div className="page-content edit-content">
           <section
@@ -20,20 +30,20 @@ class MentorsView extends React.Component {
             <div className="add-btn-con">
               <Link
                 className="readmore add-card active-admin-link"
-                to="/admin/mentors/add"
+                to="/admin/networking/add"
               >
-                Add New Mentors
+                Add Networking
               </Link>
             </div>
             <div className="events-main-container">
               <div className="cards-list">
-                {mentorsData.length > 0
-                  ? mentorsData.map(mentor => {
-                      return (
-                        <MentorCard
+              {networkingData.length > 0 
+              ? networkingData.map(networking => {
+                return (
+                        <NetworkingCard
                           {...this.props}
-                          mentorsData={mentor}
-                          key={`mentor_${mentor.id}`}
+                          networkingData={networking}
+                          key={`networking_${networking.id}`}
                         />
                       );
                     })
@@ -50,4 +60,4 @@ class MentorsView extends React.Component {
   }
 }
 
-export default MentorsView;
+export default NetworkingView;

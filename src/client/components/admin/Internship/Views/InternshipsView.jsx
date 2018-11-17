@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import EventCard from "./EventCard";
+import InternshipCard from "./InternshipCard";
 
-class EventsView extends React.Component {
+class IntershipsView extends React.Component {
   componentDidMount = () => {
-    const { eventsData } = this.props;
-    if (eventsData.length > 0 || eventsData !== undefined) {
+    const { internshipsData } = this.props;
+    if (internshipsData.length > 0 || internshipsData !== undefined) {
       this.setState({
         isLoading: false
       });
@@ -16,12 +16,12 @@ class EventsView extends React.Component {
   };
 
   render() {
-    const { eventsData } = this.props;
+    const { internshipsData } = this.props;
 
     return (
       <>
         <div className="divider">
-          <span>EVENTS</span>
+          <span>Internship</span>
         </div>
         <div className="page-content edit-content">
           <section
@@ -30,20 +30,20 @@ class EventsView extends React.Component {
             <div className="add-btn-con">
               <Link
                 className="readmore add-card active-admin-link"
-                to="/admin/events/add"
+                to="/admin/internships/add"
               >
-                Add New Mentor
+                Add New Internship
               </Link>
             </div>
             <div className="events-main-container">
               <div className="cards-list">
-                {eventsData.length > 0
-                  ? eventsData.map(event => {
+                {internshipsData.length > 0
+                  ? internshipsData.map(internship => {
                       return (
-                        <EventCard
+                        <InternshipCard
                           {...this.props}
-                          eventsData={event}
-                          key={`event_${event.id}`}
+                          internshipsData={internship}
+                          key={`internship_${internship.id}`}
                         />
                       );
                     })
@@ -60,4 +60,4 @@ class EventsView extends React.Component {
   }
 }
 
-export default EventsView;
+export default IntershipsView;

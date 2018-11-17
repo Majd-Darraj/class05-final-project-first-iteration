@@ -9,6 +9,13 @@ import EventAdd from "./Events/Forms/EventAdd";
 import MentorsView from "./Mentors/Views/MentorsView";
 import MentorEdit from "./Mentors/Forms/MentorEdit";
 import MentorAdd from "./Mentors/Forms/MentorAdd";
+import NetworkingView from "./Networking/Views/NetworkingView";
+import NetworkingEdit from "./Networking/Forms/NetworkingEdit";
+import NetworkingAdd from "./Networking/Forms/NetworkingAdd";
+import IntershipsView from "./Internship/Views/InternshipsView";
+import InternshipEdit from "./Internship/Forms/InternshipEdit";
+import IntershipAdd from "./Internship/Forms/InternshipAdd";
+
 
 class AdminView extends React.Component {
   // data = [
@@ -78,22 +85,33 @@ class AdminView extends React.Component {
           />
           <Route
             path={`/admin/mentors/add`}
-            render={props => <MentorAdd {...props} mentorsData={mentorsData} />}
-          />
-
-
-         {/* <Route
-            path={`/admin/networking`}
-            render={props => (
-              <EditView {...props} networkingData={networkingData} />
-            )}
+            render={props => <MentorAdd {...props} networkingData={networkingData} />}
           />
           <Route
-            path={`/admin/internships`}
-            render={props => (
-              <EditView {...props} internshipsData={internshipsData} />
-            )}
-          /> */}
+            path={`/admin/networking`}
+            render={props => <NetworkingView {...props} networkingData={networkingData} />}
+          />
+          <Route
+            path={`/admin/networking/edit/:id`}
+            render={props => <NetworkingEdit {...props} networkingData={networkingData} />}
+          />
+          <Route
+            path={`/admin/networking/add`}
+            render={props => <NetworkingAdd {...props} networkingData={networkingData} />}
+          />
+         <Route
+            exact
+            path={`/admin/interships`}
+            render={props => <IntershipsView {...props} internshipsData={internshipsData} />}
+          />
+          <Route
+            path={`/admin/events/internships/:id`}
+            render={props => <InternshipEdit {...props} internshipsData={internshipsData} />}
+          />
+          <Route
+            path={`/admin/internships/add`}
+            render={props => <IntershipAdd {...props} internshipsData={internshipsData} />}
+          />
         </Switch>
       </>
     );
