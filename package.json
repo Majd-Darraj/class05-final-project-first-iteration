@@ -16,6 +16,7 @@
     "body-parser": "^1.18.3",
     "bootstrap": "",
     "date-fns": "^1.29.0",
+    "decrypt": "^0.0.1",
     "eslint-config-react-app": "^3.0.4",
     "express": "^4.16.4",
     "mysql2": "^1.6.1",

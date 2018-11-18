@@ -6,12 +6,15 @@ import AdminNavigation from "./AdminNavigation";
 import EventsView from "./Events/Views/EventsView";
 import EventEdit from "./Events/Forms/EventEdit";
 import EventAdd from "./Events/Forms/EventAdd";
+
 import MentorsView from "./Mentors/Views/MentorsView";
 import MentorEdit from "./Mentors/Forms/MentorEdit";
 import MentorAdd from "./Mentors/Forms/MentorAdd";
+
 import NetworkingView from "./Networking/Views/NetworkingView";
 import NetworkingEdit from "./Networking/Forms/NetworkingEdit";
 import NetworkingAdd from "./Networking/Forms/NetworkingAdd";
+
 import IntershipsView from "./Internship/Views/InternshipsView";
 import InternshipEdit from "./Internship/Forms/InternshipEdit";
 import IntershipAdd from "./Internship/Forms/InternshipAdd";
@@ -75,7 +78,10 @@ class AdminView extends React.Component {
             path={`/admin/events/add`}
             render={props => <EventAdd {...props} eventsData={eventsData} />}
           />
+
+      
           <Route
+            exact
             path={`/admin/mentors`}
             render={props => <MentorsView {...props} mentorsData={mentorsData} />}
           />
@@ -87,7 +93,10 @@ class AdminView extends React.Component {
             path={`/admin/mentors/add`}
             render={props => <MentorAdd {...props} networkingData={networkingData} />}
           />
-          <Route
+
+
+          <Route 
+            exact
             path={`/admin/networking`}
             render={props => <NetworkingView {...props} networkingData={networkingData} />}
           />
@@ -96,6 +105,7 @@ class AdminView extends React.Component {
             render={props => <NetworkingEdit {...props} networkingData={networkingData} />}
           />
           <Route
+           
             path={`/admin/networking/add`}
             render={props => <NetworkingAdd {...props} networkingData={networkingData} />}
           />

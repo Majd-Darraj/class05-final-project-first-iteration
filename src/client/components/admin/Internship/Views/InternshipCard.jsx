@@ -16,7 +16,7 @@ class InternshipCard extends Component {
                   <div
                     className="card-image event-theme-image"
                     style={{
-                      backgroundImage: `url(${intershipsData.internship_theme_image})`
+                      backgroundImage:`url(${intershipsData.internship_theme_image})`
                     }}
                   />
                 </div>
