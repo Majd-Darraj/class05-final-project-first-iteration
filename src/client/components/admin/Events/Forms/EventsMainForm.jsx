@@ -77,7 +77,7 @@ class EventsMainForm extends Component {
     })
       .then(res => res.text())
       .then(response => {
-        console.log(`Server response: ${response}`);
+        alert(`Server response: ${response}`);
         this.setState({
           res: response
         });

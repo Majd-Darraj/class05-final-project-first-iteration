@@ -4,7 +4,7 @@ import EventsMainForm from "./EventsMainForm";
 
 class EventAdd extends Component {
   render() {
-    debugger;
+    // debugger;
     return <EventsMainForm {...this.props} status={true} />;
   }
 }

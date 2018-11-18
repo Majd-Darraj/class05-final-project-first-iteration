@@ -28,12 +28,14 @@ class Events extends Component {
   render() {
     const { data } = this.state;
     const { url, path } = this.props.match;
+    debugger;
     return (
       <>
         <Switch>
           <Route
             exact
-            path={`${path}`}
+            // path={`${path}`}
+            path="/Events"
             render={props => <CardsListView {...props} data={data} />}
           />
           <Route

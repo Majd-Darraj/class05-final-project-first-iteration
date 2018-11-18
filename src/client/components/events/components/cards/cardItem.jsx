@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class CardItem extends Component {
   render() {
@@ -28,10 +28,13 @@ class CardItem extends Component {
     let eventEndHour = eventsData.event_end_hour.slice(0, 5);
     // debugger;
 
-    const { url } = this.props.match;
+    // const { url } = this.props.match;
+    const previewUrl = `/Events/preview/${eventsData.id}`;
+
+    console.log({ previewUrl, p: this.props });
     return (
       <>
-        <Link to={`${url}/preview/${eventsData.id}`}>
+        <Link to={previewUrl}>
           <div className="card-item event-item">
             <div className="card-container event-item-container">
               <div className="card-info-container">
@@ -73,4 +76,4 @@ class CardItem extends Component {
   }
 }
 
-export default CardItem;
+export default withRouter(CardItem);

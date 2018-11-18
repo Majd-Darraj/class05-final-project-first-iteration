@@ -5,19 +5,19 @@ import db from "../config/db";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const events = [
-    "event_name",
-    "event_type",
-    "event_address",
-    "event_postal_code",
-    "event_city",
-    "event_start_date",
-    "event_agenda",
-    "event_language",
-    "contact_person",
-    "contact_phone",
-    "contact_email"
-  ];
+  // const events = [
+  //   "event_name",
+  //   "event_type",
+  //   "event_address",
+  //   "event_postal_code",
+  //   "event_city",
+  //   "event_start_date",
+  //   "event_agenda",
+  //   "event_language",
+  //   "contact_person",
+  //   "contact_phone",
+  //   "contact_email"
+  // ];
 
   const searchQuery = `${req.query.q}`;
   // const searchQuery = `%${req.query.q}%`;
