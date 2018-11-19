@@ -25,10 +25,10 @@ class MentorsMainForm extends Component {
 
   componentDidMount = () => {
     if (this.props.status) {
-      debugger;
+      // debugger;
       return null;
     } else {
-      debugger;
+      // debugger;
       this.setState({
         data: this.props.data
       });
@@ -81,7 +81,7 @@ class MentorsMainForm extends Component {
   render() {
     const { data } = this.state;
 
-    debugger;
+    // debugger;
     return (
       <>
         <div className="divider">

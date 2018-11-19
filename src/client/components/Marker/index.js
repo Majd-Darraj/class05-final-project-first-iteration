@@ -18,14 +18,21 @@ class MarkerComponent extends Component {
   };
 
   render() {
-    // debugger;
+    let lat = Number(this.props.mapData.coords.lat);
+    let lng = Number(this.props.mapData.coords.lng);
+    let coordsNu = { lat, lng };
+
+    debugger;
+
     return (
       <Marker
-        onClick={this.handleClick}
+        // onClick={this.handleClick}
         onDblClick={this.handleBlur}
         key={this.props.mapData.id}
         animation={google.maps.Animation.DROP}
-        position={this.props.mapData.coords}
+        position={coordsNu}
+        onMouseOver={this.handleClick}
+        onMouseOut={this.handleClick}
       >
         {this.state.isInfoWindowvisible && (
           <InfoWindow onCloseClick={() => {}}>

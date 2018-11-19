@@ -12,6 +12,7 @@ class MapComponent extends Component {
   render() {
     // debugger;
     if (this.props.mapData);
+    debugger;
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap
@@ -22,7 +23,7 @@ class MapComponent extends Component {
           }
           defaultZoom={this.props.Zoom ? this.props.Zoom : 13}
         >
-          {this.props.setMarker && this.props.mapData
+          {this.props.setMarker && this.props.mapData.length > 0
             ? this.props.mapData.map(event => {
                 // debugger;
                 return <MarkerComponent mapData={event} key={event.id} />;

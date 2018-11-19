@@ -28,7 +28,7 @@ class CardFull extends Component {
     let eventEndHour = data.event_end_hour.slice(0, 5);
 
     const { url, path } = this.props.match;
-    debugger;
+    // debugger;
     return (
       <div className="card-item event-item" key={data.id}>
         <div className="card-container event-item-container">

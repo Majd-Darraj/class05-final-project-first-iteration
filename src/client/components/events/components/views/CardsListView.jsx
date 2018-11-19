@@ -7,55 +7,34 @@ class CardListView extends React.Component {
     isLoading: true
   };
 
-  componentWillMount = () => {
-    this.setState({
-      ...this.state,
-      mapData: []
-    });
-    // debugger;
-  };
-
-  componentDidUpdate = () => {
-    const { data } = this.props;
-    // debugger;
-    if (data.length > 0 && this.state.mapData <= 0) {
-      let mapData = data.map(event => {
-        // debugger;
-        return {
-          ...event,
-          coords: {
-            lat: event.event_geo_lat,
-            lng: event.event_geo_lng
-          }
-        };
-      });
-
-      this.setState({
-        isLoading: false,
-        mapData: mapData
-      });
-      // debugger;
-    } else {
-      return null;
-    }
-    // debugger;
+  componentDidMount = () => {
+    debugger;
+    this.props.data !== 0
+      ? this.setState({
+          isLoading: false
+        })
+      : this.setState({
+          ...this.state
+        });
   };
 
   render() {
     const { data } = this.props;
-    const { isLoading, mapData } = this.state;
+    const { isLoading } = this.state;
 
-    // debugger;
+    debugger;
     return (
       <>
         <div className="page-content">
-          <MapComponent
-            mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
-            setMarker
-            Zoom={11}
-            mapData={mapData}
-            key="events"
-          />
+          {data && isLoading == false ? (
+            <MapComponent
+              mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
+              setMarker
+              Zoom={11}
+              mapData={data}
+              key="events"
+            />
+          ) : null}
           <section
             className={`cards-list-container ${
               this.props.match.url === "/Events"
@@ -65,7 +44,7 @@ class CardListView extends React.Component {
           >
             <div className="events-main-container">
               <div className="cards-list">
-                {data.length > 0
+                {data && isLoading == false
                   ? data.map(data => {
                       return (
                         <CardItem

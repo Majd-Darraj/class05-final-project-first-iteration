@@ -15,7 +15,7 @@ class MentorEdit extends Component {
     let currentMentor = mentorsData.find(mentor => {
       return mentor.id == paramsID;
     });
-    debugger;
+    // debugger;
 
     this.setState({
       isLoading: false,

@@ -23,7 +23,7 @@ class MentorForm extends Component {
 
   componentDidMount = () => {
     if (this.props.isEditing) {
-      debugger;
+      // debugger;
       this.setState({
         data: this.props.data
       });

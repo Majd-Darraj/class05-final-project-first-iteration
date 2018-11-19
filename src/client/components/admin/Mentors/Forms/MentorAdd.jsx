@@ -4,7 +4,7 @@ import MentorsMainForm from "./MentorsMainForm";
 
 class MentorAdd extends Component {
   render() {
-    debugger;
+    // debugger;
     return <MentorsMainForm {...this.props} status={true} />;
   }
 }

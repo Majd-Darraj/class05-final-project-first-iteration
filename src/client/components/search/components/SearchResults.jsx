@@ -7,6 +7,7 @@ import NetworkingCard from "../../cards/NetworkingCard";
 
 class SearchResults extends Component {
   state = {
+    isLoading: true,
     data: []
   };
 
@@ -27,9 +28,9 @@ class SearchResults extends Component {
         }).then(res => res.json())
       )
     ).then(data => {
-      debugger;
+      // debugger;
       this.setState({
-        // isLoading: false,
+        isLoading: false,
         data: data
       });
     });
@@ -40,7 +41,7 @@ class SearchResults extends Component {
     const mentorsData = this.state.data[2];
     const networkingData = this.state.data[3];
 
-    debugger;
+    // debugger;
     return (
       <div>
         <div className="page-content">
@@ -49,13 +50,15 @@ class SearchResults extends Component {
               <div className="divider">
                 <span>EVENTS</span>
               </div>
-              {eventsData && eventsData.length > 0 ? (
-                eventsData.map(event => {
-                  return <EventCard eventsData={event} key={event.id} />;
-                })
-              ) : (
-                <h4>No records found</h4>
-              )}
+              {this.state.isLoading == false ? (
+                eventsData && eventsData.length > 0 ? (
+                  eventsData.map(event => {
+                    return <EventCard eventsData={event} key={event.id} />;
+                  })
+                ) : (
+                  <h4>No records found</h4>
+                )
+              ) : null}
 
               <div className="divider">
                 <span>INTERNSHIPS</span>

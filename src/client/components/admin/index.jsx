@@ -41,7 +41,7 @@ class AdminView extends React.Component {
 
     Promise.all(urls.map(url => fetch(url).then(resp => resp.json()))).then(
       data => {
-        debugger;
+        // debugger;
         this.setState({
           isLoading: false,
           data: data
@@ -55,7 +55,7 @@ class AdminView extends React.Component {
     const eventsData = this.state.data[1];
     const mentorsData = this.state.data[2];
     const networkingData = this.state.data[3];
-    debugger;
+    // debugger;
     return (
       <>
         <AdminNavigation />

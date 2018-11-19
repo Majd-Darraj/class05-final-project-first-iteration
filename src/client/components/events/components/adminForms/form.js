@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class form extends Component {
   render() {
     const { data, UpdateField, SubmitField } = this.props;
-    debugger;
+    // debugger;
     return (
       <form onSubmit={this.submitForm}>
         <h2>{`${this.props.isEditing ? "Edit" : "Add"} Mentor`}</h2>

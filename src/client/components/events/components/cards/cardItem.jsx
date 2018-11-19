@@ -23,7 +23,7 @@ class CardItem extends Component {
     let eventDateNumber = parseInt(eventDate, 10) - 1;
     let eventDateMonth =
       eventDate !== undefined ? months[eventDateNumber] : null;
-    debugger;
+    // debugger;
     let eventStartHour = eventsData.event_start_hour.slice(0, 5);
     let eventEndHour = eventsData.event_end_hour.slice(0, 5);
     // debugger;

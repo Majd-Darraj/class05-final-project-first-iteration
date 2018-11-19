@@ -15,7 +15,7 @@ class InternshipEdit extends Component {
     let currentEvent = internshipsData.find(internship => {
       return internship.id == paramsID;
     });
-    debugger;
+    // debugger;
 
     this.setState({
       isLoading: false,

@@ -4,7 +4,7 @@ import InternshipMainForm from "./InternshipMainForm";
 
 class InternshipAdd extends Component {
   render() {
-    debugger;
+    // debugger;
     return <InternshipMainForm {...this.props} status={true} />;
   }
 }

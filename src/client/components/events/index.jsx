@@ -9,15 +9,24 @@ class Events extends Component {
   };
 
   componentDidMount = () => {
-    // debugger;
     const { url } = this.props.match;
     fetch(`/api${url}`, {
       method: "GET"
     })
       .then(response => response.json())
       .then(data => {
+        let mapData = data.map(event => {
+          return {
+            ...event,
+            coords: {
+              lat: event.event_geo_lat,
+              lng: event.event_geo_lng
+            }
+          };
+        });
+        debugger;
         this.setState({
-          data: data
+          data: mapData
         });
       })
       .catch(err => {
@@ -27,22 +36,22 @@ class Events extends Component {
 
   render() {
     const { data } = this.state;
-    const { url, path } = this.props.match;
     debugger;
     return (
       <>
-        <Switch>
-          <Route
-            exact
-            // path={`${path}`}
-            path="/Events"
-            render={props => <CardsListView {...props} data={data} />}
-          />
-          <Route
-            path={`${path}/preview/:id`}
-            render={props => <CardItemView {...props} data={data} />}
-          />
-        </Switch>
+        {this.state.data.length !== 0 ? (
+          <Switch>
+            <Route
+              exact
+              path="/Events"
+              render={props => <CardsListView {...props} data={data} />}
+            />
+            <Route
+              path={`/Events/preview/:id`}
+              render={props => <CardItemView {...props} data={data} />}
+            />
+          </Switch>
+        ) : null}
       </>
     );
   }

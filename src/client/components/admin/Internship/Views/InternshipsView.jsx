@@ -6,7 +6,7 @@ import InternshipCard from "./InternshipCard";
 class InternshipsView extends React.Component {
   render() {
     const { internshipsData } = this.props;
-    debugger;
+    // debugger;
     return (
       <>
         <div className="divider">

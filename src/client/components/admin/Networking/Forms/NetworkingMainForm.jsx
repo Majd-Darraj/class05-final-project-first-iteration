@@ -24,10 +24,10 @@ class NetworkingMainForm extends Component {
 
   componentDidMount = () => {
     if (this.props.status) {
-      debugger;
+      // debugger;
       return null;
     } else {
-      debugger;
+      // debugger;
       this.setState({
         data: this.props.data
       });
@@ -80,7 +80,7 @@ class NetworkingMainForm extends Component {
   render() {
     const { data } = this.state;
 
-    debugger;
+    // debugger;
     return (
       <>
         <div className="divider">
@@ -163,7 +163,7 @@ class NetworkingMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    Organisation logo
+                      Organisation logo
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -175,7 +175,7 @@ class NetworkingMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    Organisation url
+                      Organisation url
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
@@ -211,7 +211,7 @@ class NetworkingMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                     Organisation postal code
+                      Organisation postal code
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -224,7 +224,7 @@ class NetworkingMainForm extends Component {
 
                   <div>
                     <label>
-                    Contact person
+                      Contact person
                       <input
                         autoComplete="off"
                         className="edit-form-input"

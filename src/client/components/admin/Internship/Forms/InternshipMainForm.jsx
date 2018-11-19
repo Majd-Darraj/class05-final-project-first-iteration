@@ -34,10 +34,10 @@ class EventsMainForm extends Component {
 
   componentDidMount = () => {
     if (this.props.status) {
-      debugger;
+      // debugger;
       return null;
     } else {
-      debugger;
+      // debugger;
       this.setState({
         data: this.props.data
       });
@@ -90,7 +90,7 @@ class EventsMainForm extends Component {
   render() {
     const { data } = this.state;
 
-    debugger;
+    // debugger;
     return (
       <>
         <div className="divider">
@@ -173,7 +173,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                     <p>Department</p>
+                      <p>Department</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -185,7 +185,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                     <p>Internship description</p>
+                      <p>Internship description</p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
@@ -197,7 +197,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p>Organisation description</p> 
+                      <p>Organisation description</p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
@@ -209,7 +209,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p>Internship agreement</p>
+                      <p>Internship agreement</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -221,7 +221,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p>Internship requirements</p>
+                      <p>Internship requirements</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -234,7 +234,7 @@ class EventsMainForm extends Component {
 
                   <div>
                     <label>
-                    <p> Application requirements</p>
+                      <p> Application requirements</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -246,7 +246,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Internship availabiltiy schedule</p>
+                      <p> Internship availabiltiy schedule</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -258,7 +258,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p>Travel expenses</p>
+                      <p>Travel expenses</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -270,7 +270,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Location</p>
+                      <p> Location</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -282,7 +282,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Internship add date </p>
+                      <p> Internship add date </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -294,7 +294,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                   <p> Closing date </p>
+                      <p> Closing date </p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
@@ -307,7 +307,7 @@ class EventsMainForm extends Component {
 
                   <div>
                     <label>
-                    <p>Internship deadline</p>
+                      <p>Internship deadline</p>
                       <textarea
                         autoComplete="off"
                         className="edit-form-input text-area"
@@ -319,7 +319,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                  <p>Contact person</p> 
+                      <p>Contact person</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -331,7 +331,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Phone contact </p>
+                      <p> Phone contact </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -343,7 +343,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Email contact</p>
+                      <p> Email contact</p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -355,7 +355,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Porganisation address </p>
+                      <p> Porganisation address </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -367,7 +367,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Organisation website </p>
+                      <p> Organisation website </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"
@@ -379,7 +379,7 @@ class EventsMainForm extends Component {
                   </div>
                   <div>
                     <label>
-                    <p> Internship theme image </p>
+                      <p> Internship theme image </p>
                       <input
                         autoComplete="off"
                         className="edit-form-input"

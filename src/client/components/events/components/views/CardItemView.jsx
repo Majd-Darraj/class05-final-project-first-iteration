@@ -23,7 +23,7 @@ class CardItemView extends React.Component {
     //   debugger;
     //   return dataEntry.id == params ? dataEntry : null;
     // });
-    debugger;
+    // debugger;
     const selectedEvent = this.props.data.find(dataEntry => {
       return dataEntry.id == params.id ? dataEntry : null;
     });

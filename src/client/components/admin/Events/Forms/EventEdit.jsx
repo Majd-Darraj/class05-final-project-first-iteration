@@ -15,7 +15,7 @@ class EventEdit extends Component {
     let currentEvent = eventsData.find(event => {
       return event.id == paramsID;
     });
-    debugger;
+    // debugger;
 
     this.setState({
       isLoading: false,

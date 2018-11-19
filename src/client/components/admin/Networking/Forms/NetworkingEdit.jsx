@@ -15,7 +15,7 @@ class NetworkingEdit extends Component {
     let currentEvent = NetworkingData.find(networking => {
       return networking.id == paramsID;
     });
-    debugger;
+    // debugger;
 
     this.setState({
       isLoading: false,
@@ -40,4 +40,3 @@ class NetworkingEdit extends Component {
 }
 
 export default NetworkingEdit;
-
