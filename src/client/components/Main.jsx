@@ -8,7 +8,7 @@ import Networking from "./cardsList/NetworkingList";
 
 import SearchResults from "./search/components/SearchResults";
 
-import AdminView from "./admin/index";
+// import AdminView from "./admin/index";
 export default class Main extends Component {
   render() {
     return (
@@ -23,7 +23,7 @@ export default class Main extends Component {
 
           <Route exact path="/Search" component={SearchResults} />
 
-          <Route path={`/admin`} component={AdminView} />
+          {/* <Route path={`/admin`} component={AdminView} /> */}
         </Switch>
       </main>
     );

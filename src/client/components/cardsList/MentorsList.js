@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MentorCard from "../cards/MentorCard";
 import { Link, Switch, Route } from "react-router-dom";
-import MentorForms from "../mentor-form";
 
 class MentorsList extends Component {
   state = {
@@ -32,9 +31,6 @@ class MentorsList extends Component {
       <>
         <div className="page-content">
           <section className="cards-list-container">
-            <Link className="readmore mentor-add-button" to="/Mentors/add">
-              Add New Mentor
-            </Link>
             <div className="mentors-main-container">
               <div className="cards-list">
                 {!isLoading && mentorsData.length > 0
@@ -49,14 +45,6 @@ class MentorsList extends Component {
             </div>
           </section>
         </div>
-        <Switch>
-          <Route
-            exact
-            path={`/Mentors/edit/:id`}
-            component={MentorForms.EditMentor}
-          />
-          <Route exact path="/Mentors/add" component={MentorForms.AddMentor} />
-        </Switch>
       </>
     );
   }
