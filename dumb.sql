@@ -4,6 +4,13 @@
 -- ------------------------------------------------------
 -- Server version	8.0.12
 
+UPDATE `thread`.`internships` SET `organisation_description` = 'https://picsum.photos/301/300/?random' WHERE (`id` = '5');
+UPDATE `thread`.`internships` SET `organisation_description` = 'https://picsum.photos/302/300/?random' WHERE (`id` = '6');
+UPDATE `thread`.`internships` SET `organisation_description` = 'https://picsum.photos/303/300/?random' WHERE (`id` = '7');
+UPDATE `thread`.`internships` SET `organisation_description` = 'https://picsum.photos/304/300/?random' WHERE (`id` = '8');
+UPDATE `thread`.`internships` SET `organisation_description` = 'https://picsum.photos/305/300/?random' WHERE (`id` = '10');
+
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;

@@ -23,10 +23,13 @@ class CardItemView extends React.Component {
     //   debugger;
     //   return dataEntry.id == params ? dataEntry : null;
     // });
-    const data = this.props.data.find(dataEntry => {
+    debugger;
+    const selectedEvent = this.props.data.find(dataEntry => {
       return dataEntry.id == params.id ? dataEntry : null;
     });
+
     const { isLoading } = this.state;
+
     return (
       <>
         <div className="page-content">
@@ -37,10 +40,10 @@ class CardItemView extends React.Component {
           >
             <div className="events-main-container">
               <div className="cards-list">
-                {
-                  // <CardFull {...this.props} data={data} key={data.id} />
-                  <CardFull {...this.props} data={data} />
-                }
+                {// <CardFull {...this.props} data={data} key={data.id} />
+                selectedEvent ? (
+                  <CardFull {...this.props} data={selectedEvent} />
+                ) : null}
               </div>
               <div className="loader">
                 <div className="icon" />
