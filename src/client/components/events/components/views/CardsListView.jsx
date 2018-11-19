@@ -8,7 +8,7 @@ class CardListView extends React.Component {
   };
 
   componentDidMount = () => {
-    debugger;
+    // debugger;
     this.props.data !== 0
       ? this.setState({
           isLoading: false
@@ -22,7 +22,7 @@ class CardListView extends React.Component {
     const { data } = this.props;
     const { isLoading } = this.state;
 
-    debugger;
+    // debugger;
     return (
       <>
         <div className="page-content">

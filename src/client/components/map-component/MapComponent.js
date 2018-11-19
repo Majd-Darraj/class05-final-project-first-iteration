@@ -12,7 +12,6 @@ class MapComponent extends Component {
   render() {
     // debugger;
     if (this.props.mapData);
-    debugger;
     const GoogleMapComponent = withScriptjs(
       withGoogleMap(props => (
         <GoogleMap

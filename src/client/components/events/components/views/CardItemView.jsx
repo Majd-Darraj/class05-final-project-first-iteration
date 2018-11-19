@@ -18,11 +18,7 @@ class CardItemView extends React.Component {
   };
 
   render() {
-    const { url, params } = this.props.match;
-    // const data = this.props.data.map(dataEntry => {
-    //   debugger;
-    //   return dataEntry.id == params ? dataEntry : null;
-    // });
+    const { params } = this.props.match;
     // debugger;
     const selectedEvent = this.props.data.find(dataEntry => {
       return dataEntry.id == params.id ? dataEntry : null;
