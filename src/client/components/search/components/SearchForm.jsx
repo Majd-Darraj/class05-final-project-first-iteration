@@ -52,11 +52,7 @@ export default class SearchForm extends Component {
                 </div>
               </div>
             </div>
-            <button className="btn-search" type="submit">
-              {/* <Link to={`/Search`} className="menuLink nav-link">
-                SEARCH{" "}
-              </Link> */}
-            </button>
+            <button className="btn-search" type="submit" />
           </div>
         </form>
       </div>

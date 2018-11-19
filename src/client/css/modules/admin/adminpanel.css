@@ -218,7 +218,7 @@
 }
 .arch-stat {
   background-color: #f9293a !important;
-  color: #000080;
+  color: #000080 !important;
 }
 
 .add-btn-con {
@@ -260,4 +260,9 @@
     background-color: #f2faff;
     border-radius: 5px;
   }
+}
+
+button,
+a {
+  outline: 0 !important;
 }

@@ -3,21 +3,10 @@ import { Link } from "react-router-dom";
 
 import InternshipCard from "./InternshipCard";
 
-class IntershipsView extends React.Component {
-  componentDidMount = () => {
-    const { internshipsData } = this.props;
-    if (internshipsData.length > 0 || internshipsData !== undefined) {
-      this.setState({
-        isLoading: false
-      });
-    } else {
-      return null;
-    }
-  };
-
+class InternshipsView extends React.Component {
   render() {
     const { internshipsData } = this.props;
-
+    debugger;
     return (
       <>
         <div className="divider">
@@ -30,14 +19,14 @@ class IntershipsView extends React.Component {
             <div className="add-btn-con">
               <Link
                 className="readmore add-card active-admin-link"
-                to="/admin/internships/add"
+                to="/admin/View/add"
               >
                 Add New Internship
               </Link>
             </div>
             <div className="events-main-container">
               <div className="cards-list">
-                {internshipsData.length > 0
+                {internshipsData
                   ? internshipsData.map(internship => {
                       return (
                         <InternshipCard
@@ -60,4 +49,4 @@ class IntershipsView extends React.Component {
   }
 }
 
-export default IntershipsView;
+export default InternshipsView;

@@ -13,23 +13,6 @@ class Search extends Component {
     e.preventDefault();
     const searchQ = this.state.searchQuery;
     this.props.history.push("/search?q=" + searchQ);
-
-    // fetch(`/api/search?q=${searchQ}`, {
-    //   method: "GET"
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     debugger;
-    //     console.log({ dataFromSearch: data });
-    //     console.table(data);
-    //     this.setState({
-    //       // isLoading: false,
-    //       data: data
-    //     });
-    //   })
-    //   .catch(err => {
-    //     console.error("caught error!", err);
-    //   });
   };
 
   setQuery = e => {
@@ -39,7 +22,6 @@ class Search extends Component {
   };
 
   render() {
-    const { data } = this.state;
     return (
       <>
         <div className="search-container">
@@ -91,14 +73,11 @@ class Search extends Component {
                 </div>
               </div> */}
               <button className="btn-search" type="submit">
-                {/* <Link to={`/Search?q={}`} className="btn-search" type="submit"> */}
-                SEARCH {/* </Link> */}
+                SEARCH
               </button>
             </div>
           </form>
         </div>
-
-        {/* <SearchResults data={data} /> */}
       </>
     );
   }

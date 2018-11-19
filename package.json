@@ -25,6 +25,7 @@
     "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.3.1",
+    "react-transition-group": "^2.5.0",
     "sqlstring": "^2.3.1"
   },
   "devDependencies": {

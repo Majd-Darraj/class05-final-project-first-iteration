@@ -3,6 +3,7 @@ import NetworkingCard from "../cards/NetworkingCard";
 
 class NetworkingList extends React.Component {
   state = {
+    val: [],
     NetworkingData: []
   };
 
@@ -12,7 +13,11 @@ class NetworkingList extends React.Component {
     })
       .then(response => response.json())
       .then(NetworkingData => {
+        // let values = NetworkingData.map(d => {
+        //   return Object.values(d);
+        // });
         this.setState({
+          val: values,
           isLoading: false,
           NetworkingData: NetworkingData
         });
@@ -23,9 +28,11 @@ class NetworkingList extends React.Component {
   };
 
   render() {
-    const { NetworkingData } = this.state;
+    const { NetworkingData, val } = this.state;
+
     return (
       <>
+        {/* <p>{val.map(e => e)}</p> */}
         <div className="page-content">
           <section className="cards-list-container">
             <div className="networking-main-container">

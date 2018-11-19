@@ -17,7 +17,7 @@ class Header extends Component {
           <div className="navigation-menu-container">
             <nav className="navigation">
               <ul className="nav-menu">
-                <li className="nav-item Interships">
+                <li className="nav-item Internships">
                   <NavLink
                     to="/Internships"
                     className="menuLink nav-link"

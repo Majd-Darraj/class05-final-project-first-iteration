@@ -53,7 +53,7 @@ class EventCard extends Component {
                     </p>
 
                     <p className="event-start-hour">
-                      {eventStartHour},{eventEndHour}
+                      {eventStartHour} - {eventEndHour}
                     </p>
                     <p className="event-language">
                       Language: {eventsData.event_language}

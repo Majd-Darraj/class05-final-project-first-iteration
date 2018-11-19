@@ -31,7 +31,6 @@ class CardItem extends Component {
     // const { url } = this.props.match;
     const previewUrl = `/Events/preview/${eventsData.id}`;
 
-    console.log({ previewUrl, p: this.props });
     return (
       <>
         <Link to={previewUrl}>
