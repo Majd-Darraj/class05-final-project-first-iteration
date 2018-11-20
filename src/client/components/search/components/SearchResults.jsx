@@ -11,7 +11,9 @@ class SearchResults extends Component {
     data: []
   };
 
-  fetchResults(query) {
+  componentDidMount() {
+    const searchQ = this.props.location.search.substring(3);
+
     const urls = [
       "/api/search/searchEvents",
       "/api/search/searchInternships",
@@ -21,7 +23,7 @@ class SearchResults extends Component {
 
     Promise.all(
       urls.map(url =>
-        fetch(`${url}?q=${query}`, {
+        fetch(`${url}?q=${searchQ}`, {
           method: "GET"
         }).then(res => res.json())
       )
@@ -33,26 +35,6 @@ class SearchResults extends Component {
       });
     });
   }
-
-  componentDidMount() {
-    const searchQ = this.props.location.search.substring(3);
-
-    console.log("SearchResults: Component did mount!");
-
-    this.fetchResults(searchQ);
-  }
-
-  componentDidUpdate(prevProps) {
-    const prevQuery = prevProps.location.search.substring(3);
-    const newQuery = this.props.location.search.substring(3);
-
-    console.log("SearchResults: Component did update!");
-
-    if (prevQuery !== newQuery) {
-      this.fetchResults(newQuery);
-    }
-  }
-
   render() {
     const eventsData = this.state.data[0];
     const internshipsData = this.state.data[1];
