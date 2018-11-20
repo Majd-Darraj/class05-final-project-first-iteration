@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-
-import SearchResults from "./components/SearchResults";
+import { withRouter } from "react-router-dom";
 
 class Search extends Component {
   state = {

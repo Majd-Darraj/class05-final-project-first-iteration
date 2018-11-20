@@ -22,8 +22,6 @@ class MarkerComponent extends Component {
     let lng = Number(this.props.mapData.coords.lng);
     let coordsNu = { lat, lng };
 
-    debugger;
-
     return (
       <Marker
         // onClick={this.handleClick}
