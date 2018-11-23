@@ -62,7 +62,7 @@ class CardListView extends React.Component {
                 </button>
               </section>
             </div>
-            <div className="cards-list">
+            <div className="cards-list not-events-list">
               {data && isLoading == false
                 ? data.map(data => {
                     return (

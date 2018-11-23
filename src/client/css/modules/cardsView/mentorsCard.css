@@ -100,3 +100,14 @@ h1 {
   width: 100%;
   background-color: #fff;
 }
+
+.cards-list-container {
+  .not-events-list {
+    justify-content: space-evenly !important;
+    flex-flow: row wrap !important;
+
+    .card-item {
+      flex: 0 1 calc(50% - 2em);
+    }
+  }
+}

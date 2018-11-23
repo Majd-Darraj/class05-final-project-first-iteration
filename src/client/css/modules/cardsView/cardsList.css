@@ -56,7 +56,7 @@
     justify-content: space-between;
     margin-top: -8em !important;
     margin: 0 auto;
-    padding: 2em;
+    padding: 2em 5%;
 
     .card-item {
       flex: 0 1 calc(calc(100% / 3) - 30px);
