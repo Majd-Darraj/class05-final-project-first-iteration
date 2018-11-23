@@ -1,5 +1,4 @@
 import React from "react";
-import MapComponent from "../../../map-component/MapComponent";
 import CardItem from "../cards/cardItem";
 
 class CardListView extends React.Component {
@@ -8,7 +7,6 @@ class CardListView extends React.Component {
   };
 
   componentDidMount = () => {
-    // debugger;
     this.props.data !== 0
       ? this.setState({
           isLoading: false
@@ -22,43 +20,59 @@ class CardListView extends React.Component {
     const { data } = this.props;
     const { isLoading } = this.state;
 
-    // debugger;
     return (
       <>
         <div className="page-content">
-          {data && isLoading == false ? (
-            <MapComponent
-              mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
-              setMarker
-              Zoom={11}
-              mapData={data}
-              key="events"
-            />
-          ) : null}
           <section
-            className={`cards-list-container ${
-              this.props.match.url === "/Events"
-                ? "cards-list-container-events "
-                : ""
-            } ${isLoading ? "is-loading" : ""}`}
+            className={`cards-list-container ${isLoading ? "is-loading" : ""}`}
           >
-            <div className="events-main-container">
-              <div className="cards-list">
-                {data && isLoading == false
-                  ? data.map(data => {
-                      return (
-                        <CardItem
-                          {...this.props}
-                          key={data.id}
-                          eventsData={data}
-                        />
-                      );
-                    })
-                  : null}
-              </div>
-              <div className="loader">
-                <div className="icon" />
-              </div>
+            <div className="mentors-cat">
+              <h1 className="mentors-cat-head">
+                Our mentors offer help free of charge, with a smile!
+              </h1>
+              <p className="mentors-cat-p">
+                Choose the help you need, or scroll down to check all the
+                mentors!
+              </p>
+              <section className="mentors-offers">
+                <button className="mentors-offers-item readmore active">
+                  All
+                </button>
+                <button className="mentors-offers-item readmore">
+                  Networking
+                </button>
+                <button className="mentors-offers-item readmore">CV</button>
+                <button className="mentors-offers-item readmore">
+                  Job Application
+                </button>
+                <button className="mentors-offers-item readmore">
+                  Support
+                </button>
+                <button className="mentors-offers-item readmore">
+                  Networking
+                </button>
+                <button className="mentors-offers-item readmore">
+                  Internship Application
+                </button>
+                <button className="mentors-offers-item readmore">
+                  Danish Culture
+                </button>
+                <button className="mentors-offers-item readmore">
+                  Danish History
+                </button>
+              </section>
+            </div>
+            <div className="cards-list not-events-list">
+              {data && isLoading == false
+                ? data.map(data => {
+                    return (
+                      <CardItem {...this.props} key={data.id} data={data} />
+                    );
+                  })
+                : null}
+            </div>
+            <div className="loader">
+              <div className="icon" />
             </div>
           </section>
         </div>

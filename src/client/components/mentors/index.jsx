@@ -26,7 +26,6 @@ class Mentors extends Component {
 
   render() {
     const { data } = this.state;
-    debugger;
     return (
       <>
         {this.state.data.length !== 0 ? (

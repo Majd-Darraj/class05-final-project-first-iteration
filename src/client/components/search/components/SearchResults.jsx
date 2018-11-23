@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import EventCard from "../../events/components/cards/cardItem";
 import InternshipCard from "../../cards/InternshipCard";
-import MentorCard from "../../cards/MentorCard";
+import MentorCard from "../../mentors/components/cards/cardItem";
 import NetworkingCard from "../../cards/NetworkingCard";
 
 class SearchResults extends Component {
@@ -35,6 +35,26 @@ class SearchResults extends Component {
       });
     });
   }
+
+  componentDidMount() {
+    const searchQ = this.props.location.search.substring(3);
+
+    // console.log("SearchResults: Component did mount!");
+
+    this.fetchResults(searchQ);
+  }
+
+  componentDidUpdate(prevProps) {
+    const prevQuery = prevProps.location.search.substring(3);
+    const newQuery = this.props.location.search.substring(3);
+
+    // console.log("SearchResults: Component did update!");
+
+    if (prevQuery !== newQuery) {
+      this.fetchResults(newQuery);
+    }
+  }
+
   render() {
     const eventsData = this.state.data[0];
     const internshipsData = this.state.data[1];
@@ -56,7 +76,7 @@ class SearchResults extends Component {
                     return <EventCard eventsData={event} key={event.id} />;
                   })
                 ) : (
-                  <h4>No records found</h4>
+                  <h4>No records found in Events</h4>
                 )
               ) : null}
 
@@ -74,7 +94,7 @@ class SearchResults extends Component {
                   );
                 })
               ) : (
-                <h4>No records found</h4>
+                <h4>No records found in Internships</h4>
               )}
 
               <div className="divider">
@@ -83,15 +103,11 @@ class SearchResults extends Component {
               {mentorsData && mentorsData.length > 0 ? (
                 mentorsData.map(mentor => {
                   return (
-                    <MentorCard
-                      {...mentor}
-                      mentorsData={mentor}
-                      key={mentor.id}
-                    />
+                    <MentorCard {...mentor} data={mentor} key={mentor.id} />
                   );
                 })
               ) : (
-                <h4>No records found</h4>
+                <h4>No records found in Mentors</h4>
               )}
 
               <div className="divider">
@@ -108,7 +124,7 @@ class SearchResults extends Component {
                   );
                 })
               ) : (
-                <h4>No records found</h4>
+                <h4>No records found in Networking</h4>
               )}
             </div>
           </section>

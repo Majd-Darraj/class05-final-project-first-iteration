@@ -6,7 +6,6 @@ class CardItemView extends React.Component {
   };
 
   componentDidMount = () => {
-    // debugger;
     const { data } = this.props;
     if (data.length > 0) {
       this.setState({
@@ -19,7 +18,6 @@ class CardItemView extends React.Component {
 
   render() {
     const { params } = this.props.match;
-    // debugger;
     const selectedEvent = this.props.data.find(dataEntry => {
       return dataEntry.id == params.id ? dataEntry : null;
     });
@@ -36,8 +34,7 @@ class CardItemView extends React.Component {
           >
             <div className="events-main-container">
               <div className="cards-list">
-                {// <CardFull {...this.props} data={data} key={data.id} />
-                selectedEvent ? (
+                {selectedEvent ? (
                   <CardFull {...this.props} data={selectedEvent} />
                 ) : null}
               </div>

@@ -1,75 +1,59 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { faFemale, faMale } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class CardItem extends Component {
   render() {
-    const { eventsData } = this.props;
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
-
-    let eventDate = eventsData.event_start_date.substring(5, 7);
-    let eventDateNumber = parseInt(eventDate, 10) - 1;
-    let eventDateMonth =
-      eventDate !== undefined ? months[eventDateNumber] : null;
+    const { data } = this.props;
     // debugger;
-    let eventStartHour = eventsData.event_start_hour.slice(0, 5);
-    let eventEndHour = eventsData.event_end_hour.slice(0, 5);
-    // debugger;
-
-    // const { url } = this.props.match;
-    const previewUrl = `/Events/preview/${eventsData.id}`;
+    const previewUrl = `${this.props.match.path}/preview/${data.id}`;
 
     return (
       <>
-        <Link to={previewUrl}>
-          <div className="card-item event-item">
-            <div className="card-container event-item-container">
-              <div className="card-info-container">
-                <div className="card-image-container">
-                  <div
-                    className="card-image event-theme-image"
-                    style={{
-                      backgroundImage: `url(${eventsData.event_theme_image})`
-                    }}
-                  />
+        <div className="card-item event-item">
+          <div className="card-container mentor-container">
+            <img
+              src={data.profile_picture}
+              alt="Mentor"
+              className="card-image mentor-profile-picture"
+            />
+            <article className="card-info mentor-info">
+              <div className="card-information mentor-card-informatio">
+                <div className="name-gender">
+                  <h1 className="mentor-first-name">
+                    {data.first_name} {data.last_name}
+                  </h1>
+                  <p className="mentor-gender">
+                    {data.gender == "Female" ? (
+                      <FontAwesomeIcon icon={faFemale} />
+                    ) : data.gender == "Male" ? (
+                      <FontAwesomeIcon icon={faMale} />
+                    ) : null}
+                  </p>
                 </div>
-                <article className="card-info">
-                  <div className="card-date">
-                    <p className="event-month">{eventDateMonth}</p>
-                    <p className="event-day">{eventDate}</p>
-                  </div>
-                  <div className="card-information">
-                    <h1 className="event-name">{eventsData.event_name}</h1>
-                    <h3 className="event-type">{eventsData.event_type}</h3>
-                    <p className="event-address">
-                      {eventsData.event_address}, {eventsData.event_city}
-                    </p>
-
-                    <p className="event-start-hour">
-                      {eventStartHour},{eventEndHour}
-                    </p>
-                    <p className="event-language">
-                      Language: {eventsData.event_language}
-                    </p>
-                    <p className="">{eventsData.contact_person}</p>
-                  </div>
-                </article>
+                <p className="mentor-languages">
+                  <span className="card-bold">Languages:</span>
+                  <br />
+                  {data.languages}
+                </p>
+                <p className="mentor-offering">
+                  <span className="card-bold">Offering:</span>
+                  <br />
+                  {data.offering}
+                </p>
+                <p className="preferred_meeting_place">
+                  <span className="card-bold">Meeting Address:</span>
+                  <br />
+                  {data.preferred_meeting_place}
+                </p>
               </div>
-            </div>
+            </article>
+            <Link to={previewUrl} className="readmore mentor-more">
+              Read More{" "}
+            </Link>
           </div>
-        </Link>
+        </div>
       </>
     );
   }

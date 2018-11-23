@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import CardsListView from "./components/views/CardsListView";
 import CardItemView from "./components/views/CardItemView";
 
@@ -24,7 +24,7 @@ class Events extends Component {
             }
           };
         });
-        debugger;
+        // debugger;
         this.setState({
           data: mapData
         });
@@ -36,7 +36,7 @@ class Events extends Component {
 
   render() {
     const { data } = this.state;
-    debugger;
+    // debugger;
     return (
       <>
         {this.state.data.length !== 0 ? (

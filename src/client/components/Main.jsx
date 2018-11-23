@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Events from "./events";
+import Mentors from "./mentors";
 import Internships from "./cardsList/InternshipsList";
-import Mentors from "./cardsList/MentorsList";
 import Networking from "./cardsList/NetworkingList";
 
 import SearchResults from "./search/components/SearchResults";

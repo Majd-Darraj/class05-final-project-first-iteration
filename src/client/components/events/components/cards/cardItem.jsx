@@ -23,13 +23,10 @@ class CardItem extends Component {
     let eventDateNumber = parseInt(eventDate, 10) - 1;
     let eventDateMonth =
       eventDate !== undefined ? months[eventDateNumber] : null;
-    // debugger;
     let eventStartHour = eventsData.event_start_hour.slice(0, 5);
     let eventEndHour = eventsData.event_end_hour.slice(0, 5);
-    // debugger;
 
-    // const { url } = this.props.match;
-    const previewUrl = `/Events/preview/${eventsData.id}`;
+    const previewUrl = `${this.props.match.path}/preview/${eventsData.id}`;
 
     return (
       <>
@@ -58,7 +55,7 @@ class CardItem extends Component {
                     </p>
 
                     <p className="event-start-hour">
-                      {eventStartHour},{eventEndHour}
+                      {eventStartHour} - {eventEndHour}
                     </p>
                     <p className="event-language">
                       Language: {eventsData.event_language}

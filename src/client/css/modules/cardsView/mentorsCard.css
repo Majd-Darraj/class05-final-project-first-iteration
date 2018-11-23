@@ -1,0 +1,113 @@
+.mentors-card {
+  display: flex;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+  color: #324088;
+}
+
+.card-bold {
+  font-size: 1em !important;
+  font-weight: 600;
+  color: #838181;
+}
+
+.card-information {
+  font-size: 1em;
+}
+
+.card-information .event-type {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card-information p {
+  font-size: 0.9em;
+}
+
+.mentor-gender {
+  font-size: 2em !important;
+  margin-top: 0.3em;
+  color: #e62739;
+  position: absolute;
+  /* bottom: 0; */
+  right: 0.8em;
+}
+
+.cards-list-container .cards-list {
+  margin-top: 2em;
+  flex-direction: column !important;
+}
+
+.mentor-profile-picture {
+  padding-bottom: 0 !important;
+  max-width: 200px !important;
+  max-height: 17em !important;
+  height: auto;
+}
+
+.mentor-container {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  max-height: 17em !important;
+}
+
+.mentor-more {
+  position: absolute;
+  border: crimson;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 2em;
+  box-shadow: none;
+
+  &:hover {
+    margin-right: 1em;
+  }
+}
+
+.card-info {
+  margin-top: 0.5em !important;
+}
+
+.full-info {
+  flex-flow: column !important;
+  max-width: 80%;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.name-gender {
+  display: flex;
+  right: 5em !important;
+}
+
+h1 {
+  max-width: 90%;
+}
+
+.back {
+  padding: 1em 4em;
+}
+
+.cards-list-container-events .cards-list {
+  overflow-y: unset;
+  flex-flow: column;
+}
+
+.page-content {
+  width: 100%;
+  background-color: #fff;
+}
+
+.cards-list-container {
+  .not-events-list {
+    justify-content: space-evenly !important;
+    flex-flow: row wrap !important;
+
+    .card-item {
+      flex: 0 1 calc(50% - 2em);
+    }
+  }
+}

@@ -1,82 +1,76 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import BackBtn from "../helpers/BackBtn";
+import { withRouter } from "react-router-dom";
+import {
+  faFemale,
+  faMale,
+  faChevronLeft
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class CardFull extends Component {
   render() {
     const { data } = this.props;
 
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
-    // debugger;
-
-    let eventDate = data.event_start_date.substring(5, 7);
-    let eventDateNumber = parseInt(eventDate, 10) - 1;
-    let eventDateMonth = months[eventDateNumber];
-    let eventStartHour = data.event_start_hour.slice(0, 5);
-    let eventEndHour = data.event_end_hour.slice(0, 5);
-
-    const { url, path } = this.props.match;
-    // debugger;
     return (
-      <div className="card-item event-item" key={data.id}>
+      <div className="card-item event-item full-card">
         <div className="card-container event-item-container">
           <div className="card-info-container">
             <div className="card-image-container">
               <div
-                className="card-image event-theme-image"
+                className="card-image mentor-profile-picture"
                 style={{
-                  backgroundImage: `url(${data.event_theme_image})`
+                  backgroundImage: `url(${data.profile_picture})`
                 }}
               />
             </div>
-            {/* <button
-              className="readmore"
-              onClick={() => {
-                this.props.history.push(path);
-              }}
+            <button
+              className="readmore back"
+              onClick={this.props.history.goBack}
             >
-              BACK
-            </button> */}
-            <button className="readmore" onClick={this.props.history.goBack}>
-              BACK
+              <FontAwesomeIcon icon={faChevronLeft} /> BACK
             </button>
-            {/* <button className="readmore">
-              <Link to="/events" className="menuLink nav-link">
-                BACK
-              </Link>
-            </button> */}
-            {/* <BackBtn /> */}
-            <article className="card-info">
-              <div className="card-date">
-                <p className="event-month">{eventDateMonth}</p>
-                <p className="event-day">{eventDate}</p>
-              </div>
-              <div className="card-information">
-                <h1 className="event-name">{data.event_name}</h1>
-                <h3 className="event-type">{data.event_type}</h3>
-                <p className="event-address">
-                  {data.event_address}, {data.event_city}
+            <article className="card-info full-info">
+              <div className="name-gender">
+                <h1 className="mentor-first-name">
+                  <span className="card-bold">Name:</span> {data.first_name}{" "}
+                  {data.last_name}
+                </h1>
+                <p className="mentor-gender full-gender">
+                  {data.gender == "Female" ? (
+                    <FontAwesomeIcon icon={faFemale} />
+                  ) : data.gender == "Male" ? (
+                    <FontAwesomeIcon icon={faMale} />
+                  ) : null}
                 </p>
-
-                <p className="event-end-date">{data.event_end_date}</p>
-                <p className="event-start-hour">{eventStartHour},</p>
-                <p className="event-language">
-                  Language: {data.event_language}
-                </p>
-                <p className="contact-person">{data.contact_person}</p>
               </div>
+              <p className="mentor-email">
+                <span className="card-bold">Email:</span> {data.email}
+              </p>
+              <p className="mentor-description">
+                <span className="card-bold">Description:</span>{" "}
+                {data.mentor_description}
+              </p>
+              <p className="mentor-languages">
+                <span className="card-bold">Languages:</span> {data.languages}
+              </p>
+              <p className="mentor-availability">
+                <span className="card-bold">Availability:</span>{" "}
+                {data.availability}
+              </p>
+              <p className="mentor-offering">
+                <span className="card-bold">Offering:</span> {data.offering}
+              </p>
+              <p className="area_location">
+                <span className="card-bold">Area:</span> {data.area_location}
+              </p>
+              <p className="preferred_meeting_place">
+                <span className="card-bold">Meeting Address:</span>{" "}
+                {data.preferred_meeting_place}
+              </p>
+              <p className="mentor-affiliation">
+                <span className="card-bold">Affiliation:</span>{" "}
+                {data.affiliation}
+              </p>
             </article>
           </div>
         </div>
