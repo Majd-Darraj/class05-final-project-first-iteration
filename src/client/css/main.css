@@ -3,7 +3,7 @@
     * Project Name: THREAD
     * Description: Graduation project - HYF Web Development Course Copenhagen
     * Customer: Project THREAD - CPH university
-    * Author: Majd Darraj - Mila Manieva - Ibrahim Kadoura
+    * Author: Majd Darraj - Mila Manieva 
     * Version: 1.0.0
     * Tags: HTML, CSS, PostCSS, JAVASCRIPT, ReactJs, NodeJs
 
@@ -82,4 +82,5 @@
 /* @import "modules/cardsView/networkingCard"; */
 @import "modules/cardsView/eventsCard";
 @import "modules/cardsView/fullCard";
+@import "modules/cardsView/mentorsCard";
 @import "modules/admin/adminpanel";

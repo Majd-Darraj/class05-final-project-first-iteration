@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import CardsListView from "./components/views/CardsListView";
 import CardItemView from "./components/views/CardItemView";
 
-class Events extends Component {
+class Mentors extends Component {
   state = {
     data: []
   };
@@ -15,18 +15,8 @@ class Events extends Component {
     })
       .then(response => response.json())
       .then(data => {
-        let mapData = data.map(event => {
-          return {
-            ...event,
-            coords: {
-              lat: event.event_geo_lat,
-              lng: event.event_geo_lng
-            }
-          };
-        });
-        // debugger;
         this.setState({
-          data: mapData
+          data: data
         });
       })
       .catch(err => {
@@ -36,18 +26,17 @@ class Events extends Component {
 
   render() {
     const { data } = this.state;
-    // debugger;
     return (
       <>
         {this.state.data.length !== 0 ? (
           <Switch>
             <Route
               exact
-              path="/Events"
+              path="/Mentors"
               render={props => <CardsListView {...props} data={data} />}
             />
             <Route
-              path={`/Events/preview/:id`}
+              path={`/Mentors/preview/:id`}
               render={props => <CardItemView {...props} data={data} />}
             />
           </Switch>
@@ -57,4 +46,4 @@ class Events extends Component {
   }
 }
 
-export default Events;
+export default Mentors;

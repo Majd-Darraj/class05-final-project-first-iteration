@@ -82,12 +82,6 @@ export function searchInternships(req, res) {
       res.status(500).send(err);
       return;
     }
-    console.log(internshipsResults);
-
-    // if (internshipsResults.length === 0) {
-    //   res.status(404).send("Not Found");
-    //   return;
-    // }
 
     res.send(internshipsResults);
   });
@@ -132,11 +126,6 @@ export function searchMentors(req, res) {
       return;
     }
 
-    // if (mentorsResults.length === 0) {
-    //   res.status(404).send("Not Found");
-    //   return;
-    // }
-
     res.send(mentorsResults);
   });
 }
@@ -175,11 +164,6 @@ export function searchNetworking(req, res) {
       res.status(500).send(err);
       return;
     }
-
-    // if (networkingResults.length === 0) {
-    //   res.status(404).send("Not Found");
-    //   return;
-    // }
 
     res.send(networkingResults);
   });

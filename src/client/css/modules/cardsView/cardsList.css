@@ -3,14 +3,60 @@
 ----------------------------*/
 .cards-list-container {
   /* margin: 0 auto; */
-  max-width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+
+  .mentors-cat {
+    width: 100vw;
+    left: 0;
+    text-align: center;
+    margin-top: 3em;
+
+    .mentors-cat-head {
+      text-transform: uppercase;
+      max-width: 100% !important;
+      font-size: 1.2em;
+    }
+
+    .mentors-cat-p {
+      color: #a7b9cd;
+      font-size: 0.9em;
+    }
+
+    .mentors-offers {
+      background-color: #e1e8f0;
+      display: flex;
+      width: 100%;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding: 4em 20% 10em 20%;
+      margin-top: 2em;
+
+      .mentors-offers-item {
+        shadow: none;
+        border-radius: 3em;
+        margin: 2em !important;
+
+        &:hover {
+          letter-spacing: 0.0625rem !important;
+          transform: scale(1.3) !important;
+        }
+        &:active {
+          transform: scale(1.2) !important;
+        }
+      }
+    }
+  }
 
   .cards-list {
     display: flex;
     position: relative;
     flex-flow: row wrap;
     justify-content: space-between;
+    margin-top: -8em !important;
+    margin: 0 auto;
+    padding: 2em;
 
     .card-item {
       flex: 0 1 calc(calc(100% / 3) - 30px);
@@ -18,6 +64,7 @@
       width: 100%;
       margin: 20px 0;
       padding: 0;
+      margin-top: 0 !important;
       color: #a1a1a1;
       background-color: white;
       text-align: left;
@@ -62,7 +109,7 @@
   text-align: center !important;
 }
 
-.mentors-card {
+.mentor-info {
   padding-top: 0 !important;
 }
 

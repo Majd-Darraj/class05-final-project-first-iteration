@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import BackBtn from "../helpers/BackBtn";
+import { withRouter } from "react-router-dom";
 class CardFull extends Component {
   render() {
     const { data } = this.props;
@@ -41,23 +40,11 @@ class CardFull extends Component {
                 }}
               />
             </div>
-            {/* <button
-              className="readmore"
-              onClick={() => {
-                this.props.history.push(path);
-              }}
-            >
-              BACK
-            </button> */}
+
             <button className="readmore" onClick={this.props.history.goBack}>
               BACK
             </button>
-            {/* <button className="readmore">
-              <Link to="/events" className="menuLink nav-link">
-                BACK
-              </Link>
-            </button> */}
-            {/* <BackBtn /> */}
+
             <article className="card-info">
               <div className="card-date">
                 <p className="event-month">{eventDateMonth}</p>
