@@ -11,8 +11,8 @@ class SearchResults extends Component {
     data: []
   };
 
-  componentDidMount() {
-    const searchQ = this.props.location.search.substring(3);
+  fetchResults = searchQ => {
+    // const searchQ = this.props.location.search.substring(3);
 
     const urls = [
       "/api/search/searchEvents",
@@ -34,12 +34,10 @@ class SearchResults extends Component {
         data: data
       });
     });
-  }
+  };
 
   componentDidMount() {
     const searchQ = this.props.location.search.substring(3);
-
-    // console.log("SearchResults: Component did mount!");
 
     this.fetchResults(searchQ);
   }
@@ -47,8 +45,6 @@ class SearchResults extends Component {
   componentDidUpdate(prevProps) {
     const prevQuery = prevProps.location.search.substring(3);
     const newQuery = this.props.location.search.substring(3);
-
-    // console.log("SearchResults: Component did update!");
 
     if (prevQuery !== newQuery) {
       this.fetchResults(newQuery);

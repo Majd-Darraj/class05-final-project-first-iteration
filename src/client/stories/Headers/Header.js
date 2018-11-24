@@ -7,14 +7,6 @@ class Header extends Component {
     return (
       <header className="masthead">
         <div className="header-navbar-container">
-          <div className="site-branding-container">
-            <a className="logo" href="index.html">
-              <img
-                alt="logo"
-                src="https://raw.githubusercontent.com/HackYourFuture-CPH/class05-final-project/master/images/thread-logo.png"
-              />
-            </a>
-          </div>
           <div className="navigation-menu-container">
             <nav className="navigation">
               <ul>
@@ -30,6 +22,14 @@ class Header extends Component {
                     Events{" "}
                   </Link>
                 </li>
+                <div className="site-branding-container">
+                  <a className="logo" href="index.html">
+                    <img
+                      alt="logo"
+                      src="https://raw.githubusercontent.com/HackYourFuture-CPH/class05-final-project/master/images/thread-logo.png"
+                    />
+                  </a>
+                </div>
                 <li className="nav item Mentors">
                   <Link to="/Mentors" className="menuLink nav-link">
                     {" "}

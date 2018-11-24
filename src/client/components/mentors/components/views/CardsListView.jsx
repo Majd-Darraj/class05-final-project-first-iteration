@@ -1,5 +1,7 @@
 import React from "react";
 import CardItem from "../cards/cardItem";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class CardListView extends React.Component {
   state = {
@@ -28,12 +30,14 @@ class CardListView extends React.Component {
           >
             <div className="mentors-cat">
               <h1 className="mentors-cat-head">
-                Our mentors offer help free of charge, with a smile!
+                Our mentors offer help <span className="bold">free</span> of
+                charge, with a smile!
               </h1>
               <p className="mentors-cat-p">
                 Choose the help you need, or scroll down to check all the
                 mentors!
               </p>
+              <FontAwesomeIcon icon={faArrowDown} className="down-arrow" />
               <section className="mentors-offers">
                 <button className="mentors-offers-item readmore active">
                   All

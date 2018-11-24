@@ -1,6 +1,6 @@
 header {
   min-height: 60px;
-  background: #1e0a3c;
+  background: #6534ff;
 
   .header-navbar-container {
     display: flex;
@@ -11,8 +11,10 @@ header {
 
     .site-branding-container {
       img {
-        max-height: 100px;
+        max-height: 6em;
         border: none;
+        margin-top: 1.4em;
+        top: 0;
       }
     }
 
