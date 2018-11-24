@@ -11,8 +11,7 @@ class SearchResults extends Component {
     data: []
   };
 
-  componentDidMount() {
-    const searchQ = this.props.location.search.substring(3);
+  fetchResults = (searchQ) => {
 
     const urls = [
       "/api/search/searchEvents",
@@ -73,7 +72,7 @@ class SearchResults extends Component {
               {this.state.isLoading == false ? (
                 eventsData && eventsData.length > 0 ? (
                   eventsData.map(event => {
-                    return <EventCard eventsData={event} key={event.id} />;
+                    return <EventCard data={event} key={event.id} />;
                   })
                 ) : (
                   <h4>No records found in Events</h4>
@@ -88,7 +87,7 @@ class SearchResults extends Component {
                   return (
                     <InternshipCard
                       {...internship}
-                      internshipsData={internship}
+                      data={internship}
                       key={internship.id}
                     />
                   );
@@ -118,7 +117,7 @@ class SearchResults extends Component {
                   return (
                     <NetworkingCard
                       {...networking}
-                      networkingData={networking}
+                      data={networking}
                       key={networking.id}
                     />
                   );
