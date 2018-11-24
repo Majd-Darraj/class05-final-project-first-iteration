@@ -37,7 +37,7 @@ class InternshipsList extends Component {
                 {!isLoading && internshipsData.length > 0
                   ? internshipsData.map(internship => {
                       return (
-                        <InternshipCard {...internship} key={internship.id} />
+                        <InternshipCard {...internship} data={internship} key={internship.id} />
                       );
                     })
                   : null}
