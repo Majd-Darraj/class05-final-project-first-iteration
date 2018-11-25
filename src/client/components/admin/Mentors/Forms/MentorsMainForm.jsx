@@ -270,7 +270,7 @@ class MentorsMainForm extends Component {
                       className="readmore"
                       onClick={this.props.history.goBack}
                     >
-                      Cancel
+                      Done
                     </a>
                   </div>
                 </form>
