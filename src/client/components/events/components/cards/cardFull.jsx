@@ -53,16 +53,44 @@ class CardFull extends Component {
               <div className="card-information">
                 <h1 className="event-name">{data.event_name}</h1>
                 <h3 className="event-type">{data.event_type}</h3>
-                <p className="event-address">
-                  {data.event_address}, {data.event_city}
-                </p>
+                <p className="event-agenda">
+                <span className="card-bold">Event Agenda:</span>
+                {data.event_agenda}
+              </p>
+          
+                <p className="area_location">
+                <span className="card-bold">Adress: </span>
+                {data.event_address}
+              </p>
+              <p className="area_location">
+                <span className="card-bold">Event start date: </span>
+                {data.event_start_date}
+              </p>
+              <p className="area_location">
+                <span className="card-bold">Event end date: </span>
+                {data.event_end_date}
+              </p>                
+              <p className="event-agenda">
+                <span className="card-bold">Language: </span>
+                {data.event_language}
+              </p>   
+              <p className="event-agenda">
+                <span className="card-bold"> Max participants: </span>
+                {data.max_participants}
 
-                <p className="event-end-date">{data.event_end_date}</p>
-                <p className="event-start-hour">{eventStartHour},</p>
-                <p className="event-language">
-                  Language: {data.event_language}
-                </p>
-                <p className="contact-person">{data.contact_person}</p>
+              </p>  
+              <p className="contact-person">
+                <span className="card-bold"> Contact Person: </span>{" "}
+                {data.contact_person}
+              </p>
+              <p className="contact-email">
+                <span className="card-bold"> Contact Email: </span>{" "}
+                {data.contact_email}
+              </p>
+              <p className="contact-phone">
+                <span className="card-bold"> Contact Phone:</span>
+                {data.contact_phone}
+              </p>
               </div>
             </article>
           </div>

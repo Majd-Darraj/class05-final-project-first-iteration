@@ -62,7 +62,7 @@ h1 {
   position: absolute;
   border: crimson;
   bottom: 0;
-  left: 0;
+  right: 0;
   margin-bottom: 2em;
   box-shadow: none;
 
@@ -84,7 +84,6 @@ h1 {
 }
 
 .name-gender {
-  display: flex;
   right: 5em !important;
 }
 
