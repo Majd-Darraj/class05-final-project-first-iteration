@@ -17,19 +17,23 @@ class CardFull extends Component {
           <div className="card-info-container">
             <div className="card-image-container">
               <div
-                className="card-image mentor-profile-picture"
+                className="card-image event-theme-image"
                 style={{
-                  backgroundImage: `url(${data.profile_picture})`
+                  backgroundImage: `url(${data.internship_theme_image})`
                 }}
               />
             </div>
-            <button
-              className="readmore back"
-              onClick={this.props.history.goBack}
-            >
-              <FontAwesomeIcon icon={faChevronLeft} /> BACK
+            <button className="readmore" onClick={this.props.history.goBack}>
+              BACK
             </button>
+
             <article className="card-info full-info">
+              {/* <button
+                className="readmore back"
+                onClick={this.props.history.goBack}
+              >
+                <FontAwesomeIcon icon={faChevronLeft} /> BACK
+              </button> */}
               <h1 className="mentor-first-name">
                 <span className="card-bold">Internship Title:</span>{" "}
                 {data.internship_title}

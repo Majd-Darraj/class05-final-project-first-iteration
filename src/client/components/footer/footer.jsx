@@ -9,17 +9,27 @@ export default class footer extends Component {
       <>
         <footer className="footer-wrapper">
           <div className="footer-inner">
-            <section className="text">
-              <h1 className="mentors-about-head">
-                <span className="letter">T</span>
-                extile <span className="letter">H</span>
-                ub for <span className="letter">R</span>
-                efugees' <span className="letter">E</span>
-                mpowerment, Employment and Entrepreneurship{" "}
-                <span className="letter">A</span>
-                dvancement in <span className="letter">D</span>
-                enmark
-              </h1>
+            <section className="text footer-item">
+              <div className="aboutus">
+                <h3>About Us</h3>
+                <div className="contact-item">
+                  <h6>
+                    Textile Hub for Refugees' Empowerment, Employment and
+                    Entrepreneurship Advancement in Denmark - a new model
+                  </h6>
+                  <p>
+                    Integration is a key problem for refugees and their host
+                    countries. This project seeks to help solve this problem by
+                    developing and testing a pioneering themed model of
+                    Empowerment, Employment and Entrepreneurship opportunities.
+                    The model offers a step-change programme to women refugees
+                    with differing levels of life experience and educational
+                    qualifications, which may be accessed according to their
+                    individual confidence and competence.
+                  </p>
+                  <p>The project is funded by Innovationsfonden.</p>
+                </div>
+              </div>
             </section>
             <section className="mentors-offers site-map footer-item">
               <h3>Contact Us</h3>

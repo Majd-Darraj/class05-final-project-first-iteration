@@ -121,7 +121,7 @@
 
 .footer-hr {
   color: #fff;
-  width: 100% !important;
+  max-width: 50% !important;
   height: 0;
   margin-bottom: 1em;
   margin-top: 0 !important;

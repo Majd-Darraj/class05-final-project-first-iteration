@@ -42,8 +42,9 @@
     flex-flow: row wrap;
 
     .footer-item {
-      flex: 1 0 25%;
+      flex: 1 0 40%;
       list-style: none !important;
+      padding: 2em;
     }
 
     .footer-about {

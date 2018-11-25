@@ -17,7 +17,7 @@ class CardFull extends Component {
           <div className="card-info-container">
             <div className="card-image-container">
               <div
-                className="card-image mentor-profile-picture"
+                className="card-image event-theme-image"
                 style={{
                   backgroundImage: `url(${data.profile_picture})`
                 }}

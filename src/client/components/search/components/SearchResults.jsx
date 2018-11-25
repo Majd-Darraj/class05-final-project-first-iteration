@@ -5,6 +5,8 @@ import InternshipCard from "../../internships/components/cards/cardItem";
 import MentorCard from "../../mentors/components/cards/cardItem";
 import NetworkingCard from "../../networking/components/cards/cardItem";
 
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class SearchResults extends Component {
   state = {
     isLoading: true,
@@ -62,6 +64,16 @@ class SearchResults extends Component {
       <div>
         <div className="page-content">
           <section className="cards-list-container ">
+            <div className="mentors-cat">
+              <h1 className="mentors-cat-head">
+                We found these <span className="bold">results</span> for you!
+              </h1>
+              <p className="mentors-cat-p">
+                Search results seperated by section...
+              </p>
+              <FontAwesomeIcon icon={faArrowDown} className="down-arrow" />
+              <section className="mentors-offers internships-div" />
+            </div>
             <div className="cards-list">
               <div className="divider">
                 <span>EVENTS</span>
