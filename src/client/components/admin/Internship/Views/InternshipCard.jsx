@@ -36,60 +36,6 @@ class InternshipCard extends Component {
 
                   <div>
                     <p className="department">{internshipsData.department}</p>
-
-                    <p className="internship-description">
-                      {internshipsData.internship_description}
-                    </p>
-
-                    <p className="organisation-description">
-                      {internshipsData.organisation_description}
-                    </p>
-
-                    <p className="internship_agreement">
-                      {internshipsData.internship_agreement}
-                    </p>
-
-                    <p className="internship-requirements">
-                      {internshipsData.internship_requirements}
-                    </p>
-
-                    <p className="application-requirements">
-                      {internshipsData.application_requirements}
-                    </p>
-
-                    <p className="internship-availabiltiy-schedule">
-                      {internshipsData.internship_availabiltiy_schedule}
-                    </p>
-
-                    <p className="location">{internshipsData.location}</p>
-
-                    <p className="internship-add-date">
-                      {internshipsData.internship_add_date}
-                    </p>
-
-                    <p className="internship_deadline">
-                      {internshipsData.internship_deadline}
-                    </p>
-
-                    <p className="contact-person">
-                      {internshipsData.contact_person}
-                    </p>
-
-                    <p className="phone-contact">
-                      {internshipsData.phone_contact}
-                    </p>
-
-                    <p className="email-contact">
-                      {internshipsData.email_contact}
-                    </p>
-
-                    <p className="organisation-address">
-                      {internshipsData.organisation_address}
-                    </p>
-
-                    <p className="organisation-website">
-                      {internshipsData.organisation_website}
-                    </p>
                   </div>
                 </article>
               </div>

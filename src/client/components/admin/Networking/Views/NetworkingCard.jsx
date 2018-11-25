@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class NetworkingCard extends Component {
   render() {
-      const { networkingData } = this.props;
+    const { networkingData } = this.props;
 
     return (
       <>
@@ -15,25 +15,26 @@ class NetworkingCard extends Component {
                   <div
                     className="card-image event-theme-image"
                     style={{
-                      backgroundImage: `url(${networkingData.organisation_logo})`
+                      backgroundImage: `url(${
+                        networkingData.organisation_logo
+                      })`
                     }}
                   />
                 </div>
                 <article className="card-info">
-               <h1 className="organisation-name">
-                {networkingData.organisation_name}
-              </h1>
+                  <h1 className="organisation-name">
+                    {networkingData.organisation_name}
+                  </h1>
                   <div className="card-information">
-                   <p className="organisation_description">
-                      {networkingData.organisation_description}
-                    </p> 
-                    <p className="sector-activity">{networkingData.sector_activity}</p>
+                    <p className="sector-activity">
+                      {networkingData.sector_activity}
+                    </p>
                     <p className="networking-address">
-                      {networkingData.organisation_address}, {networkingData.networking_city},{networkingData.organisation_postal_code}
+                      {networkingData.organisation_address},{" "}
+                      {networkingData.networking_city},
+                      {networkingData.organisation_postal_code}
                     </p>
-                    <p className="organisation-url">
-                      {networkingData.organisation_url}
-                    </p>
+
                     <p className="">{networkingData.contact_person}</p>
                     <p className="contact-email">{this.props.contact_email}</p>
                     <p className="contact-phone">{this.props.contact_phone}</p>
