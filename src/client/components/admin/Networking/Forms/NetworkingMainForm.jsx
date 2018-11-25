@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 // import { fetchData, updateField } from "./Helpers";
 
@@ -263,9 +263,13 @@ class NetworkingMainForm extends Component {
                       {" "}
                       Submit
                     </button>
-                    <Link id="cancel" className="readmore " to={`/admin`}>
+                    <button
+                      id="cancel"
+                      className="readmore"
+                      onClick={this.props.history.goBack}
+                    >
                       Cancel
-                    </Link>
+                    </button>
                   </div>
                 </form>
               </article>
@@ -277,4 +281,4 @@ class NetworkingMainForm extends Component {
   }
 }
 
-export default NetworkingMainForm;
+export default withRouter(NetworkingMainForm);
