@@ -3,6 +3,10 @@
   padding: 0;
   width: 100%;
 
+  a {
+    color: ;
+  }
+
   .cards-list {
     height: auto;
     position: relative;
@@ -26,4 +30,8 @@
       }
     }
   }
+}
+
+.full-website-btn {
+  color: #e62739;
 }

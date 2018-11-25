@@ -62,7 +62,7 @@ h1 {
   position: absolute;
   border: crimson;
   bottom: 0;
-  right: 0;
+  left: 0;
   margin-bottom: 2em;
   box-shadow: none;
 
@@ -80,6 +80,7 @@ h1 {
   max-width: 80%;
   padding: 2em;
   margin: 0 auto;
+  margin-top: 5em !important;
 }
 
 .name-gender {
@@ -109,6 +110,7 @@ h1 {
   .not-events-list {
     justify-content: space-evenly !important;
     flex-flow: row wrap !important;
+    margin-top: -6em !important;
 
     .card-item {
       flex: 0 1 calc(50% - 3em);
@@ -131,5 +133,22 @@ h1 {
   /* You could think of as "step 2" */
   50% {
     margin-top: 0.3em;
+  }
+}
+
+.mentors-about {
+  max-height: 400px !important;
+  margin-top: 0 !important;
+
+  .mentors-offers {
+    padding: 3em 20% !important;
+    margin-top: 0 !important;
+  }
+  .mentors-cat-head {
+    font-size: 2em;
+    text-transform: capitalize !important;
+  }
+  .letter {
+    font-weight: bold;
   }
 }

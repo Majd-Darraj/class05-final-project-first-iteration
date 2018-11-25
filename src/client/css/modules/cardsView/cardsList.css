@@ -21,7 +21,7 @@
 
     .mentors-cat-p {
       color: #a7b9cd;
-      font-size: 0.9em;
+      font-size: 1.1em;
     }
 
     .mentors-offers {
@@ -30,7 +30,7 @@
       width: 100%;
       flex-flow: row wrap;
       justify-content: center;
-      padding: 4em 20% 10em 20%;
+      padding: 4em 20%;
       margin-top: 4em;
 
       .mentors-offers-item {
@@ -46,6 +46,9 @@
           transform: scale(1.2) !important;
         }
       }
+    }
+    .men-mer {
+      margin-bottom: 2em !important;
     }
   }
 

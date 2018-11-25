@@ -30,6 +30,11 @@ class CardFull extends Component {
               <FontAwesomeIcon icon={faChevronLeft} /> BACK
             </button>
             <article className="card-info full-info">
+              {/* <img
+              src={data.profile_picture}
+              alt="Mentor"
+              className="card-image mentor-profile-picture"
+            /> */}
               <div className="name-gender">
                 <h1 className="mentor-first-name">
                   <span className="card-bold">Name:</span> {data.first_name}{" "}

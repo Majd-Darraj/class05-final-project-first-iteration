@@ -2,6 +2,7 @@ import React from "react";
 import CardItem from "../cards/cardItem";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class CardListView extends React.Component {
   state = {
     isLoading: true
@@ -29,13 +30,15 @@ class CardListView extends React.Component {
           >
             <div className="mentors-cat">
               <h1 className="mentors-cat-head">
-                Expand your <span className="bold">network!</span>
+                <span className="bold">Internships,</span> jobs and more!
               </h1>
-              <p className="mentors-cat-p">Networking is important for..</p>
+              <p className="mentors-cat-p">
+                Here you can find internships related to .....
+              </p>
               <FontAwesomeIcon icon={faArrowDown} className="down-arrow" />
               <section className="mentors-offers internships-div" />
             </div>
-            <div className="cards-list not-events-list ">
+            <div className="cards-list not-events-list">
               {data && isLoading == false
                 ? data.map(data => {
                     return (

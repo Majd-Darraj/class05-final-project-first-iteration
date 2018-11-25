@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Events from "./events";
 import Mentors from "./mentors";
-import Internships from "./cardsList/InternshipsList";
+import Internships from "./internships";
 import Networking from "./networking";
 
 import SearchResults from "./search/components/SearchResults";
