@@ -80,7 +80,7 @@ h1 {
   max-width: 80%;
   padding: 2em;
   margin: 0 auto;
-  margin-top: 5em !important;
+  /* margin-top: 5em !important; */
 }
 
 .name-gender {

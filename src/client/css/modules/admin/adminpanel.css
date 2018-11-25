@@ -266,3 +266,19 @@ button,
 a {
   outline: 0 !important;
 }
+
+.edit-content {
+  .cards-list-container-events {
+    margin: 0 auto;
+
+    .events-main-container {
+      margin-top: 7em;
+    }
+  }
+}
+
+.add-btn-con {
+  margin: 0 auto;
+  max-width: 50%;
+  margin-top: -2em;
+}
