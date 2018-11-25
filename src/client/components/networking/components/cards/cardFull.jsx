@@ -26,34 +26,22 @@ class CardFull extends Component {
             <article className="card-info full-info">
               <div className="name-gender">
                 <h1 className="mentor-first-name">
-                  <span className="card-bold">Organisation Name:</span>{" "}
+                  <span className="card-bold"></span>{" "}
                   {data.organisation_name}
                 </h1>
               </div>
 
               <p className="organisation-description">
-                <span className="card-bold">Sector:</span>
+                <span className="card-bold">Sector: </span>
                 {data.sector_activity}
               </p>
               <p className="organisation-description">
                 <span className="card-bold">Organisation description: </span>
                 {data.organisation_description}
               </p>
-              <p className="mentor-languages">
-                <span className="card-bold">Networking city: </span>{" "}
-                {data.networking_city}
-              </p>
-              <p className="mentor-availability">
-                <span className="card-bold">Organisation url: </span>
-                {data.organisation_url}
-              </p>
               <p className="mentor-offering">
                 <span className="card-bold">Address: </span>{" "}
-                {data.organisation_address}, {data.organisation_city}
-              </p>
-              <p className="area_location">
-                <span className="card-bold">Postal code: </span>
-                {data.organisation_postal_code}
+                {data.organisation_address}, {data.organisation_postal_code}
               </p>
               <p className="contact-person">
                 <span className="card-bold"> Contact Person: </span>{" "}

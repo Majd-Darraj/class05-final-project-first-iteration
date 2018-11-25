@@ -60,7 +60,6 @@ class CardItem extends Component {
                     <p className="event-language">
                       Language: {eventsData.event_language}
                     </p>
-                    <p className="">{eventsData.contact_person}</p>
                   </div>
                 </article>
               </div>

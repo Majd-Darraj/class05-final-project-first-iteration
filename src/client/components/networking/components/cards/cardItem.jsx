@@ -24,36 +24,17 @@ class CardItem extends Component {
                   <h1 className="organisation-name">
                     {data.organisation_name}
                   </h1>
-                  <p className="sector-activity">
-                    {data.sector_activity}
-                  </p>
-                </div>
                 <p className="organisation-description">
-                  {data.organisation_description}
-                </p>
-                <p className="networking-city">
-                  {data.networking_city}
-                </p>
-                <p className="organisation-url">
-                  {data.organisation_url}
-                </p>
-                <p className="organisation-address">
-                  <span className="card-bold">Organisation Address:</span>
-                  <br />
-                  {data.organisation_address}
-                </p>
-                <p className="organisation-city">
-                  {data.organisation_city}
-                </p>
-                <p className="organisation-postal-code">
-                  {data.organisation_postal_code}
-                </p>
-              <p className="contact-person">{data.contact_person}</p>
-              <p className="contact-email">{data.contact_email}</p>
-              <p className="contact-phone">{data.contact_phone}</p>
-                <p className="organisation-city">
-                  {data.organisation_city}
-                </p>
+                <span className="card-bold">Sector: </span>
+                <br/>
+                {data.sector_activity}
+              </p>
+              <p className="mentor-offering">
+                <span className="card-bold">Address: </span>{" "}
+                <br/>
+                {data.organisation_address}, {data.organisation_postal_code}
+              </p>
+                </div>
               </div>
             </article>
             <Link to={previewUrl} className="readmore mentor-more">
