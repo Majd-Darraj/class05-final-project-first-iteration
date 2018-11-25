@@ -5,7 +5,7 @@ class CardItem extends Component {
   render() {
     const { data } = this.props;
     // debugger;
-    const previewUrl = `${this.props.match.path}/preview/${data.id}`;
+    const previewUrl = `internships/preview/${data.id}`;
 
     return (
       <>

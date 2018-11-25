@@ -7,7 +7,7 @@ class CardItem extends Component {
   render() {
     const { data } = this.props;
     // debugger;
-    const previewUrl = `${this.props.match.path}/preview/${data.id}`;
+    const previewUrl = `/networking/preview/${data.id}`;
 
     return (
       <>
@@ -24,16 +24,15 @@ class CardItem extends Component {
                   <h1 className="organisation-name">
                     {data.organisation_name}
                   </h1>
-                <p className="organisation-description">
-                <span className="card-bold">Sector: </span>
-                <br/>
-                {data.sector_activity}
-              </p>
-              <p className="mentor-offering">
-                <span className="card-bold">Address: </span>{" "}
-                <br/>
-                {data.organisation_address}, {data.organisation_postal_code}
-              </p>
+                  <p className="organisation-description">
+                    <span className="card-bold">Sector: </span>
+                    <br />
+                    {data.sector_activity}
+                  </p>
+                  <p className="mentor-offering">
+                    <span className="card-bold">Address: </span> <br />
+                    {data.organisation_address}, {data.organisation_postal_code}
+                  </p>
                 </div>
               </div>
             </article>

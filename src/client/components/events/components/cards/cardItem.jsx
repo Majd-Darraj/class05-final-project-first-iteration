@@ -26,7 +26,7 @@ class CardItem extends Component {
     let eventStartHour = eventsData.event_start_hour.slice(0, 5);
     let eventEndHour = eventsData.event_end_hour.slice(0, 5);
 
-    const previewUrl = `${this.props.match.path}/preview/${eventsData.id}`;
+    const previewUrl = `/events/preview/${eventsData.id}`;
 
     return (
       <>
