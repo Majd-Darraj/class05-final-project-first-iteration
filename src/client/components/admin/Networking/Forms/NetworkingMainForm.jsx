@@ -263,13 +263,14 @@ class NetworkingMainForm extends Component {
                       {" "}
                       Submit
                     </button>
-                    <button
+                    <a
+                      href="/admin"
                       id="cancel"
                       className="readmore"
                       onClick={this.props.history.goBack}
                     >
                       Cancel
-                    </button>
+                    </a>
                   </div>
                 </form>
               </article>

@@ -395,16 +395,15 @@ class EventsMainForm extends Component {
                       {" "}
                       Submit
                     </button>
-                    {/* <Link id="cancel" className="readmore " to={`/admin`}>
-                      Cancel
-                    </Link> */}
-                    <button
+
+                    <a
+                      href="/admin"
                       id="cancel"
                       className="readmore"
                       onClick={this.props.history.goBack}
                     >
                       Cancel
-                    </button>
+                    </a>
                   </div>
                 </form>
               </article>
