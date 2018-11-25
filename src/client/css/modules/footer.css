@@ -1,6 +1,6 @@
 .footer-wrapper {
   /* max-height: 100vh; */
-  background-color: #152952;
+  background-color: #007bff;
   padding: 4em 10%;
   color: #e7e5e7;
   list-style: none !important;
@@ -21,16 +21,25 @@
   }
 
   h3 {
-    color: rgb(0, 123, 255) !important;
+    color: #fff !important;
   }
 
   p {
     font-size: 14px;
   }
 
+  h6 {
+    margin-bottom: ;
+  }
+
+  .contact-link {
+    font-size: 0.9em;
+    line-height: 1.2;
+  }
+
   .footer-inner {
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
 
     .footer-item {
       flex: 1 0 25%;

@@ -34,22 +34,18 @@ class CardListView extends React.Component {
             />
           ) : null}
           <section
-            className={`cards-list-container ${
+            className={`cards-list-container events-cards-list ${
               this.props.match.url === "/Events"
                 ? "cards-list-container-events "
                 : ""
             } ${isLoading ? "is-loading" : ""}`}
           >
             <div className="events-main-container">
-              <div className="cards-list">
+              <div className="cards-list ">
                 {data && isLoading == false
                   ? data.map(data => {
                       return (
-                        <CardItem
-                          {...this.props}
-                          key={data.id}
-                          eventsData={data}
-                        />
+                        <CardItem {...this.props} key={data.id} data={data} />
                       );
                     })
                   : null}

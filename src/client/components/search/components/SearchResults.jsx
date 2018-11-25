@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 import EventCard from "../../events/components/cards/cardItem";
-import InternshipCard from "../../cards/InternshipCard";
+import InternshipCard from "../../internships/components/cards/cardItem";
 import MentorCard from "../../mentors/components/cards/cardItem";
-import NetworkingCard from "../../cards/NetworkingCard";
+import NetworkingCard from "../../networking/components/cards/cardItem";
 
 class SearchResults extends Component {
   state = {
@@ -75,7 +75,6 @@ class SearchResults extends Component {
                   <h4>No records found in Events</h4>
                 )
               ) : null}
-
               <div className="divider">
                 <span>INTERNSHIPS</span>
               </div>
@@ -92,7 +91,6 @@ class SearchResults extends Component {
               ) : (
                 <h4>No records found in Internships</h4>
               )}
-
               <div className="divider">
                 <span>MENTORS</span>
               </div>
@@ -105,7 +103,6 @@ class SearchResults extends Component {
               ) : (
                 <h4>No records found in Mentors</h4>
               )}
-
               <div className="divider">
                 <span>Networking</span>
               </div>

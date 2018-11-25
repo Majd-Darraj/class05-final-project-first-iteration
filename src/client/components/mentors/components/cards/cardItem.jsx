@@ -19,7 +19,7 @@ class CardItem extends Component {
               className="card-image mentor-profile-picture"
             />
             <article className="card-info mentor-info">
-              <div className="card-information mentor-card-informatio">
+              <div className="card-information  mentor-card-informatio">
                 <div className="name-gender">
                   <h1 className="mentor-first-name">
                     {data.first_name} {data.last_name}

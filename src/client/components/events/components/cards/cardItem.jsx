@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 class CardItem extends Component {
   render() {
-    const { eventsData } = this.props;
+    const eventsData = this.props.data;
     let months = [
       "January",
       "February",
@@ -32,17 +32,14 @@ class CardItem extends Component {
       <>
         <Link to={previewUrl}>
           <div className="card-item event-item">
-            <div className="card-container event-item-container">
-              <div className="card-info-container">
-                <div className="card-image-container">
-                  <div
-                    className="card-image event-theme-image"
-                    style={{
-                      backgroundImage: `url(${eventsData.event_theme_image})`
-                    }}
-                  />
-                </div>
-                <article className="card-info">
+            <div className="card-container mentor-container">
+              <img
+                src={eventsData.event_theme_image}
+                alt="Mentor"
+                className="card-image mentor-profile-picture"
+              />
+              <article className="card-info mentor-info">
+                <div className="card-information events-cardz accordionmentor-card-informatio">
                   <div className="card-date">
                     <p className="event-month">{eventDateMonth}</p>
                     <p className="event-day">{eventDate}</p>
@@ -50,9 +47,6 @@ class CardItem extends Component {
                   <div className="card-information">
                     <h1 className="event-name">{eventsData.event_name}</h1>
                     <h3 className="event-type">{eventsData.event_type}</h3>
-                    <p className="event-address">
-                      {eventsData.event_address}, {eventsData.event_city}
-                    </p>
 
                     <p className="event-start-hour">
                       {eventStartHour} - {eventEndHour}
@@ -60,10 +54,9 @@ class CardItem extends Component {
                     <p className="event-language">
                       Language: {eventsData.event_language}
                     </p>
-                    <p className="">{eventsData.contact_person}</p>
                   </div>
-                </article>
-              </div>
+                </div>
+              </article>
             </div>
           </div>
         </Link>
