@@ -10,7 +10,7 @@ import MentorForm from './mentor-form';
 
 class EditMentor extends Component {
     state = {
-        isLoading: true,
+        isLoading: false,
         message: 'Hang in there...',
         mentorData: null
     }

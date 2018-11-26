@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MentorCard from "../cards/MentorCard";
 import Header from "../Header";
 // import InternshipData from "../../database/InternshipData.json";
+import { Link } from "react-router-dom";
 
 class MentorsList extends Component {
   constructor(props) {
@@ -36,6 +37,8 @@ class MentorsList extends Component {
               <Header />
         <section  className={`cards-list-container `}>
           <div className="cards-list">
+          <Link  to="/Mentors/add">Add New Mentor</Link>
+
             {mentorsData.map(mentor => {
                 return (
                     <MentorCard {...mentor} />

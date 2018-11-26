@@ -3,7 +3,11 @@ import React, { Component } from "react";
 class MentorCard extends Component {
   render() {
     return (
+      <div>
+
+
       <div className="card-item internship-item">
+
         <div className="card-container internship-item-container">
           <div
             className="card-image internship-theme-image"
@@ -11,6 +15,7 @@ class MentorCard extends Component {
               backgroundImage: `url(${this.props.profile_picture})`
             }}
           />
+
           <article className="card-info">
             <h1 className="internship-title">{this.props.first_name}</h1>
             <h2 className="internship-category">
@@ -43,6 +48,8 @@ class MentorCard extends Component {
           </article>
         </div>
       </div>
+      </div>
+
     );
   }
 }
