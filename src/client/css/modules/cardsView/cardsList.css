@@ -57,9 +57,8 @@
     position: relative;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin-top: -8em !important;
     margin: 0 auto;
-    padding: 2em 5%;
+    padding: 2em 0;
     max-width: 1200px;
 
     .card-item {

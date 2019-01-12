@@ -188,7 +188,7 @@
 }
 
 #cancel {
-  color: #007bff;
+  color: #f7425c;
 
   &:hover {
     background-color: #f9293a !important;

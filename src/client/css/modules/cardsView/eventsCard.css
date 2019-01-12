@@ -2,15 +2,17 @@
     Events card
 ----------------------------*/
 .cards-list-container-events {
-  max-width: 70% !important;
-  padding: 3em;
+  /* max-width: 70% !important;
+  padding: 3em; */
   background-color: #fff;
 
   .cards-list {
-    height: 100%;
+    /* height: 100%;
     position: sticky;
-    top: 10%;
-    overflow-y: scroll;
+    top: 10%; */
+    /* overflow-y: hidden; */
+    padding-top: 0 !important;
+    padding-left: 2em;
 
     .card-item {
       min-width: calc(100% / 2 - 30px);
@@ -41,7 +43,7 @@
 .readmore {
   /* border: 3px solid #fff; */
   color: #fff !important;
-  background: #007bff;
+  background: #f7425c;
   border: none;
   font-size: 0.5em;
   padding: 1em 2em;
@@ -115,9 +117,9 @@
   max-width: 60%;
 }
 
-.events-cards-list {
+/* .events-cards-list {
   margin-top: 5em !important;
-}
+} */
 
 .footer-hr {
   color: #fff;
