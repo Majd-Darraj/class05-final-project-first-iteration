@@ -19,6 +19,15 @@ class Search extends Component {
     });
   };
 
+  scrollToContent = () => {
+    let pageContent = document.getElementById("main-content");
+    pageContent.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest"
+    });
+  };
+
   render() {
     return (
       <>
@@ -41,36 +50,11 @@ class Search extends Component {
                   />
                 </div>
               </div>
-              {/* <div className="input-wrap second">
-                  <div className="input-field second">
-                    <label>IN</label>
-                    <div className="input-select">
-                      <select data-trigger="" name="choices-single-defaul">
-                        <option placeholder="">Section</option>
-                        <option>Internships</option>
-                        <option>Events</option>
-                        <option>Mentors</option>
-                        <option>Networking</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div className="input-wrap third">
-                  <div className="input-field third">
-                    <label>WHERE</label>
-                    <div className="input-select">
-                      <select data-trigger="" name="choices-single-defaul">
-                        <option placeholder="">Region</option>
-                        <option>Copenhagen</option>
-                        <option>Odense</option>
-                        <option>Aarhus</option>
-                        <option>Aalborg</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-              <button className="btn-search" type="submit">
+              <button
+                className="btn-search"
+                type="submit"
+                onClick={this.scrollToContent()}
+              >
                 SEARCH
               </button>
             </div>

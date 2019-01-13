@@ -34,14 +34,11 @@ export default class footer extends Component {
             <section className="mentors-offers site-map footer-item">
               <h3>Contact Us</h3>
               <div className="contact-item">
-                <h6>Jane Malcolm-Davies</h6>
                 <a
                   className="contact-link"
                   href="https://saxoinstitute.ku.dk/staff/?pure=en/persons/519745"
                 >
-                  Director - Centre for Textile Research,
-                  <br />
-                  University of Copenhagen
+                  Jane Malcolm-Davies
                 </a>
                 <p>
                   Phone:
@@ -55,14 +52,11 @@ export default class footer extends Component {
               </div>
               <hr className="footer-hr" />
               <div className="contact-item">
-                <h6>Egzona Haxha</h6>
                 <a
                   className="contact-link"
                   href="https://saxoinstitute.ku.dk/staff/?pure=en/persons/519745"
                 >
-                  Co-Director - Centre for Textile Research,
-                  <br />
-                  University of Copenhagen
+                  Egzona Haxha
                 </a>
                 <p>
                   Phone:

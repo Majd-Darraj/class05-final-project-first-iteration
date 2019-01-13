@@ -216,7 +216,7 @@
   min-width: 110px;
   height: 80px;
   padding: 0 15px;
-  background: #3dbdad;
+  background: #bb0f24;
   white-space: nowrap;
   border-radius: 3px;
   font-size: 16px;
@@ -233,11 +233,11 @@
 }
 
 .search-container form .btn-search:hover {
-  background: #5cd4c5;
+  background: #d2394c;
   transform: scale(1.02);
 }
 .search-container form .btn-search:active {
-  background: #3dbdad;
+  background: #bb0f24;
   transform: scale(0.97);
 }
 

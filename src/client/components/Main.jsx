@@ -14,7 +14,7 @@ import Admin from "./admin/index";
 export default class Main extends Component {
   render() {
     return (
-      <main>
+      <main id="main-content">
         <Switch>
           <Route exact path="/" component={Internships} />
 
