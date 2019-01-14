@@ -7,7 +7,7 @@ export default class footer extends Component {
   render() {
     return (
       <>
-        <footer className="footer-wrapper">
+        <footer className="footer-wrapper" ref="footer-ref">
           <div className="footer-inner">
             <section className="text footer-item">
               <div className="aboutus">

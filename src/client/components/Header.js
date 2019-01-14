@@ -53,6 +53,8 @@ class Header extends Component {
                     Networking
                   </NavLink>
                 </li>
+                {/* <li className="nav-item Footer-nav">About Us</li>
+                <li className="nav-item Footer-nav">Contact Us</li> */}
                 {/* <li className="nav-item admin">
                   <NavLink
                     to="/admin"

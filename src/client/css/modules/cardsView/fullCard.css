@@ -3,7 +3,8 @@
   padding: 0;
   width: 100%;
   margin: 0 auto;
-  margin-top: 10em !important;
+  /* margin-top: 10em !important; */
+
   a {
     color: ;
   }
@@ -15,11 +16,10 @@
     display: block;
 
     .card-item {
-      margin-top: -30px !important;
+      /* margin-top: -30px !important; */
 
       &:hover {
-        box-shadow: none;
-        transform: translateY(0);
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.1);
       }
 
       .card-container {

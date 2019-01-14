@@ -11,6 +11,8 @@ class CardFull extends Component {
   render() {
     const { data } = this.props;
 
+    let internship_deadline = data.internship_deadline.substring(0, 10);
+
     return (
       <div className="card-item event-item full-card">
         <div className="card-container event-item-container">
@@ -35,46 +37,82 @@ class CardFull extends Component {
                 <FontAwesomeIcon icon={faChevronLeft} /> BACK
               </button> */}
               <h1 className="mentor-first-name">
-                <span className="card-bold">Internship Title:</span>{" "}
+                <span className="card-bold">
+                  Internship Title:
+                  <br />
+                </span>{" "}
                 {data.internship_title}
               </h1>
               <p className="mentor-first-name internship-org">
-                <span className="card-bold">Organisation Name:</span>{" "}
+                <br />
+                <span className="card-bold">
+                  Organisation Name:
+                  <br />
+                </span>{" "}
                 {data.organisation_name}
               </p>
               <p className="mentor-email">
-                <span className="card-bold">Organisation Description:</span>{" "}
+                <span className="card-bold">
+                  Organisation Description:
+                  <br />
+                </span>{" "}
                 {data.organisation_description}
               </p>
               <p className="mentor-email">
-                <span className="card-bold">Department:</span> {data.department}
+                <span className="card-bold">
+                  Department:
+                  <br />
+                </span>{" "}
+                {data.department}
               </p>
               <p className="mentor-description">
-                <span className="card-bold">Internship Description:</span>{" "}
+                <span className="card-bold">
+                  Internship Description:
+                  <br />
+                </span>{" "}
                 {data.internship_description}
               </p>
               <p className="mentor-languages">
-                <span className="card-bold">Availability Schedule:</span>{" "}
+                <span className="card-bold">
+                  Availability Schedule:
+                  <br />
+                </span>{" "}
                 {data.internship_availabiltiy_schedule}
               </p>
               <p className="mentor-offering">
-                <span className="card-bold">Travel expenses:</span>{" "}
+                <span className="card-bold">
+                  Travel expenses:
+                  <br />
+                </span>{" "}
                 {data.travel_expenses}
               </p>
               <p className="area_location">
-                <span className="card-bold">Deadline:</span>{" "}
-                {data.internship_deadline}
+                <span className="card-bold">
+                  Deadline:
+                  <br />
+                </span>{" "}
+                {internship_deadline}
               </p>
               <p className="mentor-availability">
-                <span className="card-bold">Location:</span>{" "}
+                <span className="card-bold">
+                  Location:
+                  <br />
+                </span>{" "}
                 {data.organisation_address}, {data.location}
               </p>
               <p className="preferred_meeting_place">
-                <span className="card-bold">Contact Person:</span>{" "}
+                <span className="card-bold">
+                  Contact Person:
+                  <br />
+                </span>{" "}
                 {data.contact_person}
               </p>
               <p className="mentor-affiliation">
-                <span className="card-bold">Phone:</span> {data.phone_contact}
+                <span className="card-bold">
+                  Phone:
+                  <br />
+                </span>{" "}
+                {data.phone_contact}
               </p>
               <a
                 className="readmore full-website-btn"

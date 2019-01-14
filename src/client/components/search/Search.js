@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+// import scrollIntoView from "scroll-into-view-if-needed";
 
 class Search extends Component {
   state = {
@@ -19,14 +20,14 @@ class Search extends Component {
     });
   };
 
-  scrollToContent = () => {
-    let pageContent = document.getElementById("main-content");
-    pageContent.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "nearest"
-    });
-  };
+  // scrollToContent = () => {
+  //   const pageContent = document.querySelector("main-content");
+
+  //   scrollIntoView(pageContent, {
+  //     behavior: "smooth",
+  //     scrollMode: "always"
+  //   });
+  // };
 
   render() {
     return (
@@ -50,11 +51,7 @@ class Search extends Component {
                   />
                 </div>
               </div>
-              <button
-                className="btn-search"
-                type="submit"
-                onClick={this.scrollToContent()}
-              >
+              <button className="btn-search" type="submit">
                 SEARCH
               </button>
             </div>

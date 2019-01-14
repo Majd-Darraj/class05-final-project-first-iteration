@@ -9,6 +9,13 @@ import Networking from "./networking";
 import SearchResults from "./search/components/SearchResults";
 
 import Admin from "./admin/index";
+// import createHistory from "history/createBrowserHistory";
+
+// export const history = createHistory();
+
+// history.listen((location, action) => {
+//   window.scrollTo(0, 0);
+// });
 
 // import AdminView from "./admin/index";
 export default class Main extends Component {

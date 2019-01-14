@@ -64,7 +64,7 @@
     .card-item {
       flex: 0 1 calc(calc(100% / 3) - 5em);
       display: flex;
-      width: 100%;
+      width: 99%;
       margin: 2rem 0;
       padding: 0;
       margin-top: 0 !important;

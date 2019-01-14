@@ -26,7 +26,7 @@ class CardListView extends React.Component {
     return (
       <>
         <div className="page-content">
-          <div className="mentors-cat">
+          {/* <div className="mentors-cat">
             <h1 className="mentors-cat-head">
               <span className="bold">Internships,</span> jobs and more!
             </h1>
@@ -35,7 +35,7 @@ class CardListView extends React.Component {
             </p>
             <FontAwesomeIcon icon={faArrowDown} className="down-arrow" />
             <section className="mentors-offers internships-div" />
-          </div>
+          </div> */}
           {data && isLoading == false ? (
             <MapComponent
               mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
