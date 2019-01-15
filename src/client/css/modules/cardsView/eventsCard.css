@@ -99,7 +99,7 @@
   }
 
   p.event-month {
-    color: #ff4150;
+    color: #f63952 !important;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -115,6 +115,7 @@
 
 .event-name {
   max-width: 60%;
+  color: #231280 !important;
 }
 
 /* .events-cards-list {

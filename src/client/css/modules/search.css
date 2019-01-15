@@ -1,7 +1,8 @@
 .search-container {
-  height: 85vh;
+  height: 75vh;
   min-height: 300px;
   background: url("./assets/img/search.jpg") no-repeat 0 0;
+  background-position: center top;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
@@ -216,7 +217,7 @@
   min-width: 110px;
   height: 80px;
   padding: 0 15px;
-  background: #bb0f24;
+  background: #f63952;
   white-space: nowrap;
   border-radius: 3px;
   font-size: 16px;
@@ -233,17 +234,18 @@
 }
 
 .search-container form .btn-search:hover {
-  background: #d2394c;
+  background: #4b3aa7;
   transform: scale(1.02);
 }
 .search-container form .btn-search:active {
-  background: #bb0f24;
-  transform: scale(0.97);
+  background: #f63952;
+  transform: scale(0.98);
 }
 
 .menuLink,
 a {
   color: #fff !important;
+  transition: all 0.4s ease-in-out !important;
 }
 @media screen and (max-width: 767px) {
   .search-container form .inner-form {

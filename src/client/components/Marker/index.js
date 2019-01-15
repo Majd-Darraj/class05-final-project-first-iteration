@@ -27,6 +27,9 @@ class MarkerComponent extends Component {
     let lat = Number(this.props.mapData.coords.lat);
     let lng = Number(this.props.mapData.coords.lng);
     let coordsNu = { lat, lng };
+    let marerIcon = {
+      url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+    };
 
     return (
       <Marker
@@ -36,15 +39,19 @@ class MarkerComponent extends Component {
         key={this.props.mapData.id}
         animation={google.maps.Animation.DROP}
         position={coordsNu}
+        icon={marerIcon}
         onMouseOver={this.handleHover}
         onMouseOut={this.handleHover}
       >
         {this.state.isInfoWindowvisible && (
           <InfoWindow onCloseClick={() => {}}>
             <div>
-              {" "}
-              {this.props.mapData.event_name} <br />{" "}
-              {this.props.mapData.event_type}{" "}
+              <img src="this.props.mapData.event_theme_image" />
+              {this.props.mapData.event_theme_image}
+              <br />
+              {this.props.mapData.event_name}
+              <br />
+              {this.props.mapData.event_type}
             </div>
           </InfoWindow>
         )}
