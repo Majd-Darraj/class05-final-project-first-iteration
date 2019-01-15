@@ -32,7 +32,7 @@ class EventsView extends React.Component {
                 className="readmore add-card active-admin-link"
                 to="/admin/events/add"
               >
-                Add New Mentor
+                Add New Event
               </Link>
             </div>
             <div className="events-main-container">

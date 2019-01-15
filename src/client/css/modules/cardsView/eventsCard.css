@@ -63,7 +63,7 @@
   align-self: center;
 
   &:hover {
-    background-color: #003269 !important;
+    background-color: #4b3aa7 !important;
     transform: scale(1.25);
     letter-spacing: 0.0625rem;
     box-shadow: 1px 7px 17px rgba(68, 68, 70, 0.3);

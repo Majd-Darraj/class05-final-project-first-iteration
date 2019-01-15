@@ -53,9 +53,9 @@ header {
 
             &:hover {
               background-color: #fff !important;
-              transform: scale(1.01);
+              /* transform: scale(1.01); */
               color: #231280 !important;
-              text-shadow: none;
+              text-shadow: 1px 1px transparent;
             }
           }
         }
@@ -75,4 +75,22 @@ header {
   background-color: #f63952;
   opacity: 0.9;
   border-bottom: 1px solid #860921;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

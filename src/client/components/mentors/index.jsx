@@ -10,7 +10,7 @@ class Mentors extends Component {
 
   componentDidMount = () => {
     const { url } = this.props.match;
-    fetch(`/api${url}`, {
+    fetch(`/api/mentors`, {
       method: "GET"
     })
       .then(response => response.json())

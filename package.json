@@ -26,6 +26,7 @@
     "mysql2": "^1.6.1",
     "npm": "^6.4.1",
     "react": "^16.5.2",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",

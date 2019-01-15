@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
-  state = { isShow: false };
+  state = { isShow: false, isMobileViewport: false };
 
   showBar = () => {
     const { isShow } = this.state;
@@ -14,12 +14,24 @@ class Header extends Component {
     //  this.prev = window.scrollY;
   };
 
+  mobileMenu = () => {
+    const { isMobileViewport } = this.state;
+
+    window.width < 768
+      ? !isMobileViewport && this.setState({ isMobileViewport: true })
+      : isMobileViewport && this.setState({ isMobileViewport: false });
+
+    //  this.prev = window.scrollY;
+  };
+
   componentDidMount() {
     window.addEventListener("scroll", this.showBar);
+    window.addEventListener("resize", this.mobileMenu);
   }
 
   // componentWillUnmount(){
   //      window.removeEventListener('scroll', this.showBar);
+  //      window.addEventListener("resize",this.mobileMenu);
   // }
 
   // render(){
@@ -28,9 +40,10 @@ class Header extends Component {
   // }
 
   render() {
-    const classShow = this.state.isShow ? "navbar-scroll" : "";
+    const scrollClass = this.state.isShow ? "navbar-scroll" : "";
+    const mobileViewClass = this.state.mobileViewport ? "isMobile" : "";
     return (
-      <header className={`masthead ${classShow}`}>
+      <header className={`masthead ${scrollClass}`}>
         <div className="header-navbar-container">
           <div className="site-branding-container">
             <a className="logo" href="/">
@@ -41,7 +54,7 @@ class Header extends Component {
             </a>
           </div>
           <div className="navigation-menu-container">
-            <nav className="navigation">
+            <nav className={`navigation ${mobileViewClass}`} role="navigation">
               <ul className="nav-menu">
                 <li className="nav-item Internships">
                   <NavLink

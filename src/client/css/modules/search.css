@@ -26,6 +26,7 @@
   color: #eee;
   font-family: "Poppins", sans-serif;
   text-align: center;
+  text-shadow: 1px 1px #4b3aa7;
 }
 
 .search-container form .inner-form {

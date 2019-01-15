@@ -10,7 +10,7 @@ class Networking extends Component {
 
   componentDidMount = () => {
     const { url } = this.props.match;
-    fetch(`/api${url}`, {
+    fetch(`/api/networking`, {
       method: "GET"
     })
       .then(response => response.json())

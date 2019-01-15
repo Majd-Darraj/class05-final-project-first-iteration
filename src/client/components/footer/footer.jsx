@@ -138,8 +138,9 @@ export default class footer extends Component {
           </div>
         </footer>
         <div className="copy">
-          Copyright 2018 THREAD - Centre for Textile Research. All Rights
-          Reserved.
+          Copyright 2019 THREAD - Centre for Textile Research.
+          <br />
+          All Rights Reserved.
         </div>
       </>
     );

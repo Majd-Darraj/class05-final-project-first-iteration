@@ -45,10 +45,19 @@ class CardListView extends React.Component {
                       <CardItem {...this.props} key={data.id} data={data} />
                     );
                   })
-                : null}
+                : null // <img
+                  //   className="loader-svg"
+                  //   src="../../../helpers/loader.svg"
+                  //   alt="page is loading"
+                  // />
+              }
             </div>
             <div className="loader">
-              <div className="icon" />
+              <img
+                className="loader-svg"
+                src="../../../helpers/loader.svg"
+                alt="page is loading"
+              />
             </div>
           </section>
         </div>
