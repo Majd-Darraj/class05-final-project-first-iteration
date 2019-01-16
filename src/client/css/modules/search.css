@@ -32,7 +32,7 @@
   font-family: "Cera Bold", sans-serif;
   text-align: center;
   text-shadow: 0.125rem 0.125rem #4b3aa7, 0.0625rem 0.0625rem #4b3aa7,
-    0 0 1.25rem rgba(7, 1, 41, 0.56);
+    0 0 1.25rem rgba(7, 1, 41, 0.56), 2.5px 2px #4b3aa7;
 }
 
 .search-container form .inner-form {
@@ -235,7 +235,7 @@
   border-radius: 3px;
   font-size: 16px;
   color: #fff;
-  transition: all 0.1s ease-out, color 0.2s ease-out;
+  transition: all 0.4s ease-out;
   border: none;
   cursor: pointer;
   font-weight: 400;
@@ -257,13 +257,13 @@
   border-radius: 3px;
   font-size: 16px;
   color: #fff;
-  transition: all 0.1s ease-out, color 0.2s ease-out;
+  transition: all 0.4s ease-out;
   border: none;
   cursor: pointer;
   font-weight: 400;
   font-family: "Cera Reg", sans-serif;
   margin-left: 0;
-  transform: scale(1);
+  transform: scale(1.01);
   outline: 0;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   animation: btn-animation 0.5s infinite;
@@ -273,7 +273,7 @@
 
 .search-container form .btn-search:hover {
   background: #4b3aa7;
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 .search-container form .btn-search:active {
   background: #f63952;

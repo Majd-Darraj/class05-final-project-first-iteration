@@ -54,3 +54,7 @@ html,
 body {
   outline: 0 !important;
 }
+
+a {
+  font-family: "Cera Reg", sans-serif !important;
+}
