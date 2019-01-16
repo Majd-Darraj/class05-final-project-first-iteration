@@ -36,6 +36,7 @@ class Search extends Component {
           <form onSubmit={this.search}>
             <fieldset>
               <legend>WHAT ARE YOU LOOKING FOR?</legend>
+              <div className="legend-back" />
             </fieldset>
             <div className="inner-form">
               {/* <div className="left"> */}

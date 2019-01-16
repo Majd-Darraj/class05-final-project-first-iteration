@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600");
-
+@font-face {
+  font-family: "Cera Bold";
+  font-weight: 700;
+  src: local("Cera Bold"), local("Cera-Bold"),
+    url("./assets/fonts/cera_pro_bold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/cera_pro_bold-webfont.woff") format("woff");
+}
+/* @font-face {
+  font-family: "cerabold";
+  src: local("cerabold"),
+    url(./assets/fonts/cera_pro_bold-webfont.woff) format("woff");
+} */
 body {
   margin: 0;
   padding: 0;

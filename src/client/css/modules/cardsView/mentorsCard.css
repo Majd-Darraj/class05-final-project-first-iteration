@@ -97,7 +97,7 @@ h1 {
 
 .cards-list-container-events .cards-list {
   overflow-y: unset;
-  flex-flow: column;
+  flex-flow: row wrap !important;
 }
 
 .page-content {

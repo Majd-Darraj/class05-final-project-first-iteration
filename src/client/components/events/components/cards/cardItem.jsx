@@ -30,8 +30,8 @@ class CardItem extends Component {
 
     return (
       <>
-        <Link to={previewUrl}>
-          <div className="card-item event-item">
+        <Link to={previewUrl} className="event-item">
+          <div className="card-item ">
             <div className="card-container mentor-container">
               <img
                 src={eventsData.event_theme_image}

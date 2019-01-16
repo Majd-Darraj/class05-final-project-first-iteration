@@ -16,6 +16,14 @@ module.exports = {
       selectorBlackList: ["html"],
       unitPrecision: 5
     }),
-    require("cssnano")()
+    require("cssnano")(),
+    require("postcss-font-magician")({
+      variants: {
+        "Cera Bold": {
+          "700": []
+        }
+      },
+      foundries: ["google"]
+    })
   ]
 };

@@ -1,22 +1,22 @@
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
+const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const nodeExternals = require("webpack-node-externals");
 
-const outputDirectory = path.join(__dirname, 'dist/server');
+const outputDirectory = path.join(__dirname, "dist/server");
 
 module.exports = {
   resolve: {
-    extensions: ['.js'],
+    extensions: [".js"]
   },
-  target: 'node',
+  target: "node",
   externals: [nodeExternals()],
   entry: {
-    server: './src/server/index.js',
+    server: "./src/server/index.js"
   },
   output: {
     path: outputDirectory,
-    publicPath: '/',
-    filename: '[name].js',
+    publicPath: "/",
+    filename: "[name].js"
   },
   module: {
     rules: [
@@ -24,13 +24,13 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
-      },
-    ],
+          loader: "babel-loader"
+        }
+      }
+    ]
   },
   plugins: [new CleanWebpackPlugin([outputDirectory])],
   node: {
-    __dirname: false,
+    __dirname: false
   }
 };
