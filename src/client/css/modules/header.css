@@ -41,7 +41,7 @@ header {
 
           a {
             color: white;
-            text-shadow: 1px 1px #231280a6;
+            text-shadow: 0.0625rem 0.0625rem rgba(9, 5, 33, 0.65);
             text-decoration: none;
             font-size: 0.8em;
             outline: none !important;
@@ -50,6 +50,7 @@ header {
             border-bottom-right-radius: 0.2em;
             text-transform: uppercase;
             padding: 1em 1.3em;
+            font-family: "Cera Reg", sans-serif;
 
             &:hover {
               background-color: #fff !important;

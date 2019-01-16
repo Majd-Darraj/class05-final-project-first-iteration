@@ -15,7 +15,7 @@
   background-size: cover;
   background-position: top center;
   padding: 15px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Cera Reg", sans-serif;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3);
 }
 
@@ -26,12 +26,13 @@
 }
 
 .search-container form fieldset legend {
-  font-size: 36px;
+  font-size: 2.8em;
   font-weight: bold;
   color: #eee;
   font-family: "Cera Bold", sans-serif;
   text-align: center;
-  text-shadow: 1px 1px #4b3aa7;
+  text-shadow: 0.125rem 0.125rem #4b3aa7, 0.0625rem 0.0625rem #4b3aa7,
+    0 0 1.25rem rgba(7, 1, 41, 0.56);
 }
 
 .search-container form .inner-form {
@@ -62,7 +63,8 @@
   font-size: 11px;
   font-weight: 500;
   display: block;
-  color: #231280;
+  color: #4b3aa7;
+  font-family: "Cera Reg", sans-serif;
 }
 
 .search-container form .inner-form .input-wrap .input-field input {
@@ -71,8 +73,11 @@
   background: transparent;
   width: 100%;
   border: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Cera Light", sans-serif;
   padding: 8px 0;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+  outline: 0;
 }
 
 .search-container form .inner-form .input-wrap .input-field input.placeholder {
@@ -101,6 +106,7 @@
 .search-container form .inner-form .input-wrap .input-field input:focus {
   box-shadow: none;
   outline: 0;
+  opacity: 1;
 }
 
 .search-container form .inner-form .input-wrap.first {
@@ -139,7 +145,7 @@
   padding-right: 30px;
   font-size: 16px;
   min-height: auto;
-  font-family: "Lato", sans-serif;
+  font-family: "Cera Light", sans-serif;
 }
 
 .search-container form .choices__inner .choices__list.choices__list--single {
@@ -220,6 +226,28 @@
   background-repeat: no-repeat;
 }
 
+.search-container form .btn-search:disabled {
+  min-width: 110px;
+  height: 80px;
+  padding: 0 15px;
+  background: #f63952;
+  white-space: nowrap;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.1s ease-out, color 0.2s ease-out;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-family: "Cera Reg", sans-serif;
+  margin-left: 0;
+  transform: scale(1);
+  outline: 0;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
 .search-container form .btn-search {
   min-width: 110px;
   height: 80px;
@@ -233,11 +261,14 @@
   border: none;
   cursor: pointer;
   font-weight: 400;
-  font-family: "Poppins", sans-serif;
-  margin-left: 10px;
+  font-family: "Cera Reg", sans-serif;
+  margin-left: 0;
   transform: scale(1);
   outline: 0;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  animation: btn-animation 0.5s infinite;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .search-container form .btn-search:hover {

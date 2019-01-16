@@ -30,6 +30,9 @@ class Search extends Component {
   // };
 
   render() {
+    const { searchQuery } = this.state;
+    const isValid = searchQuery.length > 0;
+
     return (
       <>
         <div className="search-container">
@@ -42,7 +45,7 @@ class Search extends Component {
               {/* <div className="left"> */}
               <div className="input-wrap first">
                 <div className="input-field first">
-                  <label>WHAT</label>
+                  <label>Find Internships, Events, Mentors and more...</label>
                   <input
                     type="text"
                     placeholder="ex: DIY, fair, workshop, internship"
@@ -52,7 +55,7 @@ class Search extends Component {
                   />
                 </div>
               </div>
-              <button className="btn-search" type="submit">
+              <button className="btn-search" type="submit" disabled={!isValid}>
                 SEARCH
               </button>
             </div>
