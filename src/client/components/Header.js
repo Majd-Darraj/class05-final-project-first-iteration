@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 
 import { stack as Menu } from "react-burger-menu";
 
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Header extends Component {
   state = { isShow: false, isMobile: null, menuOpen: false };
   constructor(props) {
@@ -32,6 +34,12 @@ class Header extends Component {
     this.setState({ menuOpen: false });
   }
 
+  scrollToTop = () => {
+    window.addEventListener("click", () => {
+      window.scrollY = 0;
+    });
+  };
+
   componentDidMount() {
     window.addEventListener("scroll", this.showBar);
     window.addEventListener("resize", this.mobileMenu);
@@ -54,6 +62,7 @@ class Header extends Component {
 
   render() {
     const scrollClass = this.state.isShow ? "navbar-scroll" : "";
+    const mobileViewScroll = this.state.isShow ? "menu-icon-on-scroll" : "";
     const mobileViewClass = this.state.isMobile ? "-mobile" : "";
     // const classHideMobile = this.state.isMobile ? "hide" : "";
     // const classShowMobile = !this.state.isMobile ? "show" : "";
@@ -62,12 +71,12 @@ class Header extends Component {
       <header className={`masthead${mobileViewClass} ${scrollClass}`}>
         <div className="header-navbar-container">
           <div className="site-branding-container">
-            <a className="logo" href="/">
+            <NavLink to="/" className="logo" onClick={this.scrollToTop()}>
               <img
                 alt="logo"
                 src="https://raw.githubusercontent.com/HackYourFuture-CPH/class05-final-project/master/images/thread-logo.png"
               />
-            </a>
+            </NavLink>
           </div>
           <div className="navigation-menu-container">
             <div className={`mobile-navigation `}>
@@ -76,7 +85,6 @@ class Header extends Component {
                   to="/Internships"
                   className="menu-item"
                   activeClassName="mobile-menu-item-active"
-                  onClick={() => this.handleItemClick()}
                 >
                   Internships
                 </NavLink>
@@ -115,6 +123,7 @@ class Header extends Component {
                   Textile Hub for Refugees' Empowerment, Employment and
                   Entrepreneurship Advancement in Denmark
                 </p>
+                <FontAwesomeIcon icon={faFacebook} className="facebook-icon" />
               </Menu>
             </div>
             <nav className={`navigation`} role="navigation">
@@ -155,17 +164,6 @@ class Header extends Component {
                     Networking
                   </NavLink>
                 </li>
-                {/* <li className="nav-item Footer-nav">About Us</li>
-                <li className="nav-item Footer-nav">Contact Us</li> */}
-                {/* <li className="nav-item admin">
-                  <NavLink
-                    to="/admin"
-                    className=" nav-link"
-                    activeClassName="active-main-link"
-                  >
-                    Login
-                  </NavLink>
-                </li> */}
               </ul>
             </nav>
           </div>

@@ -15,7 +15,7 @@ class MarkerComponent extends Component {
 
   handleHover = () => {
     this.setState({ isInfoWindowvisible: !this.state.isInfoWindowvisible });
-    debugger;
+    // debugger;
   };
 
   handleClick = () => {

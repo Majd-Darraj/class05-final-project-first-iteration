@@ -64,6 +64,7 @@ header {
         }
       }
     }
+
     @media screen and (max-width: 767px) {
       .navigation-menu-container .navigation {
         visibility: hidden;
@@ -73,14 +74,13 @@ header {
       .navigation-menu-container .mobile-navigation {
         visibility: hidden;
       }
-      .navbar-scroll {
-        background-color: #f63952db;
-        border-bottom: 1px solid #86092194;
-      }
     }
   }
 }
-
+.navbar-scroll {
+  background-color: #f63952db;
+  border-bottom: 1px solid #86092194;
+}
 .active-main-link {
   background-color: #4b3aa7 !important;
   font-weight: bold !important;

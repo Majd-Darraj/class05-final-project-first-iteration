@@ -115,6 +115,44 @@ h1 {
       flex: 0 1 calc(50% - 3em);
     }
   }
+  @media screen and (max-width: 767px) {
+    .not-events-list {
+      flex-flow: column !important;
+      padding: 0;
+      max-width: 100%;
+
+      .card-item {
+        max-width: 100%;
+        margin: 1em;
+        /* border-radius: 0; */
+
+        .card-container {
+          flex-direction: column !important;
+
+          img {
+            margin-bottom: 1em;
+            padding-bottom: 0 !important;
+            margin: 0 auto;
+            height: auto;
+            max-height: 200px;
+          }
+
+          .card-info {
+          }
+
+          .readmore {
+            min-width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 767px) {
+    .navigation-menu-container .mobile-navigation {
+      visibility: hidden;
+    }
+  }
 }
 
 .down-arrow {
