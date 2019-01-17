@@ -137,15 +137,61 @@ class Header extends Component {
                   Textile Hub for Refugees' Empowerment, Employment and
                   Entrepreneurship Advancement in Denmark
                 </p>
-                <NavLink
-                  to="https://www.facebook.com/threadcopenhagen/"
+                <hr className="footer-hr" />
+
+                <section className="contact-menu">
+                  <h4>Contact Us</h4>
+                  <div className="contact-item">
+                    <a
+                      className="contact-link"
+                      href="https://saxoinstitute.ku.dk/staff/?pure=en/persons/519745"
+                    >
+                      Jane Malcolm-Davies
+                    </a>
+                    <p>
+                      Phone:
+                      <a href="tel:0045262022"> +45 26 20 22 09</a>
+                      <br /> E-mail:&nbsp;
+                      <a href="mailto:jmalcolm-davies@hum.ku.dk">
+                        jmalcolm-davies@hum.ku.dk
+                      </a>
+                      &nbsp;&nbsp;
+                    </p>
+                  </div>
+                  <hr className="footer-hr" />
+                  <div className="contact-item">
+                    <a
+                      className="contact-link"
+                      href="https://saxoinstitute.ku.dk/staff/?pure=en/persons/519745"
+                    >
+                      Egzona Haxha
+                    </a>
+                    <p>
+                      Phone:
+                      <a href="tel:004560863217"> +45 60 86 32 17</a>
+                      <br /> E-mail:&nbsp;
+                      <a href="mailto:egzona@hum.ku.dk">egzona@hum.ku.dk</a>
+                      &nbsp;&nbsp;
+                    </p>
+                  </div>
+                  {/* <FontAwesomeIcon icon={facebook} className="social-item" />
+              <FontAwesomeIcon icon={faFacebook} className="social-item" />
+              <div className="social">
+                <Link to={`/internships`}>
+                  {" "}
+                  <FontAwesomeIcon icon={facebook} className="social-item" />
+                </Link>
+              </div> */}
+                </section>
+                <a
+                  href="https://www.facebook.com/threadcopenhagen/"
                   className="menu-item"
                 >
                   <FontAwesomeIcon
                     icon={faFacebook}
                     className="facebook-icon"
                   />
-                </NavLink>
+                </a>
               </Menu>
             </div>
             <nav className={`navigation`} role="navigation">

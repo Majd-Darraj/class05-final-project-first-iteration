@@ -252,3 +252,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .line {
   border-bottom: thin solid #f6395280;
 }
+
+.contact-menu {
+  font-size: 0.7em;
+}
