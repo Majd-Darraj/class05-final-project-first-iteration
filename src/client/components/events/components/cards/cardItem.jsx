@@ -32,7 +32,10 @@ class CardItem extends Component {
       <>
         <Link to={previewUrl} className="event-item">
           <div className="card-item ">
-            <div className="card-container mentor-container">
+            <div
+              className="card-container mentor-container "
+              id="events-container"
+            >
               <img
                 src={eventsData.event_theme_image}
                 alt="Mentor"

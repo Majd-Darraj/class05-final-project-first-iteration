@@ -92,3 +92,52 @@
   font-size: 0.8em;
   opacity: 0.5;
 }
+
+.cards-list-container-events #cards-list-events {
+  flex-direction: column !important;
+  overflow: hidden;
+
+  .event-item {
+    width: 100% !important;
+
+    .card-item {
+      min-width: 100%;
+      overflow: hidden;
+
+      .card-container {
+        flex-direction: column !important;
+
+        max-height: 100% !important;
+
+        .mentor-profile-picture {
+          max-width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .events-content {
+    flex-direction: column !important;
+
+    .map-container {
+      order: 1 important;
+      width: 100%;
+      max-height: 40vh;
+      z-index: 3000;
+      top: 90px !important;
+    }
+
+    .cards-list-container-events {
+      width: calc(100% - 2em) !important;
+      margin: 0 auto !important;
+      order: 3 !important;
+
+      .event-item {
+        width: 100% !important;
+        margin-bottom: 2em !important;
+      }
+    }
+  }
+}

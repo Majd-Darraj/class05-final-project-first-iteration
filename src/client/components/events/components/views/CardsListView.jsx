@@ -32,7 +32,7 @@ class CardListView extends React.Component {
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}
         >
-          <div className="page-content">
+          <div className="page-content events-content">
             {data && isLoading == false ? (
               <MapComponent
                 mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
@@ -50,7 +50,10 @@ class CardListView extends React.Component {
               } ${isLoading ? "is-loading" : ""}`}
             >
               <div className="events-main-container">
-                <div className="cards-list events-cards-list">
+                <div
+                  className="cards-list events-cards-list"
+                  id="cards-list-events"
+                >
                   {data && isLoading == false ? (
                     data.map(data => {
                       return (
