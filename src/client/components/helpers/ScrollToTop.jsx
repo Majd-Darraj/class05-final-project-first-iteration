@@ -5,7 +5,7 @@ class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo({
-        top: 600,
+        top: 50,
         left: 0,
         behavior: "smooth"
       });

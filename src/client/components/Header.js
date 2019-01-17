@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { stack as Menu } from "react-burger-menu";
 
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Header extends Component {
   state = { isShow: false, isMobile: null, menuOpen: false };
@@ -137,6 +138,11 @@ class Header extends Component {
                   Textile Hub for Refugees' Empowerment, Employment and
                   Entrepreneurship Advancement in Denmark
                 </p>
+                <FontAwesomeIcon
+                  icon={faArrowDown}
+                  className="down-arrow down-arrow-menu"
+                />
+
                 <hr className="footer-hr" />
 
                 <section className="contact-menu">

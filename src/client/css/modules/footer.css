@@ -125,8 +125,9 @@
       order: 1 important;
       width: 100%;
       max-height: 40vh;
-      z-index: 3000;
+      z-index: 99;
       top: 90px !important;
+      padding: 1em !important;
     }
 
     .cards-list-container-events {
@@ -140,4 +141,22 @@
       }
     }
   }
+}
+
+.mobile-navigation {
+  z-index: 1000000 !important;
+}
+
+.bm-cross-button {
+  right: 1.8em !important;
+  top: 0.8em !important;
+}
+
+.bm-cross {
+  width: 2px !important;
+  height: 25px !important;
+}
+
+.bm-cross:hover {
+  background-color: #f63952 !important;
 }

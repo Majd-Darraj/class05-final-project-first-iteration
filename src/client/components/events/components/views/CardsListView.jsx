@@ -37,7 +37,7 @@ class CardListView extends React.Component {
               <MapComponent
                 mapCenter={{ lat: 55.6802303, lng: 12.5718571 }}
                 setMarker
-                Zoom={11}
+                Zoom={10}
                 mapData={data}
                 key="events"
               />

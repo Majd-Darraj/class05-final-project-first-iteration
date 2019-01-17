@@ -196,9 +196,27 @@ h1 {
 }
 
 .down-arrow {
-  color: #e62739;
+  color: #f63952;
   position: absolute;
   animation: move-me 1s infinite;
+}
+
+.down-arrow-menu {
+  right: 1em !important;
+  bottom: 2em !important;
+  animation: momo 2s infinite !important;
+}
+
+@keyframes momo {
+  /* You could think of as "step 1" */
+  0%,
+  100% {
+    margin-bottom: 0;
+  }
+  /* You could think of as "step 2" */
+  50% {
+    margin-bottom: 0.3em;
+  }
 }
 
 @keyframes move-me {
