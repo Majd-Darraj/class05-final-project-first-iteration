@@ -137,7 +137,15 @@ class Header extends Component {
                   Textile Hub for Refugees' Empowerment, Employment and
                   Entrepreneurship Advancement in Denmark
                 </p>
-                <FontAwesomeIcon icon={faFacebook} className="facebook-icon" />
+                <NavLink
+                  to="https://www.facebook.com/threadcopenhagen/"
+                  className="menu-item"
+                >
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    className="facebook-icon"
+                  />
+                </NavLink>
               </Menu>
             </div>
             <nav className={`navigation`} role="navigation">

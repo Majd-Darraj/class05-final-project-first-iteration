@@ -232,7 +232,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 #logo-menu {
   max-width: 60%;
   border-radius: 4px;
-  margin-top: 5em;
+  margin-top: 2em;
 }
 #logo-menu:hover {
   padding-left: 0;
