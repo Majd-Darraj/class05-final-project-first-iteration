@@ -112,19 +112,40 @@ header {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
-  right: 36px;
-  top: 36px;
+  width: 30px;
+  height: 25px;
+  right: 1.7em;
+  top: 1em;
   transition: all 0.4s ease-in-out;
+}
+
+.bm-cross-button {
+  right: 1.5em;
+  top: 1em;
+}
+
+.bm-cross {
+  width: 2px;
+  height: 25px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #fff !important;
+  background: #fff;
   border-radius: 3px;
+  height: 10% !important;
   transition: all 0.6s ease-in-out;
+  animation: menu 30s infinite;
 }
+/* @keyframes menu {
+  0%,
+  100% {
+    background: #fff;
+  }
+  50% {
+    background: #4b3aa7;
+  }
+} */
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {

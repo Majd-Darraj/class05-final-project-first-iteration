@@ -32,7 +32,6 @@
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   border-radius: 8px;
-  overflow: hidden;
 }
 
 .internship-item:not(:first-child) {

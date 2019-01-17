@@ -28,7 +28,7 @@ class CardItemView extends React.Component {
       <>
         <div className="page-content">
           <section
-            className={`cards-list-container cards-list-container-events full-card ${
+            className={`cards-list-container cards-list-container-events  ${
               isLoading ? "is-loading" : ""
             }`}
           >

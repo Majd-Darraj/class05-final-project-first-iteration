@@ -25,7 +25,10 @@ class CardFull extends Component {
                 }}
               />
             </div>
-            <button className="readmore" onClick={this.props.history.goBack}>
+            <button
+              className="readmore back"
+              onClick={this.props.history.goBack}
+            >
               BACK
             </button>
 

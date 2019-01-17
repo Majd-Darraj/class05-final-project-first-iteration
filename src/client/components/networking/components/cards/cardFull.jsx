@@ -26,8 +26,7 @@ class CardFull extends Component {
             <article className="card-info full-info">
               <div className="name-gender">
                 <h1 className="mentor-first-name">
-                  <span className="card-bold"></span>{" "}
-                  {data.organisation_name}
+                  <span className="card-bold" /> {data.organisation_name}
                 </h1>
               </div>
 

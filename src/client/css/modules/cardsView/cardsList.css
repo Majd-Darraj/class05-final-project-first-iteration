@@ -8,20 +8,24 @@
   margin: 0;
 
   .mentors-cat {
-    width: 100%;
+    max-width: 100%;
     left: 0;
+    margin: 0 auto;
     text-align: center;
     margin-top: 3em;
 
     .mentors-cat-head {
       text-transform: uppercase;
-      max-width: 100% !important;
+      max-width: 90% !important;
       font-size: 1.2em;
+      margin: 0 auto;
     }
 
     .mentors-cat-p {
       color: #a7b9cd;
       font-size: 1.1em;
+      max-width: 90% !important;
+      margin: 0 auto;
     }
 
     .mentors-offers {
@@ -75,7 +79,6 @@
       transition: all 0.4s;
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
 
       .card-container {
         padding: 0;

@@ -26,6 +26,19 @@ class Header extends Component {
       : isShow && this.setState({ isShow: false });
   };
 
+  // changeBurgerMenuColor = () => {
+  //   let sasa = document.getElementsByClassName("bm-burger-bars");
+
+  //   console.log(sasa);
+  //   window.scrollY > 400
+  //     ? document
+  //         .getElementsByClassName("bm-burger-bars")
+  //         .classList.add("purple")
+  //     : document
+  //         .getElementsByClassName("bm-burger-bars")
+  //         .classList.remove("purple");
+  // };
+
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen });
   }
@@ -42,6 +55,7 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.showBar);
+    window.addEventListener("scroll", this.changeBurgerMenuColor);
     window.addEventListener("resize", this.mobileMenu);
 
     window.addEventListener(
@@ -68,7 +82,7 @@ class Header extends Component {
     // const classShowMobile = !this.state.isMobile ? "show" : "";
 
     return (
-      <header className={`masthead${mobileViewClass} ${scrollClass}`}>
+      <header className={`masthead ${scrollClass}`}>
         <div className="header-navbar-container">
           <div className="site-branding-container">
             <NavLink to="/" className="logo" onClick={this.scrollToTop()}>

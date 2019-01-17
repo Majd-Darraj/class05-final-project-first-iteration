@@ -12,7 +12,6 @@
   .cards-list {
     height: auto;
     position: relative;
-    overflow: hidden;
     display: block;
 
     .card-item {
