@@ -46,8 +46,8 @@ class MarkerComponent extends Component {
         {this.state.isInfoWindowvisible && (
           <InfoWindow onCloseClick={() => {}}>
             <div>
-              <img src="this.props.mapData.event_theme_image" />
-              {this.props.mapData.event_theme_image}
+              <img src={this.props.mapData.event_theme_image} alt="event" />
+              {/* {this.props.mapData.event_theme_image} */}
               <br />
               {this.props.mapData.event_name}
               <br />
