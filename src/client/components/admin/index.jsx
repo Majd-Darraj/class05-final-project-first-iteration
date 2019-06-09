@@ -39,15 +39,19 @@ class AdminView extends React.Component {
       "/api/networking"
     ];
 
-    Promise.all(urls.map(url => fetch(url).then(resp => resp.json()))).then(
-      data => {
-        // debugger;
-        this.setState({
-          isLoading: false,
-          data: data
-        });
-      }
-    );
+    Promise.all(
+      urls.map(url =>
+        fetch(url).then(resp => {
+          return resp.json();
+        })
+      )
+    ).then(data => {
+      // debugger;
+      this.setState({
+        isLoading: false,
+        data: data
+      });
+    });
   };
 
   render() {
