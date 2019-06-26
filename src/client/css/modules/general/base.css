@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600");
+@font-face {
+  font-family: "Cera Bold";
+  font-weight: normal;
+  src: local("Cera Bold"), local("Cera-Bold"),
+    url("./assets/fonts/cera_pro_bold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/cera_pro_bold-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Cera Light";
+  font-weight: normal;
+  src: local("Cera Light"), local("Cera-Light"),
+    url("./assets/fonts/cera_pro_light-webfont.woff2") format("woff2"),
+    url("./assets/fonts/cera_pro_light-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Cera Reg";
+  font-weight: normal;
+  src: local("Cera Reg"), local("Cera-Reg"),
+    url("./assets/fonts/cera_pro_regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/cera_pro_regular-webfont.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "Montserrat", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eee !important;
+}
+
+.page-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+*,
+html,
+body {
+  outline: 0 !important;
+}
+
+a {
+  font-family: "Cera Reg", sans-serif !important;
+}

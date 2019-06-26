@@ -1,0 +1,37 @@
+.full-card {
+  max-width: 900px !important;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  /* margin-top: 10em !important; */
+
+  a {
+    color: ;
+  }
+
+  .cards-list {
+    height: auto;
+    position: relative;
+    display: block;
+
+    .card-item {
+      /* margin-top: -30px !important; */
+
+      &:hover {
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.1);
+      }
+
+      .card-container {
+        margin: 0;
+        color: #717e82;
+
+        .card-info-container {
+        }
+      }
+    }
+  }
+}
+
+.full-website-btn {
+  color: #e62739;
+}

@@ -1,0 +1,198 @@
+/* ----------------------------
+      internship LIST CONTAINER
+----------------------------*/
+.cards-list-container {
+  padding: 20px 0 100px 0;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  margin-top: 2em !important;
+}
+
+.internship-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  color: yellowgreen;
+  padding: 0;
+  text-align: left;
+  height: 100%;
+  min-width: 80%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-radius: 8px;
+}
+
+.internship-item:not(:first-child) {
+  margin-top: 2em;
+}
+
+.internship-item:hover {
+  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.internship-branding {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  max-width: 100%;
+  max-height: 10em;
+  position: relative;
+  background-color: #0a214e;
+  overflow: hidden;
+}
+
+.internship-branding .internship-branding-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-basis: 1;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  background-color: transparent;
+  padding-left: 2em;
+}
+
+.internship-branding .internship-branding-logo img {
+  width: auto;
+  height: 70%;
+  opacity: 1;
+  background-color: transparent;
+  filter: drop-shadow(0px 5px 15px rgba(179, 207, 248, 0.76));
+}
+
+.internship-branding .internship-item-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.internship-branding .internship-item-image img {
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  top: 20%;
+}
+
+.internship-item-info {
+  padding: 20px 40px 10px 30px;
+  border-top: none;
+}
+
+.internship-item-image {
+  width: 20%;
+}
+
+.internship-item-image img {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.internship-item .internship-title {
+  font-size: 1.4rem;
+  line-height: 0.7rem;
+  color: #274fa5;
+}
+
+.internship-item .internship-company {
+  font-size: 0.9rem;
+  color: rgba(2, 33, 66, 0.5);
+}
+
+.internship-item .internship-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(1, 39, 80, 0.8);
+  line-height: 1.4rem;
+}
+
+.internship-item .internship-dates {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  border-left: 1px solid #d9dadc62;
+  position: absolute;
+  margin-right: 1em;
+  padding-bottom: 10px;
+}
+
+.internship-item .internship-dates p {
+  font-family: "Raleway", sans-seriaf;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.541);
+  line-height: 1.1rem;
+  /* padding-bottom: 10px; */
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  padding: 0 20px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.internship-item .internship-dates p.internship-deadline {
+  color: #ff4151bd;
+}
+
+.internship-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  border-top: none;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.internship-item .internship-dates p:hover {
+  transform: scale(1.2);
+}
+
+.internship-links a {
+  padding: 15px 0;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #274fa5;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+}
+
+.internship-links .internship-read-more {
+  border-right: 1px solid #b6353f34;
+}
+
+.internship-links .internship-read-more:hover {
+  background-color: #ff6347;
+  color: #fff;
+}
+
+.internship-links .internship-apply:hover {
+  background-color: #ff6347;
+  color: #fff;
+}

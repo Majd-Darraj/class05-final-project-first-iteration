@@ -1,0 +1,265 @@
+.mentors-card {
+  display: flex;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+  color: #324088;
+}
+
+.card-bold {
+  font-size: 1em !important;
+  font-weight: 600;
+  color: #838181;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.card-information {
+  font-size: 1em;
+}
+
+.card-information .event-type {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card-information p {
+  font-size: 0.9em;
+}
+
+.mentor-gender {
+  font-size: 2em !important;
+  margin-top: 0.3em;
+  color: #e62739;
+  position: absolute;
+  /* bottom: 0; */
+  right: 0.8em;
+}
+
+.cards-list-container .cards-list {
+  margin-top: 2em;
+  flex-direction: column !important;
+}
+
+.mentor-profile-picture {
+  padding-bottom: 0 !important;
+  max-width: 200px !important;
+  max-height: 17em !important;
+  height: auto;
+}
+
+.mentor-container {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  max-height: 17em !important;
+}
+
+.mentor-more {
+  position: absolute;
+  border: crimson;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 2em;
+  box-shadow: none;
+
+  &:hover {
+    margin-right: 1em;
+  }
+}
+
+.card-info {
+  margin-top: 0.5em !important;
+}
+
+.full-info {
+  flex-flow: column !important;
+  max-width: 80%;
+  padding: 2em;
+  margin: 0 auto;
+  /* margin-top: 5em !important; */
+}
+
+.name-gender {
+  right: 5em !important;
+}
+
+h1 {
+  max-width: 90%;
+}
+
+.back {
+  padding: 1em 4em;
+}
+
+.cards-list-container-events .cards-list {
+  flex-flow: row wrap !important;
+}
+
+.page-content {
+  width: 100%;
+  background-color: #fff;
+}
+
+.cards-list-container {
+  .not-events-list {
+    justify-content: space-evenly !important;
+    flex-flow: row wrap !important;
+    margin-top: -6em !important;
+
+    .card-item {
+      flex: 0 1 calc(50% - 3em);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .header-navbar-container {
+      height: 3em !important;
+    }
+    .cards-list {
+      padding: 0 !important;
+
+      .card-item {
+        margin: 0 !important;
+        min-width: 100%;
+
+        .card-info-container {
+          .card-image-container {
+            padding: 0 2em;
+          }
+
+          .back {
+            padding: 1em 3em;
+            position: sticky;
+            top: 105px;
+          }
+
+          .full-info {
+            padding: 3em 0 2em 3.5em !important;
+          }
+          .full-website-btn {
+            align-self: start;
+            width: 50vw;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .not-events-list {
+      flex-flow: column !important;
+      padding: 0;
+      max-width: 95%;
+
+      .card-item {
+        max-width: 100%;
+        margin: 1em auto !important;
+        overflow: hidden;
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
+        /* border-radius: 0; */
+
+        .card-container {
+          flex-direction: column !important;
+          max-height: 100% !important;
+          justify-content: space-between;
+
+          img {
+            margin-bottom: 1em;
+            padding-bottom: 0 !important;
+            margin: 0 auto;
+            height: auto;
+            max-height: 200px;
+            padding-top: 1em;
+          }
+
+          .card-info {
+            margin-top: 1.5em !important;
+            margin-bottom: 1em;
+          }
+
+          .readmore {
+            min-width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 767px) {
+    .navigation-menu-container .mobile-navigation {
+      visibility: hidden;
+    }
+  }
+}
+
+.down-arrow {
+  color: #f63952;
+  position: absolute;
+  animation: move-me 1s infinite;
+}
+
+.down-arrow-menu {
+  right: 1em !important;
+  bottom: 2em !important;
+  animation: momo 2s infinite !important;
+}
+
+@keyframes momo {
+  /* You could think of as "step 1" */
+  0%,
+  100% {
+    margin-bottom: 0;
+  }
+  /* You could think of as "step 2" */
+  50% {
+    margin-bottom: 0.3em;
+  }
+}
+
+@keyframes move-me {
+  /* You could think of as "step 1" */
+  0%,
+  100% {
+    margin-top: 0;
+  }
+  /* You could think of as "step 2" */
+  50% {
+    margin-top: 0.3em;
+  }
+}
+
+.mentors-about {
+  max-height: 400px !important;
+  margin-top: 0 !important;
+
+  .mentors-offers {
+    padding: 3em 20% !important;
+    margin-top: 0 !important;
+  }
+  .mentors-cat-head {
+    font-size: 2em;
+    text-transform: capitalize !important;
+  }
+  .letter {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    min-height: 3.3em !important;
+  }
+  .cards-list-container .mentors-cat .mentors-offers {
+    flex-flow: row nowrap !important;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    .mentors-offers-item {
+      min-width: auto;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+/* ----------------------------
+    Internship card
+----------------------------*/
+
+.internship-item .internship-company {
+  font-size: 0.9rem;
+  color: rgba(2, 33, 66, 0.5);
+}
+
+.internship-item .internship-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(1, 39, 80, 0.8);
+  line-height: 1.4rem;
+}
+
+.internship-item .internship-dates {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  border-left: 1px solid #d9dadc62;
+  position: absolute;
+  margin-right: 1em;
+  padding-bottom: 10px;
+}
+
+.internship-item .internship-dates p {
+  font-family: "Raleway", sans-seriaf;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.541);
+  line-height: 1.1rem;
+  /* padding-bottom: 10px; */
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  padding: 0 20px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.internship-item .internship-dates p.internship-deadline {
+  color: #ff4151bd;
+}
+
+.internship-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  border-top: none;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.internship-item .internship-dates p:hover {
+  transform: scale(1.2);
+}
+
+.internship-links a {
+  padding: 15px 0;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #274fa5;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+}
+
+.internship-links .internship-read-more {
+  border-right: 1px solid #b6353f34;
+}
+
+.internship-links .internship-read-more:hover {
+  background-color: #ff6347;
+  color: #fff;
+}
+
+.internship-links .internship-apply:hover {
+  background-color: #ff6347;
+  color: #fff;
+}

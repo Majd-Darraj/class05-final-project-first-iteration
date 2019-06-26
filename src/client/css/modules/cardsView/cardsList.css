@@ -1,0 +1,131 @@
+/* ----------------------------
+    Cards list - Card item
+----------------------------*/
+.cards-list-container {
+  /* margin: 0 auto; */
+  width: 100%;
+
+  margin: 0;
+
+  .mentors-cat {
+    max-width: 100%;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 3em;
+
+    .mentors-cat-head {
+      text-transform: uppercase;
+      max-width: 90% !important;
+      font-size: 1.2em;
+      margin: 0 auto;
+    }
+
+    .mentors-cat-p {
+      color: #a7b9cd;
+      font-size: 1.1em;
+      max-width: 90% !important;
+      margin: 0 auto;
+    }
+
+    .mentors-offers {
+      background-color: #e1e8f0;
+      display: flex;
+      width: 100%;
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: 4em 20%;
+      margin-top: 4em;
+
+      .mentors-offers-item {
+        shadow: none;
+        border-radius: 3em;
+        margin: 2em !important;
+
+        &:hover {
+          letter-spacing: 0.0625rem !important;
+          transform: scale(1.3) !important;
+        }
+        &:active {
+          transform: scale(1.2) !important;
+        }
+      }
+    }
+    .men-mer {
+      margin-bottom: 2em !important;
+    }
+  }
+
+  .cards-list {
+    display: flex;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2em 0;
+    max-width: 1200px;
+
+    .card-item {
+      flex: 0 1 calc(calc(100% / 3) - 5em);
+      display: flex;
+      width: 99%;
+      margin: 2rem 0;
+      padding: 0;
+      margin-top: 0 !important;
+      color: #a1a1a1;
+      background-color: white;
+      text-align: left;
+      transform: translateY(0);
+      transition: all 0.4s;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+      .card-container {
+        padding: 0;
+        border-top: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .card-image {
+          padding-bottom: 40%;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          transition: all 1s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+        .card-info {
+          padding: 30px;
+        }
+      }
+    }
+    .card-item:hover {
+      box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.mentor-add-button {
+  text-align: center !important;
+}
+
+.mentor-info {
+  padding-top: 0 !important;
+}
+
+.red {
+  background-color: #f14949 !important;
+}
+
+.admin-link {
+  background: #f9293a !important;
+}
+.active-admin-link {
+  background: #bb19249c !important;
+}
