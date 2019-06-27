@@ -31,7 +31,7 @@ class CardListView extends React.Component {
               <h1 className="mentors-cat-head">
                 Expand your <span className="bold">network!</span>
               </h1>
-              <p className="mentors-cat-p">Networking is important for..</p>
+              <p className="mentors-cat-p">Networking is important to explore new opportunities</p>
               <FontAwesomeIcon icon={faArrowDown} className="down-arrow" />
               <section className="mentors-offers internships-div" />
             </div>
