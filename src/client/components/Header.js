@@ -86,7 +86,7 @@ class Header extends Component {
       <header className={`masthead ${scrollClass}`}>
         <div className="header-navbar-container">
           <div className="site-branding-container">
-            <NavLink to="/" className="logo" onClick={this.scrollToTop()}>
+            <NavLink to="/website" className="logo" onClick={this.scrollToTop()}>
               <img
                 alt="logo"
                 src="https://raw.githubusercontent.com/HackYourFuture-CPH/class05-final-project/master/images/thread-logo.png"
@@ -97,7 +97,7 @@ class Header extends Component {
             <div className={`mobile-navigation `}>
               <Menu right onStateChange={this.handleStateChange}>
                 <NavLink
-                  to="/Internships"
+                  to="/website/Internships"
                   className="menu-item"
                   activeClassName="mobile-menu-item-active"
                 >
@@ -105,7 +105,7 @@ class Header extends Component {
                 </NavLink>
                 <div className="line" />
                 <NavLink
-                  to="/Events"
+                  to="/website/Events"
                   className="menu-item"
                   activeClassName="mobile-menu-item-active"
                 >
@@ -113,7 +113,7 @@ class Header extends Component {
                 </NavLink>
                 <div className="line" />
                 <NavLink
-                  to="/Mentors"
+                  to="/website/Mentors"
                   className="menu-item"
                   activeClassName="mobile-menu-item-active"
                 >
@@ -121,7 +121,7 @@ class Header extends Component {
                 </NavLink>
                 <div className="line" />
                 <NavLink
-                  to="/Networking"
+                  to="/website/Networking"
                   className="menu-item"
                   activeClassName="mobile-menu-item-active"
                 >
@@ -204,7 +204,7 @@ class Header extends Component {
               <ul className="nav-menu">
                 <li className="nav-item Internships">
                   <NavLink
-                    to="/Internships"
+                    to="/website/Internships"
                     className="menuLink nav-link"
                     activeClassName="active-main-link"
                   >
@@ -213,7 +213,7 @@ class Header extends Component {
                 </li>
                 <li className="nav-item Events">
                   <NavLink
-                    to="/Events"
+                    to="/website/Events"
                     className="menuLink nav-link"
                     activeClassName="active-main-link"
                   >
@@ -222,7 +222,7 @@ class Header extends Component {
                 </li>
                 <li className="nav-item Mentors">
                   <NavLink
-                    to="/Mentors"
+                    to="/website/Mentors"
                     className="menuLink nav-link"
                     activeClassName="active-main-link"
                   >
@@ -231,7 +231,7 @@ class Header extends Component {
                 </li>
                 <li className="nav-item Networking">
                   <NavLink
-                    to="/Networking"
+                    to="/website/Networking"
                     className=" nav-link"
                     activeClassName="active-main-link"
                   >
