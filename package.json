@@ -96,7 +96,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "start": "node dist/server/server.js",
+    "flex-start": "node dist/server/server.js",
     "build-client": "webpack --config webpack.client.config.js --mode production",
     "build-server": "webpack --config webpack.server.config.js --mode production",
     "build": "npm run build-client && npm run build-server",
